@@ -1,9 +1,9 @@
 // import React from 'react'
-import './shared/test.css'
+import './test.css'
 
 const Test = () => {
   return (
-    <h1>hello world</h1>
+      <h1 className='font-bold underline'>hello world!</h1>
   )
 }
 
