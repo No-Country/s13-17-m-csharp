@@ -1,4 +1,5 @@
 // import React from 'react'
+import './shared/test.css'
 
 const Test = () => {
   return (
