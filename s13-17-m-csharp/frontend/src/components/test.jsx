@@ -1,13 +1,18 @@
 import { useEffect, useState } from 'react';
 import {getProfile} from '../api/getProfile'
+import {getUser} from '../api/getUser'
 import './test.css';
 
 const Test = () => {
   
-  //---------- Para llamar al resultado de getProfile y usarlo en el estado effect----//
+  //---------- Para llamar a la api en el estado effect----//
   const [data, setData] = useState([]);
+  const [user, setUser] = useState([]);
+
   useEffect(() => {
-    const fetchData = async () => {
+
+    // LLAMAR A PROFILE
+    const fetchProfile = async () => {
       try {
         const data = await getProfile();
         setData(data);
@@ -15,7 +20,19 @@ const Test = () => {
         console.error(error);
       }
     };
-    fetchData();
+    fetchProfile();
+
+    // LLAMAR A USER
+    const fetchUser = async ()=>{
+      try {
+        const user = await getUser();
+        setUser(user); 
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchUser();
+
   }, []);
   //-----FIN de Para llamar al resultado de getProfile y usarlo en el estado effect----//
   
@@ -36,8 +53,18 @@ const Test = () => {
           ))
         }
       </ul>
-      <div>
-      </div>
+      <ul>
+        {user && user.length > 0 &&
+          user.map((us, index) => (
+            <li key={index}>
+              <p>Nombre: {us.fullName}</p>
+              <p>Telefono: {us.phone}</p>
+              <p>Alergias?: {us.allergy}</p>
+              <p>Fecha de Nacimiento: {us.birdDate}</p>
+            </li>
+          ))
+        }
+      </ul>
     </>
   );
 };
