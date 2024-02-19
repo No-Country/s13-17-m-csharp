@@ -8,7 +8,7 @@
 :root {
   --color-primary: #00a1a3;
   --color-secondary: #097dca;
-  --color-cards: hsla(204, 91%, 41%, 0.1);
+  --color-cards: rgba(21, 128, 235, 0);
   --color-text: #000000;
   --color-bg: #ffffff;
   --color-text-footer: rgba(255, 255, 255, 0.6);
