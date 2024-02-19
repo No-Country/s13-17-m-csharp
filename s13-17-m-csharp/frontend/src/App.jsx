@@ -1,16 +1,13 @@
 import { useState } from 'react';
 import './App.css';
 import Test from './components/test';
-import { Header } from './components/shared/Header/Header';
-import { Footer } from './components/shared/Footer/Footer';
+import { Layout } from './components/shared/Layout/Layout';
 
 function App() {
   return (
-    <>
-      <Header />
+    <Layout>
       <Test />
-      <Footer />
-    </>
+    </Layout>
   );
 }
 
