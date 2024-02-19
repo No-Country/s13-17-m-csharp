@@ -1,7 +1,6 @@
 /* GLOBAL SETTING */
 
 /*-----------VARIABLES PROPIAS-----------------*/
-
 /* Importacion de la fuente */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
@@ -13,16 +12,20 @@
   --color-text: #000000;
   --color-bg: #ffffff;
 
-  /* --color1 : #09456c ;
-  --color2 : #026f6e ;
-  --color3 : #1ca39e ; */
-
   --font-main: 'Poppins', sans-serif;
   --font-text: 'Lato', sans-serif;
   --font-title: 'Roboto', sans-serif;
 }
+/*---------------FIN DE VARIABLES PROPIAS-------------*/
 
-/*----------------------------*/
+
+/*---------------DIRECTIVAS DE TAILWIND-------------*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/*---------------FIN DE DIRECTIVAS DE TAILWIND-------------*/
+
+
 
 /*SETEO CON NORMALIZE DE ESTILOS PARA SEGUIR UN ESTANDAR EN VARIOS NAVEGADORES*/
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
