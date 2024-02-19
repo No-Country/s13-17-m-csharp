@@ -1,5 +1,5 @@
-import mobileLogo from '../../../assets/logo-header-mobile.svg';
-import desktopLogo from '../../../assets/logo-header-desktop.svg';
+import mobileLogo from '../../../assets/img/logo-header-mobile.svg';
+import desktopLogo from '../../../assets/img/logo-header-desktop.svg';
 
 const Header = () => {
   return (
@@ -7,7 +7,7 @@ const Header = () => {
       <picture>
         <source media="(min-width:768px)" srcSet={desktopLogo} />
         <img
-          className="ml-4 w-24 md:w-40 md:ml-10"
+          className="ml-4 w-24 md:w-36 md:ml-10"
           alt="logo"
           src={mobileLogo}
         />
