@@ -7,7 +7,7 @@
     background-color: var(--color-primary);
     border-radius: 4px;
     height: 56px;
-    a {
+    button {
         display: inherit;
         p{
             font-family: var(--font-main);
@@ -26,11 +26,10 @@
 
 @media (min-width: 576px){
     .containerVolver{
-        /* background-color: #1580EB17; */
         background-color: var(--color-cards);
         margin-inline: 114px;
         margin-block: 35px;
-        a{
+        button{
             p{
                 margin-left: 23.8px;
                 font-size: 18px;
@@ -42,6 +41,5 @@
                 height: 28px;
             }
         }
-
     }
 }

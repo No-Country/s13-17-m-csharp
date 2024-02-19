@@ -1,13 +1,12 @@
-// import React from 'react'
-import './Volver.css'
+import styles from './Volver.module.css'
 
 const Volver = () => {
     return (
-        <div className='containerVolver'>
-            <a href="">
+        <div className={styles.containerVolver}>
+            <button>
                 <img src="./Back.svg" alt="back arrow" />
                 <p>Titulo por props</p>
-            </a>
+            </button>
         </div>
     )
 }
