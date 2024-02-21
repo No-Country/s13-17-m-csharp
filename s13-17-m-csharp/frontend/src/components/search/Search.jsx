@@ -1,5 +1,7 @@
 import styles from "./search.module.css";
 import arrow from "../../assets/arrow.svg";
+import agenda from "../../assets/agenda.svg";
+import lupa from "../../assets/lupa.svg";
 import { categoriasTurnosMedicos } from "../../utils/Categorias";
 import { useState } from "react";
 
@@ -12,10 +14,10 @@ const Search = () => {
 
   return (
     <div>
-      <div className={styles.contenedor}>
+      <div className={styles.contenedor} >
         <h2 className={`${styles.title} mt-5`}>Agenda tu turno</h2>
         <div
-          className={`${styles.contenedorSearch} flex items-center mt-5 justify-between`}
+          className={`${styles.contenedorSearch} flex items-center mt-5 justify-between md:hidden`}
           onClick={slideup}
         >
           {!slide ? (
@@ -32,6 +34,25 @@ const Search = () => {
             </div>
           )}
         </div>
+
+        {/*Deskop */}
+        <div className=" bg-[#EEEEEE] hidden md:grid gap-2  rounded-3xl  pb-9 pt-12 mt-3 grid-cols-2">
+          <img className=" mx-auto " src={agenda} alt="" />
+          <div>
+            <h2 className={styles.titleSecondary}>Encuentra tu especialista y agenda una cita</h2>
+
+            <div className="relative mt-5">
+              <input
+                className={`${styles.input} relative`}
+                type="text"
+                placeholder="Buscar especialidades..."
+              />
+              <img className={styles.lupa} src={lupa} alt="" />
+            </div>
+          </div>
+        </div>
+
+        {/* */}
 
         {slide ? (
           <div className={styles.sugerencias}>
