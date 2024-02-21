@@ -1,0 +1,53 @@
+.container-register2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0px 20px;
+}
+
+.title-register2 {
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.title-opcionessexo {
+  font-weight: bold;
+}
+
+.input-register2 {
+  padding: 15px 5px;
+  border: 1px solid #00a1a3;
+  border-radius: 5px;
+  width: 320px;
+  margin: 10px 0 30px 0;
+}
+
+.container-opcionessexo {
+  padding: 15px;
+}
+
+.label-opcionessexo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #00a1a3;
+  margin-right: 10px;
+}
+
+input[type='radio']:checked + label .circle {
+  background-color: #00a1a3;
+}
+
+.container-btncontinuar2 {
+  margin: 20vh 0 10vh 0;
+}

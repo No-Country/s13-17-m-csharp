@@ -1,0 +1,18 @@
+.img-containerinicio {
+  display: flex;
+  justify-content: center;
+  margin-top: 20vh;
+}
+
+.text-inicio {
+  padding: 0 50px;
+  text-align: center;
+}
+
+.btns-logreg {
+  margin: 25vh 0 10vh 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
