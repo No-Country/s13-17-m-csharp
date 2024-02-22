@@ -1,22 +1,44 @@
+import { useEffect, useState } from 'react';
+import {getProfile} from '../../api/getProfile';
 
+import styles from '../Staff/staff.module.css';
 const Staff = () => {
+
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const data = await getProfile();
+          setData(data);
+          
+        } catch (error) {
+          console.error(error);
+        }
+      };
+      fetchData();
+    }, []);
+
     return (
         <div>
-            <div className="p-5">
-                <h4 className="text-center ">Staff</h4>
+            <div className="p-4">
+                <h4 className={styles.titulo}>Staff médico</h4>
             </div>
 
-            <div className="grid grid-cols-3 gap-2">
-                <div className="bg-gray-400 w-28 h-36 rounded-lg">0</div>
-                <div className="bg-gray-400 w-28 h-36 rounded-lg">1</div>
-                <div className="bg-gray-400 w-28 h-36 rounded-lg">2</div>
-                <div className="bg-gray-400 w-28 h-36 rounded-lg">3</div>
-                <div className="bg-gray-400 w-28 h-36 rounded-lg">4</div>
-                <div className="bg-gray-400 w-28 h-36 rounded-lg">5</div>
+            <div className={"overflow-x-scroll flex flex-col flex-wrap " + styles.areaStaff}>
+                {data && data.length > 0 && data.map((dato, index) => (
+                    <div key={index} className={styles.cardMedico}>
+                        <div className={styles.contenedorFotoMedico} >
+                            <img className={styles.fotoMedico} src="../../../public/img/medicos/medico4.png" alt="foto-medico1"/>
+                        </div>
+                        <h6 className={styles.nombreMedico}>{dato.name} {dato.lastName}</h6>
+                        <p className={styles.especialidadMedico}>{dato.speciality}</p>
+                    </div>
+                  
+                ))
+                }
+              
             </div>
-            
-        
-
         </div>
         
     )

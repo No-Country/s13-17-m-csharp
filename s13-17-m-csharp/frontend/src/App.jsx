@@ -9,7 +9,7 @@ function App() {
     <>
       <Header />
       <Test />
-      <p className='p-16 text-center h-30 bg-teal-100'>Aqui va el Carrusel</p>
+     
       <Staff/>
     </>
   );
