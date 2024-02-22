@@ -8,7 +8,6 @@ import { Layout } from './components/shared/Layout/Layout';
 import { DoctorCard } from './components/DoctorCard/DoctorCard';
 import Volver from './components/Volver/Volver';
 import Home from './pages/Home/Home';
-import Icon from './components/shared/Icon/Icon';
 
 function App() {
   return (
