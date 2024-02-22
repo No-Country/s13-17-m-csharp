@@ -1,8 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Slider from './components/Slider/Slider';
-import Staff from './components/Staff/Staff';
-import Search from './components/search/Search';
 import Login from './pages/Login/Login';
 import Inicio from './pages/Inicio/Inicio';
 import Register1 from './pages/Registros/Register1';
@@ -18,23 +15,27 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path='/inicio' element={<Layout>
+                                            <Volver title={"Volver"} />
                                             <Inicio />
                                           </Layout>}/>
         <Route path='/login' element={<Layout>
+                                        <Volver title={"Volver"} />
                                         <Login />
                                       </Layout>}/>
         <Route path='/register/step1' element={<Layout>
+                                        <Volver title={"Volver"} />
                                         <Register1 />
                                       </Layout>}/>
         <Route path='/register/step2' element={<Layout>
+                                        <Volver title={"Volver"} /> 
                                         <Register2 />
                                       </Layout>}/>
-                
+        <Route path='/docProfile' element={<Layout>
+                                        <Volver title={"Volver"} />
+                                        <DoctorCard />
+                                      </Layout>}/>
 
-
-          {/* <Slider/>
-          <Staff/>
-          <Search/>
+          {/*
           <Volver />
           <Inicio />
           <Register1 />

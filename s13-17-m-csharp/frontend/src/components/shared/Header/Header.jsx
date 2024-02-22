@@ -1,7 +1,6 @@
 import mobileLogo from '../../../assets/img/logo-header-mobile.svg';
 import desktopLogo from '../../../assets/img/logo-header-desktop.svg';
 import { NavLink } from 'react-router-dom';
-import Inicio from '../../../pages/Inicio/Inicio';
 
 const Header = () => {
   return (
