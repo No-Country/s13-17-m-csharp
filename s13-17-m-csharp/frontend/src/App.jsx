@@ -1,5 +1,6 @@
 import './App.css';
 // import Test from './components/test';
+import Slider from './components/Slider/Slider'
 import { Header } from './components/shared/Header/Header';
 import Search from './components/search/Search'
 import Login from './pages/Login/Login';
@@ -14,6 +15,7 @@ function App() {
     <>
       <Layout>
         <Volver />
+        <Slider/>
         <Login />
         <Search/>
         <Inicio />
