@@ -1,0 +1,23 @@
+.container-register1 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0px 20px;
+}
+
+.title-register1 {
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.input-register1 {
+  padding: 15px 5px;
+  border: 1px solid #00a1a3;
+  border-radius: 5px;
+  width: 320px;
+  margin: 10px 0;
+}
+
+.container-btncontinuar1 {
+  margin: 20vh 0 10vh 0;
+}
