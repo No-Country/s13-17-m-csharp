@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import ButtonContinuar from '../../components/shared/Buttons/ButtonContinuar/ButtonContinuar';
 import './register1.css';
 
@@ -40,7 +41,9 @@ export default function Register1() {
           />
         </label>
         <div className="container-btncontinuar1">
-          <ButtonContinuar />
+          <NavLink to='/register/step2'>
+            <ButtonContinuar />
+          </NavLink>
         </div>
       </form>
     </div>
