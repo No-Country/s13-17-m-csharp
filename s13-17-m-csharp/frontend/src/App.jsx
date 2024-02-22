@@ -1,8 +1,8 @@
-
 import './App.css';
 // import Test from './components/test';
 import Slider from './components/Slider/Slider'
 import { Header } from './components/shared/Header/Header';
+import Search from './components/search/Search'
 import Login from './pages/Login/Login';
 import Inicio from './pages/Inicio/Inicio';
 import Register1 from './pages/Registros/Register1';
@@ -17,6 +17,7 @@ function App() {
         <Volver />
         <Slider/>
         <Login />
+        <Search/>
         <Inicio />
         <Register1 />
         <Register2 />
