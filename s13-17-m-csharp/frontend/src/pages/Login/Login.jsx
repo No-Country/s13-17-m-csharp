@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import ButtonLogin from '../../components/shared/Buttons/ButtonIniciarSesion/ButtonLogin';
 import ButtonRegister from '../../components/shared/Buttons/ButtonsRegistrarse/ButtonRegister';
 import './login.css';
@@ -24,8 +25,12 @@ export default function Login() {
         Olvide mi contraseña
       </a>
       <div className="btns-iniciarsesion">
-        <ButtonLogin />
-        <ButtonRegister />
+        <NavLink to='/'>
+          <ButtonLogin />
+        </NavLink>
+        <NavLink to='register/step1'>
+          <ButtonRegister />
+        </NavLink>
       </div>
     </div>
   );

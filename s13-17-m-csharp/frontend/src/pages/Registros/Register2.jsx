@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import ButtonContinuar from '../../components/shared/Buttons/ButtonContinuar/ButtonContinuar';
 import './register2.css';
 
@@ -45,7 +46,9 @@ export default function Register2() {
           </div>
         </fieldset>
         <div className="container-btncontinuar2">
-          <ButtonContinuar />
+          <NavLink to='/'>
+            <ButtonContinuar />
+          </NavLink>
         </div>
       </form>
     </div>

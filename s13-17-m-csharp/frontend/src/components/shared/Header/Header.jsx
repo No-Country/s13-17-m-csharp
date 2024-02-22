@@ -1,5 +1,7 @@
 import mobileLogo from '../../../assets/img/logo-header-mobile.svg';
 import desktopLogo from '../../../assets/img/logo-header-desktop.svg';
+import { NavLink } from 'react-router-dom';
+import Inicio from '../../../pages/Inicio/Inicio';
 
 const Header = () => {
   return (
@@ -16,9 +18,11 @@ const Header = () => {
       <nav className="hidden md:flex w-2/5 justify-self-center">
         <ul className="flex justify-evenly  w-full">
           <li>
-            <a className="text-color-primary" href="/home">
-              Home
-            </a>
+            <NavLink to='/'>
+              <a className="text-color-primary" href="/">
+                Home
+              </a>
+            </NavLink>
           </li>
           <li>
             <a href="#">Nosotros</a>
@@ -32,9 +36,11 @@ const Header = () => {
         </ul>
       </nav>
       <section className="flex text-sm">
-        <button className="h-10 w-24 bg-color-primary  rounded-full flex items-center justify-center mr-4 md:mr-10 md:rounded-md md:h-7">
-          Ingresar
-        </button>
+        <NavLink to='/inicio'>
+          <button className="h-10 w-24 bg-color-primary  rounded-full flex items-center justify-center mr-4 md:mr-10 md:rounded-md md:h-7">
+            Ingresar
+          </button>
+        </NavLink>
       </section>
     </header>
   );
