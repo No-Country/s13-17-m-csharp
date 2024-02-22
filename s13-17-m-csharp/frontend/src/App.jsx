@@ -34,12 +34,6 @@ function App() {
                                         <Volver title={"Volver"} />
                                         <DoctorCard />
                                       </Layout>}/>
-
-          {/*
-          <Volver />
-          <Inicio />
-          <Register1 />
-          <Register2 /> */}
       </Routes>
     </BrowserRouter>
   );
