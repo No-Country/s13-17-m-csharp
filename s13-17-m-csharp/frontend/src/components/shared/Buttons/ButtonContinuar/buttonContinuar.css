@@ -1,8 +1,13 @@
 .btn-continuar {
-  color: #000;
+  color: rgba(51, 51, 51, 1);
   padding: 10px;
   font-weight: bold;
   background-color: #00a1a3;
-  width: 320px;
+  width: 70dvw;
+  max-width: 360px;
   border-radius: 100px;
+  font-family: var(--font-text);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
 }

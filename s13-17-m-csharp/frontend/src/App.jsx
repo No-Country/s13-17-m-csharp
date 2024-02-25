@@ -8,6 +8,7 @@ import { Layout } from './components/shared/Layout/Layout';
 import { DoctorCard } from './components/DoctorCard/DoctorCard';
 import Volver from './components/Volver/Volver';
 import Home from './pages/Home/Home';
+import Turno from './pages/Turno/Turno';
 
 function App() {
   return (
@@ -33,6 +34,10 @@ function App() {
         <Route path='/docProfile' element={<Layout>
                                         <Volver title={"Volver"} />
                                         <DoctorCard />
+                                      </Layout>}/>
+        <Route path='/docProfile/agenda' element={<Layout>
+                                        <Volver title={"Volver"} />
+                                        <Turno />
                                       </Layout>}/>
       </Routes>
     </BrowserRouter>
