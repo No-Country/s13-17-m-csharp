@@ -1,6 +1,8 @@
+import { NavLink } from 'react-router-dom';
 import addresIcon from '../../assets/icons/address-icon.svg';
 import docIcon from '../../assets/icons/doc-icon.svg';
 import DoctorData from '../DoctorData/DoctorData';
+import ButtonContinuar from '../shared/Buttons/ButtonContinuar/ButtonContinuar';
 
 const DoctorCard = () => {
   return (
@@ -39,6 +41,11 @@ const DoctorCard = () => {
           </button>
         </footer>
       </section>
+          <div className='flex justify-center mt-20 mb-2'>
+            <NavLink to='/agenda'>
+              <ButtonContinuar title='Continuar'/>
+            </NavLink>
+          </div>
       <aside></aside>
     </article>
   );

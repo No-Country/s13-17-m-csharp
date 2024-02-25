@@ -7,7 +7,7 @@ const DoctorData = () => {
     const location = useLocation();
 
     useEffect(() => {
-        if (location.pathname === '/docProfile/agenda') {
+        if (location.pathname === '/agenda') {
             setShowValoracion(false);
         } else {
             setShowValoracion(true);

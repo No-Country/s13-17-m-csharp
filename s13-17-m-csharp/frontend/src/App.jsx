@@ -35,8 +35,8 @@ function App() {
                                         <Volver title={"Volver"} />
                                         <DoctorCard />
                                       </Layout>}/>
-        <Route path='/docProfile/agenda' element={<Layout>
-                                        <Volver title={"Volver"} />
+        <Route path='/agenda' element={<Layout>
+                                        <Volver title={"Confirmar fecha"} />
                                         <Turno />
                                       </Layout>}/>
       </Routes>
