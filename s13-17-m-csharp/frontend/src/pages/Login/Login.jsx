@@ -4,28 +4,40 @@ import './login.css';
 
 export default function Login() {
   return (
-    <div>
-      <h1 className="title-iniciarsesion">Iniciar sesión</h1>
-      <form className="form-iniciarsesion">
-        <input
-          type="email"
-          name="email"
-          placeholder="Mail"
-          className="input-iniciarsesion"
-        />
-        <input
-          type="password"
-          name="contraseña"
-          placeholder="Contraseña"
-          className="input-iniciarsesion"
-        />
-      </form>
-      <a href="#" className="text-iniciarsesion">
-        Olvide mi contraseña
-      </a>
-      <div className="btns-iniciarsesion">
-        <ButtonLogin />
-        <ButtonRegister />
+    <div className="container-iniciarmain">
+      <div className="container-iniciarsesion">
+        <h1 className="title-iniciarsesion">Iniciar sesión</h1>
+        <form className="form-iniciarsesion">
+          <label className="label-iniciarsesion" htmlFor="email">
+            Email
+          </label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Mail"
+            className="input-iniciarsesion"
+          />
+          <label className="label-iniciarsesion" htmlFor="password">
+            Contraseña
+          </label>
+          <input
+            type="password"
+            name="contraseña"
+            id="password"
+            placeholder="Contraseña"
+            className="input-iniciarsesion"
+          />
+        </form>
+        <a href="#" className="text-iniciarsesion">
+          Olvide mi contraseña
+        </a>
+        <div className="btns-iniciarsesion">
+          <ButtonLogin />
+          <div className="ocultarbtn-iniciarsesion">
+            <ButtonRegister />
+          </div>
+        </div>
       </div>
     </div>
   );
