@@ -1,11 +1,13 @@
+import { useNavigate } from 'react-router-dom'
 import styles from './Volver.module.css'
 
-const Volver = () => {
+const Volver = (props) => {
+    const navigate = useNavigate()
     return (
         <div className={styles.containerVolver}>
-            <button>
+            <button onClick={()=> navigate(-1)}>
                 <img src="./Back.svg" alt="back arrow" />
-                <p>Titulo por props</p>
+                <p>{props.title}</p>
             </button>
         </div>
     )

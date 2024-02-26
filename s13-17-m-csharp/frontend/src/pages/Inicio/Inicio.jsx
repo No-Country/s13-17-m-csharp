@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import ButtonLogin from '../../components/shared/Buttons/ButtonIniciarSesion/ButtonLogin';
 import ButtonRegisterFill from '../../components/shared/Buttons/ButtonsRegistrarse/ButtonRegisterFill';
 import './inicio.css';
@@ -17,8 +18,12 @@ export default function Inicio() {
         la comodidad de tu casa{' '}
       </p>
       <div className="btns-logreg">
-        <ButtonLogin />
-        <ButtonRegisterFill />
+        <NavLink to='/login'>
+          <ButtonLogin />
+        </NavLink>
+        <NavLink to='/register/step1'>
+          <ButtonRegisterFill />
+        </NavLink>
       </div>
     </div>
   );

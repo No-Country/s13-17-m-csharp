@@ -4,6 +4,7 @@ import agenda from "../../assets/agenda.svg";
 import lupa from "../../assets/lupa.svg";
 import { categoriasTurnosMedicos } from "../../utils/Categorias";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const Search = () => {
   const [slide, setSlide] = useState(false);
@@ -59,9 +60,11 @@ const Search = () => {
             <h2 className={styles.titleSugerencia}>Sugerencias</h2>
             {categoriasTurnosMedicos.map((category) => (
               <>
+              <NavLink to='/docProfile'>
                 <div key={category.id}>
                   <h3 className={`${styles.category} mb-4`}>{category.name}</h3>
                 </div>
+              </NavLink>
               </>
             ))}
           </div>

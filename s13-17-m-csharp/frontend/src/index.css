@@ -8,9 +8,13 @@
 :root {
   --color-primary: #00a1a3;
   --color-secondary: #097dca;
-  --color-cards: rgba(21, 128, 235, 0);
+  --color-bg-desk: rgba(21, 128, 235, 0.09);
+  --color-bg-mobile: rgba(255, 255, 255, 1);
+  --color-cards: rgba(9, 125, 202, 0.1);
+  --color-cards-desk: rgba(9, 125, 202, 0.1);
   --color-text: #000000;
-  --color-bg: #ffffff;
+  --color-secondary-text: rgba(51, 51, 51, 1);
+  /* --color-bg: #ffffff; */
   --color-text-footer: rgba(255, 255, 255, 0.6);
   --font-main: 'Poppins', sans-serif;
   --font-text: 'Lato', sans-serif;
@@ -48,6 +52,12 @@ html {
 
 body {
   margin: 0;
+  background-color: var(--color-bg-desk);
+}
+@media (max-width: 768px){
+  body{
+    background-color: var(--color-bg-mobile);
+  }
 }
 
 /**

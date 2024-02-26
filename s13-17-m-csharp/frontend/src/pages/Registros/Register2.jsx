@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import ButtonContinuar from '../../components/shared/Buttons/ButtonContinuar/ButtonContinuar';
 import './register2.css';
 
