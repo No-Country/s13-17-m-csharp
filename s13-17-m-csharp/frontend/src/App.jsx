@@ -8,10 +8,8 @@ import { Layout } from './components/shared/Layout/Layout';
 import { DoctorCard } from './components/DoctorCard/DoctorCard';
 import Volver from './components/Volver/Volver';
 import Home from './pages/Home/Home';
-
 import { useState } from 'react';
 import Turno from './pages/Turno/Turno';
-
 
 function App() {
 
@@ -29,7 +27,7 @@ function App() {
                                           </Layout>}/>
         <Route path='/login' element={<Layout>
                                         <Volver title={"Volver"} />
-                                         <Login isLoggedIn={isLoggedIn}  setIsLoggedIn= {setIsLoggedIn} />
+                                        <Login isLoggedIn={isLoggedIn}  setIsLoggedIn= {setIsLoggedIn} />
                                       </Layout>}/>
         <Route path='/register/step1' element={<Layout>
                                         <Volver title={"Volver"} />
@@ -47,11 +45,8 @@ function App() {
                                         <Volver title={"Confirmar fecha"} />
                                         <Turno />
                                       </Layout>}/>
-        <Route path="/logueado" element={ isLoggedIn ? (<Layout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
-                <Slider />
-                <Staff />
-                <Search />
-              </Layout>
+        <Route path="/logueado" element={ isLoggedIn ? (<Home isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
+              </Home>
             ) : (
               <Navigate to="/" /> 
             )

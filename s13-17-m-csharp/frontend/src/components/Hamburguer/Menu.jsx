@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import styles from '../Hamburguer/menu.module.css';
 import { NavLink } from 'react-router-dom';
 import mobileLogo from '../../assets/img/mobileLogo.svg';
