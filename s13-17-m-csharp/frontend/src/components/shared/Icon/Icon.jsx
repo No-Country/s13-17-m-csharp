@@ -3,7 +3,7 @@ import style from './Icon.module.css'
 const Icon = () => {
     return (
         <div className={style.iconContainer}>
-            <div className={style.iconDiv}>
+            <div className={`${style.iconDiv} ${style.slideLeft}`}>
                 <a href="https://wa.me/3416851106" rel="noopener noreferrer" target="_blank">
                     <img className={style.iconImg} src="WhatsApp.svg" alt="whatsapp icon" />
                 </a>

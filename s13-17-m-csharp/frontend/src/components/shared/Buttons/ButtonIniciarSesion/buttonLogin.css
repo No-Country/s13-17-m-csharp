@@ -1,7 +1,20 @@
 .btn-login {
-  background-color: #00a1a3;
-  padding: 10px 20px;
+  background-color: var(--color-primary);
+  font-family: var(--font-text);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--color-text);
+  padding: 12px;
   border-radius: 100px;
-  font-weight: bold;
-  width: 320px;
+  width: 328px;
+}
+
+@media (width >= 576px) {
+  .btn-login {
+    width: 226px;
+    border-radius: 12px;
+    font-family: var(--font-main);
+    line-height: 24px;
+  }
 }
