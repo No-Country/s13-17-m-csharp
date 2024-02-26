@@ -1,9 +1,17 @@
 import { Header } from '../Header/Header';
 import { Footer } from '../Footer/Footer';
-const Layout = ({ children }) => {
+import Menu from '../../Hamburguer/Menu';
+const Layout = ({ children,isLoggedIn,setIsLoggedIn }) => {
+
+
+
   return (
     <>
-      <Header />
+      
+
+      
+      {isLoggedIn ? <Menu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />   :  <Header /> }
+   
       {children}
       <Footer />
     </>
