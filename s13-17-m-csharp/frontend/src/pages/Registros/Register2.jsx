@@ -53,7 +53,9 @@ export default function Register2() {
             </div>
           </fieldset>
           <div className="container-btncontinuar2">
-            <ButtonContinuar />
+            <NavLink to='/'>
+              <ButtonContinuar />
+            </NavLink>
           </div>
         </form>
       </div>

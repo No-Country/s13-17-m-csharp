@@ -34,7 +34,9 @@ export default function Login() {
           Olvide mi contraseña
         </a>
         <div className="btns-iniciarsesion">
-          <ButtonLogin />
+          <NavLink to='/'>
+            <ButtonLogin />
+          </NavLink>
           <div className="ocultarbtn-iniciarsesion">
             <ButtonRegister />
           </div>
