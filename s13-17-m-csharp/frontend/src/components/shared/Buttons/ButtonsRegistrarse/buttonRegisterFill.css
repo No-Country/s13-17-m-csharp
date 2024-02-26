@@ -10,3 +10,12 @@
   border-radius: 100px;
   width: 328px;
 }
+
+@media (width >= 576px) {
+  .btn-registerfill {
+    width: 226px;
+    border-radius: 10px;
+    font-family: var(--font-main);
+    line-height: 24px;
+  }
+}
