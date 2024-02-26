@@ -1,0 +1,15 @@
+.container{
+    background-color: red;
+    width: 100%;
+    section{
+        h2{
+            font-family: var(--font-text);
+        }
+        p{
+            font-family: var(--font-text);
+            font-weight: 600;
+            line-height: 26px;
+        }
+    }
+}
+
