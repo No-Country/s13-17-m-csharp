@@ -1,14 +1,28 @@
-import logo from '../../../assets/mediCita-icon.svg';
+import mobileLogo from '../../../assets/img/logo-header-mobile.svg';
+import desktopLogo from '../../../assets/img/logo-header-desktop.svg';
+import { NavLink } from 'react-router-dom';
+
 const Header = () => {
   return (
-    <header className="w-full h-14 flex justify-evenly items-center font-font-main text-base pt-5">
-      <img className="w-28 md:w-40" alt="logo" src={logo} />
-      <nav className="hidden md:flex w-2/5">
+    <header className="w-full h-20 flex justify-between items-center font-font-main text-base mb-5">
+      <picture>
+        <source media="(min-width:768px)" srcSet={desktopLogo} />
+        <NavLink to="/">
+          <img
+            className="ml-4 w-24 md:w-36 md:ml-10"
+            alt="logo"
+            src={mobileLogo}
+          />
+        </NavLink>
+      </picture>
+      <nav className="hidden md:flex w-2/5 justify-self-center">
         <ul className="flex justify-evenly  w-full">
           <li>
-            <a className="text-color-primary" href="/home">
-              Home
-            </a>
+            <NavLink to="/">
+              <a className="text-color-primary" href="/">
+                Home
+              </a>
+            </NavLink>
           </li>
           <li>
             <a href="#">Nosotros</a>
@@ -22,12 +36,11 @@ const Header = () => {
         </ul>
       </nav>
       <section className="flex text-sm">
-        <button className="h-9 w-28 bg-color-secondary text-white rounded-md flex items-center justify-center mr-4">
-          Ingresar
-        </button>
-        <button className="h-9 w-28 bg-color-secondary text-white rounded-md flex items-center justify-center">
-          Registrarse
-        </button>
+        <NavLink to="/inicio">
+          <button className="h-10 w-24 bg-color-primary  rounded flex items-center justify-center mr-4 md:mr-10 md:rounded-md md:h-7">
+            Ingresar
+          </button>
+        </NavLink>
       </section>
     </header>
   );
