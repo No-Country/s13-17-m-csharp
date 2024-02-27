@@ -10,6 +10,7 @@ import Volver from './components/Volver/Volver';
 import Home from './pages/Home/Home';
 import { useState } from 'react';
 import Turno from './pages/Turno/Turno';
+import Confirmacion from './pages/Confirmacion/Confirmacion';
 
 function App() {
 
@@ -45,6 +46,11 @@ function App() {
                                         <Volver title={"Confirmar fecha"} />
                                         <Turno />
                                       </Layout>}/>
+
+        <Route path='/confirmacion' element={<Layout>
+                                        <Confirmacion />
+                                      </Layout>}/>
+
         <Route path="/logueado" element={ isLoggedIn ? (<Home isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
               </Home>
             ) : (
@@ -52,6 +58,7 @@ function App() {
             )
           }
         />
+
       </Routes>
     </BrowserRouter>
   );
