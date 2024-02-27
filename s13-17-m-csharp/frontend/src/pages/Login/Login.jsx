@@ -1,11 +1,18 @@
+/* eslint-disable react/prop-types */
 import { NavLink } from 'react-router-dom';
+
 import ButtonLogin from '../../components/shared/Buttons/ButtonIniciarSesion/ButtonLogin';
 import ButtonRegister from '../../components/shared/Buttons/ButtonsRegistrarse/ButtonRegister';
 import './login.css';
 
-export default function Login() {
+
+export default function Login({isLoggedIn,setIsLoggedIn}) {
+
+
+
+
   return (
-    <div className="container-iniciarmain">
+        <div className="container-iniciarmain">
       <div className="container-iniciarsesion">
         <h1 className="title-iniciarsesion">Iniciar sesión</h1>
         <form className="form-iniciarsesion">
@@ -34,7 +41,9 @@ export default function Login() {
           Olvide mi contraseña
         </a>
         <div className="btns-iniciarsesion">
-          <ButtonLogin />
+          <NavLink to='/logueado'>
+            <ButtonLogin isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+          </NavLink>
           <div className="ocultarbtn-iniciarsesion">
             <ButtonRegister />
           </div>

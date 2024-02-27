@@ -5,7 +5,7 @@ import twiIcon from '../../../assets/icons/twitter-icon.svg';
 import youIcon from '../../../assets/icons/youtube-icon.svg';
 const Footer = () => {
   return (
-    <footer className="pt-4 pb-4 text-white font-font-text w-full bg-color-secondary flex flex-col  md:flex-row md:justify-evenly ">
+    <footer className="mt-9 pt-4 pb-4 text-white font-font-text w-full bg-color-secondary flex flex-col  md:flex-row md:justify-evenly ">
       <section className=" mb-5 md:flex flex-col justify-between md:pt-24 md:pb-10">
         <div className="flex flex-col items-center md:items-start">
           <img
