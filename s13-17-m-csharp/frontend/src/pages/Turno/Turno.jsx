@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom'
 import DoctorData from '../../components/DoctorData/DoctorData'
 import ButtonContinuar from '../../components/shared/Buttons/ButtonContinuar/ButtonContinuar'
 import style from'./Turno.module.css'
+import TurnoAsignado from '../../components/TurnoAsignado/TurnoAsignado'
 
 const Turno = () => {
     return (
@@ -10,12 +11,7 @@ const Turno = () => {
                 <section className="s:w-[55%] md:w-[100%]">
                     <DoctorData />
                     <footer className="md:hidden md:mt-0 mt-4 rounded-md flex-column justify-between items-center bg-white py-1 text-xs font-normal font-font-title">
-                        <div className='space-y-3 space-x-[6px] font-font-text'>
-                            <br />
-                            <p className="ml-[7px] text-sm font-medium mb-2 md:text-base text-[#333333]">Fecha: Lunes 27/02</p>
-                            <p className="ml-[7px] text-sm font-medium mb-2 md:text-base text-[#333333]">Hora 12:30</p>
-                            <p className="ml-[7px] text-sm font-medium mb-2 md:text-base text-[#333333]">Dirección: Av. Independencia 265</p>
-                        </div>
+                        <TurnoAsignado/>
                         <div className='md:hidden flex justify-center mt-20 mb-2'>
                             <NavLink to='/confirmacion'>
                                 <ButtonContinuar title='Confirmar'/>

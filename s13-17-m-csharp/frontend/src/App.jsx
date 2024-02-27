@@ -11,6 +11,7 @@ import Home from './pages/Home/Home';
 import { useState } from 'react';
 import Turno from './pages/Turno/Turno';
 import Confirmacion from './pages/Confirmacion/Confirmacion';
+import Misturnos from './pages/MisTurnos/Misturnos';
 
 function App() {
 
@@ -58,6 +59,10 @@ function App() {
             )
           }
         />
+        <Route path='/misturnos' element={<Layout>
+                                        <Volver title={"Ir al Home"} />
+                                        <Misturnos />
+                                      </Layout>}/>
 
       </Routes>
     </BrowserRouter>
