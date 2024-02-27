@@ -41,7 +41,6 @@ function App() {
                                         <Turno />
                                       </Layout>}/>
         <Route path='/confirmacion' element={<Layout>
-                                        <Volver title={"Confirmar fecha"} />
                                         <Confirmacion />
                                       </Layout>}/>
       </Routes>

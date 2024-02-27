@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import DoctorData from '../../components/DoctorData/DoctorData'
 import ButtonContinuar from '../../components/shared/Buttons/ButtonContinuar/ButtonContinuar'
 import style from'./Turno.module.css'
@@ -16,7 +17,9 @@ const Turno = () => {
                             <p className="ml-[7px] text-sm font-medium mb-2 md:text-base text-[#333333]">Dirección: Av. Independencia 265</p>
                         </div>
                         <div className='md:hidden flex justify-center mt-20 mb-2'>
-                            <ButtonContinuar title='Confirmar'/>
+                            <NavLink to='/confirmacion'>
+                                <ButtonContinuar title='Confirmar'/>
+                            </NavLink>
                         </div>
                     </footer>
                 </section>  
@@ -47,7 +50,9 @@ const Turno = () => {
                             </div>
                         </div>
                         <div className='flex justify-center mt-20 mb-2'>
-                            <ButtonContinuar title='Confirmar'/>
+                            <NavLink to='/confirmacion'>
+                                <ButtonContinuar title='Confirmar'/>
+                            </NavLink>
                         </div>
                     </footer>
                 </section>  
