@@ -1,0 +1,41 @@
+
+
+.font{
+font-family: var(--font-text);
+font-weight: 400;
+font-size: 15px;
+}
+
+.li{
+    list-style: none;
+    font-family: var(--font-text);
+    font-weight: 400;
+    font-size: 1.02rem;
+    cursor: pointer;
+   
+}
+
+
+.imgUser{
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+}
+
+.header{
+    position: static;
+}
+@media (min-width:768px){
+    .header{
+        z-index: 101;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 20px;
+    
+        bottom: 0;
+        background: white;
+       
+    }
+}

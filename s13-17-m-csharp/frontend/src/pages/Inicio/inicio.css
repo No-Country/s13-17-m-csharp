@@ -1,18 +1,25 @@
 .img-containerinicio {
   display: flex;
   justify-content: center;
-  margin-top: 20vh;
+  margin-top: 125px;
+  margin-bottom: 13px;
 }
 
 .text-inicio {
-  padding: 0 50px;
+  font-family: var(--font-text);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--color-text);
+  margin-inline: 54px;
+  margin-bottom: 73px;
   text-align: center;
 }
 
 .btns-logreg {
-  margin: 25vh 0 10vh 0;
+  margin-bottom: 168px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
