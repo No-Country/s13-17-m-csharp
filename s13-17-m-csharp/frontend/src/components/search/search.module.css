@@ -72,6 +72,9 @@ text-decoration: underline;
    
 }
 
+.contenedorItems{
+    width: 100%;
+}
 
 .input:focus{
 
@@ -123,3 +126,10 @@ text-decoration: underline;
     }
 }
 
+.bgContainerItems{
+    background: white;
+    margin-top: 5px;
+    border-radius: 5px;
+    width: 80%;
+    padding: 10px;
+}
