@@ -1,0 +1,59 @@
+.li{
+    list-style: none;
+    font-family: var(--font-text);
+    font-weight: 400;
+    font-size: 1.02rem;
+    cursor: pointer;
+   
+}
+
+
+.bgContenedor{
+    background: #097DCA1A;
+    display: flex;
+
+    justify-content: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    margin: 0 auto;
+    flex-direction: column;
+    z-index: 50;
+    height: 90vh;
+   
+}
+
+
+
+@media (min-width:768px){
+
+ 
+
+
+    .bgContenedor{
+        background: #0000008a;
+        position: fixed;
+        top: 0;
+    
+        left: 0;
+        right: 0;
+        bottom: 0;
+     
+      height: 100vh;
+        z-index: 100;
+       
+    }
+
+    .bgWhite{
+        background: #EEEEEEBA;
+        width: 320px;
+        position: fixed;
+        right: 0;
+        padding: 2rem;
+        top: 55px;
+       
+    }
+
+
+}

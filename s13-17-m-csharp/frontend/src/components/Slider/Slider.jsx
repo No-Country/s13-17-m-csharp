@@ -55,7 +55,7 @@ const Slider = () => {
   }, []);
 
   return (
-    <div className="relative max-w-[81.69rem] mx-auto">
+    <div className="relative max-w-[81.69rem] md:mt-14 mx-auto">
       <div className="overflow-hidden w-full h-96">
         <div className="flex transition-transform duration-500 ease-in-out transform">
           {slides.map((slide, index) => (

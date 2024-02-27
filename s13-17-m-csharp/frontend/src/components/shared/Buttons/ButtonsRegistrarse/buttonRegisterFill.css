@@ -1,8 +1,21 @@
 .btn-registerfill {
-  background-color: #1580eb;
-  color: #000;
-  padding: 10px 20px;
+  background-color: var(--color-secondary);
+  font-family: var(--font-text);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--color-text);
+  padding: 12px;
+  border: 1px solid var(--color-secondary);
   border-radius: 100px;
-  border: 1px solid #1580eb;
-  width: 320px;
+  width: 328px;
+}
+
+@media (width >= 576px) {
+  .btn-registerfill {
+    width: 226px;
+    border-radius: 10px;
+    font-family: var(--font-main);
+    line-height: 24px;
+  }
 }
