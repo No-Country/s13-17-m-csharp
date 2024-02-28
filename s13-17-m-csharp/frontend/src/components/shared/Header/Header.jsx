@@ -1,10 +1,12 @@
 import mobileLogo from '../../../assets/img/logo-header-mobile.svg';
 import desktopLogo from '../../../assets/img/logo-header-desktop.svg';
 import { NavLink } from 'react-router-dom';
+import Menu from '../../Hamburguer/Menu';
 
-const Header = () => {
+const Header = ({ isLoggedIn, setIsLoggedIn }) => {
   return (
-    <header className="w-full h-20 flex justify-between items-center font-font-main text-base mb-5">
+    <header className="w-full h-20 top-0 z-50 flex justify-between items-center font-font-main text-base mb-5 fixed">
+      <div className="w-full h-20  bg-[#eeeeeef0] z-50 flex justify-between items-center font-font-main text-base fixed">
       <picture>
         <source media="(min-width:768px)" srcSet={desktopLogo} />
         <NavLink to="/">
@@ -42,6 +44,10 @@ const Header = () => {
           </button>
         </NavLink>
       </section>
+      <section className='flex text-sm'>
+        <Menu />
+      </section>
+      </div>
     </header>
   );
 };

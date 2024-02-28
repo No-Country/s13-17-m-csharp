@@ -41,7 +41,7 @@ export default function Login({isLoggedIn,setIsLoggedIn}) {
           Olvide mi contraseña
         </a>
         <div className="btns-iniciarsesion">
-          <NavLink to='/logueado'>
+          <NavLink to='/'>
             <ButtonLogin isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
           </NavLink>
           <div className="ocultarbtn-iniciarsesion">
