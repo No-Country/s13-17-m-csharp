@@ -1,4 +1,9 @@
-import { BrowserRouter, Route, Routes,Navigate } from 'react-router-dom';
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+  Navigate
+} from 'react-router-dom';
 import './App.css';
 import Login from './pages/Login/Login';
 import Inicio from './pages/Inicio/Inicio';
@@ -10,18 +15,20 @@ import Volver from './components/Volver/Volver';
 import Home from './pages/Home/Home';
 import { useState } from 'react';
 import Turno from './pages/Turno/Turno';
+
+import Nosotros from './pages/Nosotros/Nosotros';
 import Confirmacion from './pages/Confirmacion/Confirmacion';
 import Misturnos from './pages/MisTurnos/Misturnos';
 
+
 function App() {
-
-  // state para saber si está registrado o no  
+  // state para saber si está registrado o no
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
 
   return (
     <BrowserRouter>
       <Routes>
+
         <Route path='/' element={<Home />}/>
         <Route path='/inicio' element={<Layout>
                                             <Volver title={"Volver"} />
@@ -51,11 +58,20 @@ function App() {
         <Route path='/confirmacion' element={<Layout>
                                         <Confirmacion />
                                       </Layout>}/>
+        <Route
+          path="/nosotros"
+          element={
+            <Layout>
+              <Volver title={'Volver'} />
+              <Nosotros />
+            </Layout>
+          }
+        />
 
         <Route path="/logueado" element={ isLoggedIn ? (<Home isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
               </Home>
             ) : (
-              <Navigate to="/" /> 
+              <Navigate to="/" />
             )
           }
         />
