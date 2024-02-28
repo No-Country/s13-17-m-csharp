@@ -25,7 +25,7 @@ const Header = () => {
             </NavLink>
           </li>
           <li>
-            <a href="#">Nosotros</a>
+            <NavLink to={'/nosotros'}>Nosotros</NavLink>
           </li>
           <li>
             <a href="#">Servicios</a>

@@ -7,6 +7,7 @@ import customer from '../../../assets/img/Customer.svg';
 import support from '../../../assets/img/Support.svg';
 import info from '../../../assets/img/Info.svg';
 import styles from '../ContentHamburguer/ContentHamburguer.module.css'
+import { NavLink } from 'react-router-dom';
 
 
 
@@ -37,7 +38,9 @@ const ContentHamburguer = ({isLoggedIn,setIsLoggedIn}) => {
 
         <div className="flex items-center  gap-2 mb-6">
           <img width={30} src={calendar} alt="" />
-          <li className={styles.li} >Turnos</li>
+          <NavLink to='/misturnos'>
+            <li className={styles.li} >Turnos</li>
+          </NavLink>
         </div>
 
         <div className="flex items-center  gap-2 mb-6 mt-32">

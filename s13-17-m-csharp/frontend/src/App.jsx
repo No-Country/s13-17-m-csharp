@@ -15,8 +15,9 @@ import Volver from './components/Volver/Volver';
 import Home from './pages/Home/Home';
 import { useState } from 'react';
 import Turno from './pages/Turno/Turno';
+import Nosotros from './pages/Nosotros/Nosotros';
 import Confirmacion from './pages/Confirmacion/Confirmacion';
-import { Calendar } from './components/Calendar/Calendar';
+import Misturnos from './pages/MisTurnos/Misturnos';
 import { Agenda } from './pages/Agenda/Agenda';
 
 function App() {
@@ -93,6 +94,15 @@ function App() {
             </Layout>
           }
         />
+        <Route
+          path="/nosotros"
+          element={
+            <Layout>
+              <Volver title={'Volver'} />
+              <Nosotros />
+            </Layout>
+          }
+        />
 
         <Route
           path="/logueado"
@@ -104,6 +114,15 @@ function App() {
             ) : (
               <Navigate to="/" />
             )
+          }
+        />
+        <Route
+          path="/misturnos"
+          element={
+            <Layout>
+              <Volver title={'Ir al Home'} />
+              <Misturnos />
+            </Layout>
           }
         />
 
