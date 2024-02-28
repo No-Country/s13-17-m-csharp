@@ -4,18 +4,18 @@ function generateUUID() {
 
 
 export const categoriasTurnosMedicos = [
-  { id: generateUUID(), name: "Cardiología" },
-  { id: generateUUID(), name: "Ginecología" },
-  { id: generateUUID(), name: "Dermatología" },
-  { id: generateUUID(), name: "Endocrinología" },
-  { id: generateUUID(), name: "Flebología" },
-  { id: generateUUID(), name: "Gastroenterología" },
-  { id: generateUUID(), name: "Neurología" },
-  { id: generateUUID(), name: "Nutrición infantil" },
-  { id: generateUUID(), name: "Nutrición" },
+  { id: generateUUID(), name: "Cardiologia" },
+  { id: generateUUID(), name: "Ginecologia" },
+  { id: generateUUID(), name: "Dermatologia" },
+  { id: generateUUID(), name: "Endocrinologia" },
+  { id: generateUUID(), name: "Flebologia" },
+  { id: generateUUID(), name: "Gastroenterologia" },
+  { id: generateUUID(), name: "Neurologia" },
+  { id: generateUUID(), name: "Nutricion infantil" },
+  { id: generateUUID(), name: "Nutricion" },
   { id: generateUUID(), name: "Obstetricia" },
-  { id: generateUUID(), name: "Oftalmología" },
-  { id: generateUUID(), name: "Pediatría" },
-  { id: generateUUID(), name: "Psiquiatría" },
+  { id: generateUUID(), name: "Oftalmologia" },
+  { id: generateUUID(), name: "Pediatria" },
+  { id: generateUUID(), name: "Psiquiatria" },
   { id: generateUUID(), name: "Traumatología cadera y pelvis" }
 ];

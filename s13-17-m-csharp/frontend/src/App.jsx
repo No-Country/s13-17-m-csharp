@@ -15,7 +15,11 @@ import Volver from './components/Volver/Volver';
 import Home from './pages/Home/Home';
 import { useState } from 'react';
 import Turno from './pages/Turno/Turno';
+
 import Nosotros from './pages/Nosotros/Nosotros';
+import Confirmacion from './pages/Confirmacion/Confirmacion';
+import Misturnos from './pages/MisTurnos/Misturnos';
+
 
 function App() {
   // state para saber si está registrado o no
@@ -24,55 +28,36 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="/inicio"
-          element={
-            <Layout>
-              <Volver title={'Volver'} />
-              <Inicio />
-            </Layout>
-          }
-        />
-        <Route
-          path="/login"
-          element={
-            <Layout>
-              <Volver title={'Volver'} />
-              <Login
-                isLoggedIn={isLoggedIn}
-                setIsLoggedIn={setIsLoggedIn}
-              />
-            </Layout>
-          }
-        />
-        <Route
-          path="/register/step1"
-          element={
-            <Layout>
-              <Volver title={'Volver'} />
-              <Register1 />
-            </Layout>
-          }
-        />
-        <Route
-          path="/register/step2"
-          element={
-            <Layout>
-              <Volver title={'Volver'} />
-              <Register2 />
-            </Layout>
-          }
-        />
-        <Route
-          path="/docProfile"
-          element={
-            <Layout>
-              <Volver title={'Volver'} />
-              <DoctorCard />
-            </Layout>
-          }
-        />
+
+        <Route path='/' element={<Home />}/>
+        <Route path='/inicio' element={<Layout>
+                                            <Volver title={"Volver"} />
+                                            <Inicio />
+                                          </Layout>}/>
+        <Route path='/login' element={<Layout>
+                                        <Volver title={"Volver"} />
+                                        <Login isLoggedIn={isLoggedIn}  setIsLoggedIn= {setIsLoggedIn} />
+                                      </Layout>}/>
+        <Route path='/register/step1' element={<Layout>
+                                        <Volver title={"Volver"} />
+                                        <Register1 />
+                                      </Layout>}/>
+        <Route path='/register/step2' element={<Layout>
+                                        <Volver title={"Volver"} /> 
+                                        <Register2 />
+                                      </Layout>}/>
+        <Route path='/docProfile' element={<Layout>
+                                        <Volver title={"Volver"} />
+                                        <DoctorCard />
+                                      </Layout>}/>
+        <Route path='/agenda' element={<Layout>
+                                        <Volver title={"Confirmar fecha"} />
+                                        <Turno />
+                                      </Layout>}/>
+
+        <Route path='/confirmacion' element={<Layout>
+                                        <Confirmacion />
+                                      </Layout>}/>
         <Route
           path="/nosotros"
           element={
@@ -82,27 +67,19 @@ function App() {
             </Layout>
           }
         />
-        <Route
-          path="/agenda"
-          element={
-            <Layout>
-              <Volver title={'Confirmar fecha'} />
-              <Turno />
-            </Layout>
-          }
-        />
-        <Route
-          path="/logueado"
-          element={
-            isLoggedIn ? (
-              <Home
-                isLoggedIn={isLoggedIn}
-                setIsLoggedIn={setIsLoggedIn}></Home>
+
+        <Route path="/logueado" element={ isLoggedIn ? (<Home isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
+              </Home>
             ) : (
               <Navigate to="/" />
             )
           }
         />
+        <Route path='/misturnos' element={<Layout>
+                                        <Volver title={"Ir al Home"} />
+                                        <Misturnos />
+                                      </Layout>}/>
+
       </Routes>
     </BrowserRouter>
   );
