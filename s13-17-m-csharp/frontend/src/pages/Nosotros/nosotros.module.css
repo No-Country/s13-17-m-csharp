@@ -1,0 +1,33 @@
+.containerNosMain {
+  margin-inline: 20px;
+  margin-block: 80px;
+}
+
+.titleNos {
+  font-family: var(--font-main);
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--color-text);
+}
+
+.titleNosInfo {
+  margin-top: 60px;
+  margin-bottom: 10px;
+  font-family: var(--font-title);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--color-primary);
+}
+
+.textNosInfo {
+  font-family: var(--font-text);
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+@media (width >= 576px) {
+  .containerNosMain {
+    margin-inline: 120px;
+  }
+}

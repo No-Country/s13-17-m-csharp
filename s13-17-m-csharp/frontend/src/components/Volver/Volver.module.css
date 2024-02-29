@@ -7,6 +7,7 @@
     background-color: var(--color-primary);
     border-radius: 4px;
     height: 56px;
+    margin-top: 96px;
     button {
         display: inherit;
         p{
@@ -29,6 +30,7 @@
         background-color: transparent;
         margin-inline: 114px;
         margin-block: 35px;
+        margin-top: 120px;
         button{
             p{
                 margin-left: 23.8px;

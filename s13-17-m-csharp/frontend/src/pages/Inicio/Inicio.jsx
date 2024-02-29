@@ -3,7 +3,8 @@ import ButtonLogin from '../../components/shared/Buttons/ButtonIniciarSesion/But
 import ButtonRegisterFill from '../../components/shared/Buttons/ButtonsRegistrarse/ButtonRegisterFill';
 import './inicio.css';
 
-export default function Inicio() {
+// eslint-disable-next-line react/prop-types
+export default function Inicio({isLoggedIn,setIsLoggedIn}) {
   return (
     <div>
       <div className="img-containerinicio">
@@ -19,10 +20,10 @@ export default function Inicio() {
       </p>
       <div className="btns-logreg">
         <NavLink to='/login'>
-          <ButtonLogin />
+          <ButtonLogin  isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
         </NavLink>
         <NavLink to='/register/step1'>
-          <ButtonRegisterFill />
+          <ButtonRegisterFill   isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
         </NavLink>
       </div>
     </div>

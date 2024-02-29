@@ -1,7 +1,5 @@
 /* eslint-disable react/prop-types */
 import styles from '../Hamburguer/menu.module.css';
-import { NavLink } from 'react-router-dom';
-import mobileLogo from '../../assets/img/mobileLogo.svg';
 import { Turn as Hamburger } from 'hamburger-react';
 import user from '../../assets/img/User.svg';
 import { useState } from 'react';
@@ -29,6 +27,7 @@ const Menu = ({ isLoggedIn, setIsLoggedIn }) => {
         </div>
 
         <div className="flex items-center gap-3 md:order-1 ">
+
           <h4 className={`${styles.font} text-[#333333]`}>
             ¡Hola Julia!{' '}
           </h4>
@@ -39,33 +38,10 @@ const Menu = ({ isLoggedIn, setIsLoggedIn }) => {
               color="#097DCA"
             />
           </div>
-
           <div className="hidden md:block cursor-pointer ">
             <img onClick={handleToggle} className={`${styles.imgUser}`} src={user} alt="" />
           </div>
         </div>
-
-        <nav className="hidden md:flex w-2/5 justify-self-center">
-          <ul className="flex justify-evenly  w-full">
-            <li>
-              <NavLink to="/">
-                <a className="text-color-primary" href="/">
-                  Home
-                </a>
-              </NavLink>
-            </li>
-            <li>
-              <a href="#">Nosotros</a>
-            </li>
-            <li>
-              <a href="#">Servicios</a>
-            </li>
-            <li>
-              <a href="#">Contacto</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
 
       {open ? (
         <>

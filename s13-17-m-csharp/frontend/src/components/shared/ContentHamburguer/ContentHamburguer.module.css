@@ -7,8 +7,8 @@
    
 }
 
-
 .bgContenedor{
+
     background: #097DCA1A;
     display: flex;
 
@@ -22,38 +22,56 @@
     z-index: 50;
     /*height: 90vh;*/
    
+
+    /*background: #0000008a;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: auto;
+    z-index: 100;*/
+
 }
 
+.bgWhite{
+    background: #EEEEEEBA;
+    width: 320px;
+    position: fixed;
+    top: 80px;
+    right: 0;
+    padding: 2rem;
+}
 
-
-@media (min-width:768px){
-
- 
-
-
+@media (width < 768px){
     .bgContenedor{
         background: #0000008a;
         position: fixed;
-        top: 0;
-    
+        top: 80px;
         left: 0;
         right: 0;
         bottom: 0;
-     
-      height: 100vh;
+        height: auto;
         z-index: 100;
-       
     }
-
     .bgWhite{
         background: #EEEEEEBA;
         width: 320px;
         position: fixed;
         right: 0;
         padding: 2rem;
-        top: 55px;
-       
     }
+} 
 
-
+@media (width <= 560px){
+    .bgContenedor{
+        background-color: var(--color-bg-mobile);
+        width: 100vw;
+    }
+    
+    .bgWhite{
+        width: auto;
+        background: #097dca1a;
+        width: 100%;
+    }
 }
