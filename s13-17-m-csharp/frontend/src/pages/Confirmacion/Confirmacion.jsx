@@ -2,7 +2,7 @@ import style from './Confirmacion.module.css'
 
 const Confirmacion = () => {
     return (
-        <main className="flex justify-center content-center text-center">
+        <main className="flex justify-center content-center mt-[120px] text-center">
             <div className={style.container}>
                 <section>
                     <h2>¡Tu turno ha sido confirmado!</h2>

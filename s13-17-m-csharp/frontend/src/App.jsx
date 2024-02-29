@@ -4,7 +4,7 @@ import {
   Routes,
   Navigate
 } from 'react-router-dom';
-import './App.css';
+import { useState } from 'react';
 import Login from './pages/Login/Login';
 import Inicio from './pages/Inicio/Inicio';
 import Register1 from './pages/Registros/Register1';
@@ -13,78 +13,85 @@ import { Layout } from './components/shared/Layout/Layout';
 import { DoctorCard } from './components/DoctorCard/DoctorCard';
 import Volver from './components/Volver/Volver';
 import Home from './pages/Home/Home';
-import { useState } from 'react';
 import Turno from './pages/Turno/Turno';
 import Nosotros from './pages/Nosotros/Nosotros';
 import Confirmacion from './pages/Confirmacion/Confirmacion';
 import Misturnos from './pages/MisTurnos/Misturnos';
-import { Agenda } from './pages/Agenda/Agenda';
-import { SearchResults } from './pages/SearchResults/SearchResults';
+import './App.css';
 
 function App() {
   // state para saber si está registrado o no
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  console.log(isLoggedIn);
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="/inicio"
+        <Route 
+          path='/' 
           element={
-            <Layout>
-              <Volver title={'Volver'} />
-              <Inicio />
+            <Home isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+          }
+        />
+        <Route 
+          path='/inicio' 
+          element={
+            <Layout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
+              <Volver title={"Volver"} />
+              <Inicio  isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
             </Layout>
           }
         />
-        <Route
-          path="/login"
+        <Route 
+          path='/login' 
           element={
             <Layout>
-              <Volver title={'Volver'} />
-              <Login
-                isLoggedIn={isLoggedIn}
-                setIsLoggedIn={setIsLoggedIn}
-              />
+              <Volver title={"Volver"} />
+              <Login/>
             </Layout>
           }
         />
-        <Route
-          path="/register/step1"
+        <Route 
+          path='/register/step1' 
           element={
             <Layout>
-              <Volver title={'Volver'} />
+              <Volver title={"Volver"} />
               <Register1 />
             </Layout>
           }
         />
-        <Route
-          path="/register/step2"
+        <Route 
+          path='/register/step2' 
           element={
             <Layout>
-              <Volver title={'Volver'} />
+              <Volver title={"Volver"} /> 
               <Register2 />
             </Layout>
           }
         />
-        <Route path="/search-doctors" element={<SearchResults />} />
-        <Route path="/agenda" element={<Agenda />} />
-
-        <Route
-          path="/confirm"
+        <Route 
+          path='/docProfile' 
           element={
-            <Layout>
-              <Volver title={'Confirmar fecha'} />
-              <Turno />
+            <Layout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
+              <Volver title={"Volver"} />
+              <DoctorCard />
             </Layout>
           }
         />
-
-        <Route
-          path="/confirmacion"
+        <Route 
+          path='/agenda' 
           element={
-            <Layout>
+            isLoggedIn ? (
+            <Layout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
+              <Volver title={"Confirmar fecha"} />
+              <Turno />
+            </Layout>) : (<Navigate to="/inicio" />)
+          }
+        />
+        <Route 
+          path='/confirmacion' 
+          element={
+            <Layout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
               <Confirmacion />
             </Layout>
           }
@@ -92,37 +99,29 @@ function App() {
         <Route
           path="/nosotros"
           element={
-            <Layout>
+            <Layout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
               <Volver title={'Volver'} />
               <Nosotros />
             </Layout>
           }
         />
-
-        <Route
-          path="/logueado"
+        <Route 
+          path='/misturnos' 
           element={
-            isLoggedIn ? (
-              <Home
-                isLoggedIn={isLoggedIn}
-                setIsLoggedIn={setIsLoggedIn}></Home>
-            ) : (
-              <Navigate to="/" />
-            )
-          }
-        />
-        <Route
-          path="/misturnos"
-          element={
-            <Layout>
-              <Volver title={'Ir al Home'} />
+            <Layout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
+              <Volver title={"Ir al Home"} />
               <Misturnos />
             </Layout>
           }
         />
+        <Route path="/search-doctors" element={<SearchResults />} />
+        <Route path="/agenda" element={<Agenda />} />
       </Routes>
     </BrowserRouter>
   );
 }
 
 export default App;
+
+
+        
