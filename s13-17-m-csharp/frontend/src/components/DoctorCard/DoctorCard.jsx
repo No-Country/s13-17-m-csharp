@@ -2,14 +2,13 @@ import { NavLink } from 'react-router-dom';
 import addresIcon from '../../assets/icons/address-icon.svg';
 import docIcon from '../../assets/icons/doc-icon.svg';
 import DoctorData from '../DoctorData/DoctorData';
-import ButtonContinuar from '../shared/Buttons/ButtonContinuar/ButtonContinuar';
 
-const DoctorCard = () => {
+const DoctorCard = ({ children, viewAgenda }) => {
   return (
-    <article className="w-[91%] bg-color-cards mx-auto p-3 rounded md:w-[72%] md:bg-color-cards-desk md:p-8">
-      <section className="md:w-[55%]">
-        <DoctorData/>
-        <footer className="text-[#333333] hidden md:flex flex-col mt-5 font-font-text mb-8">
+    <article className="mb-5 w-[91%] bg-color-cards p-3 rounded  md:w-[55%] md:max-w-[561px] md:bg-color-cards-desk md:p-5 md:rounded-xl md:m-5">
+      <section>
+        <DoctorData />
+        <section className="text-[#333333] hidden md:flex flex-col mt-5 font-font-text mb-8 md:my-5">
           <h3 className="text-lg mb-2 font-medium">Dirección</h3>
           <span className="mb-2 w-full h-[1px] bg-[#333333]"></span>
           <div className="flex items-center mb-3">
@@ -26,27 +25,24 @@ const DoctorCard = () => {
             </div>
             <p className="mr-10">$60</p>
           </div>
-        </footer>
-        <footer className="mt-8 rounded-md flex justify-between items-center bg-white py-1 text-xs font-normal font-font-title">
-          <a className="ml-[6px] underline">
-            Próxima fecha disponible: 20/2
-          </a>
-          <button className="flex items-center">
-            <p className="underline">Ver agenda</p>
-            <img
-              className="ml-2 mt-[2px] h-6 rotate-180"
-              alt="arrow"
-              src="./Back.svg"
-            />
-          </button>
+        </section>
+        <footer className="rounded-md flex flex-col justify-between items-center bg-white py-1 text-xs font-normal font-font-title">
+          <section className="w-full flex justify-between items-center">
+            <a className="ml-[6px] underline">
+              Próxima fecha disponible: 20/2
+            </a>
+            <NavLink to="/agenda" className="flex items-center">
+              <p className="underline">Ver agenda</p>
+              <img
+                className={`${viewAgenda ? 'rotate-[-90deg]' : 'rotate-180'} ml-2 mt-[2px] h-6 `}
+                alt="arrow"
+                src="../Back.svg"
+              />
+            </NavLink>
+          </section>
+          {children}
         </footer>
       </section>
-          <div className='flex justify-center mt-20 mb-2'>
-            <NavLink to='/agenda'>
-              <ButtonContinuar title='Continuar'/>
-            </NavLink>
-          </div>
-      <aside></aside>
     </article>
   );
 };
