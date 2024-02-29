@@ -4,15 +4,17 @@ import Staff from '../../components/Staff/Staff'
 import Search from '../../components/search/Search'
 import Icon from '../../components/shared/Icon/Icon'
 import { Layout } from '../../components/shared/Layout/Layout'
-// import styles from './Home.module.css'
+import styles from './Home.module.css';
 
 const Home = ({isLoggedIn,setIsLoggedIn}) => {
     return (
         <>
             <Layout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
-                <Slider />
-                <Staff />
-                <Search />
+                <div className={styles.contenedorPadre}>
+                    <Slider />
+                    <Staff />
+                    <Search />
+                </div>
                 <Icon />
             </Layout>
         </>

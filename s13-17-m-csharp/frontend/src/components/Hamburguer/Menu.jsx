@@ -17,7 +17,7 @@ const Menu = ({ isLoggedIn, setIsLoggedIn }) => {
 
   return (
     <div>
-      <header className={`${styles.header} w-full  h-14 flex  justify-between items-center font-font-main text-base pt-5`} >
+      <header className={`${styles.header} w-full  h-14 flex  justify-between items-center font-font-main text-base pt-5 mb-5`} >
         {/*  <source media="(min-width:768px)" srcSet={desktopLogo} />*/}
 
         <div>

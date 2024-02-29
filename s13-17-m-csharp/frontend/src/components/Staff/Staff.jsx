@@ -20,7 +20,7 @@ const Staff = () => {
     }, []);
 
     return (
-        <div>
+        <div className={styles.contenedorStaff}>
             <div className="p-4">
                 <h4 className={styles.titulo}>Staff médico</h4>
             </div>
