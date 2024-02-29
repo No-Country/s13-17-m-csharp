@@ -3,15 +3,21 @@ import { useState } from 'react';
 import { Turn as Hamburger } from 'hamburger-react';
 import styles from '../Hamburguer/menu.module.css';
 import user from '../../assets/img/User.svg';
-
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import ContentHamburguer from '../shared/ContentHamburguer/ContentHamburguer';
 
 const Menu = ({ isLoggedIn, setIsLoggedIn }) => {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
 
   const handleToggle = () => {
     setOpen(!open);
   };
+
+  useEffect(() => {
+    setOpen(false); 
+  }, [location]);
 
   return (
     <div>
@@ -21,7 +27,8 @@ const Menu = ({ isLoggedIn, setIsLoggedIn }) => {
           </h4>
           <div className="md:hidden">
             <Hamburger
-              onToggle={handleToggle}
+              toggled={open} 
+              toggle={setOpen} 
               size={30}
               color="#097DCA"
             />
@@ -31,15 +38,13 @@ const Menu = ({ isLoggedIn, setIsLoggedIn }) => {
           </div>
         </div>
 
-      {open ? (
-        <>
-          <ContentHamburguer
-            isLoggedIn={isLoggedIn}
-            setIsLoggedIn={setIsLoggedIn}
-            handleToggle={handleToggle}
-          />
-        </>
-      ) : null}
+      {open && (
+        <ContentHamburguer
+          isLoggedIn={isLoggedIn}
+          setIsLoggedIn={setIsLoggedIn}
+          handleToggle={handleToggle}
+        />
+      )}
     </div>
   );
 };
