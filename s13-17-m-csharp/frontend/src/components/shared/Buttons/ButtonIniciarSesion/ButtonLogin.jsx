@@ -2,7 +2,6 @@
 import './buttonLogin.css';
 
 export default function ButtonLogin({isLoggedIn,setIsLoggedIn}) {
-  console.log(setIsLoggedIn)
 
   const handleLogin = () => {
     // Lógica para autenticar al usuario

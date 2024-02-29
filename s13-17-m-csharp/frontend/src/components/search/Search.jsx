@@ -32,7 +32,6 @@ const Search = () => {
   };
 
   const handleBlur = (e) => {
-    console.log(e);
     if (
       !e.relatedTarget ||
       !e.relatedTarget.classList.contains('preview-button') // hace funcionar el boton de ver todas las especialdades

@@ -24,7 +24,6 @@ import { Agenda } from './pages/Agenda/Agenda';
 function App() {
   // state para saber si está registrado o no
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  console.log(isLoggedIn);
 
   return (
     <BrowserRouter>
@@ -125,7 +124,6 @@ function App() {
             </Layout>
           } 
         />
-
         <Route 
           path="/agenda" 
           element={
@@ -135,13 +133,9 @@ function App() {
             </Layout>
           } 
         />
-
       </Routes>
     </BrowserRouter>
   );
 }
 
 export default App;
-
-
-        
