@@ -22,6 +22,7 @@ import './App.css';
 function App() {
   // state para saber si está registrado o no
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  console.log(isLoggedIn);
 
   return (
     <BrowserRouter>
@@ -29,15 +30,15 @@ function App() {
         <Route 
           path='/' 
           element={
-            <Home />
+            <Home isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
           }
         />
         <Route 
           path='/inicio' 
           element={
-            <Layout>
+            <Layout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
               <Volver title={"Volver"} />
-              <Inicio />
+              <Inicio  isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
             </Layout>
           }
         />
@@ -46,7 +47,7 @@ function App() {
           element={
             <Layout>
               <Volver title={"Volver"} />
-              <Login isLoggedIn={isLoggedIn}  setIsLoggedIn= {setIsLoggedIn} />
+              <Login/>
             </Layout>
           }
         />
@@ -71,7 +72,7 @@ function App() {
         <Route 
           path='/docProfile' 
           element={
-            <Layout>
+            <Layout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
               <Volver title={"Volver"} />
               <DoctorCard />
             </Layout>
@@ -80,16 +81,17 @@ function App() {
         <Route 
           path='/agenda' 
           element={
-            <Layout>
+            isLoggedIn ? (
+            <Layout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
               <Volver title={"Confirmar fecha"} />
               <Turno />
-            </Layout>
+            </Layout>) : (<Navigate to="/inicio" />)
           }
         />
         <Route 
           path='/confirmacion' 
           element={
-            <Layout>
+            <Layout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
               <Confirmacion />
             </Layout>
           }
@@ -97,26 +99,16 @@ function App() {
         <Route
           path="/nosotros"
           element={
-            <Layout>
+            <Layout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
               <Volver title={'Volver'} />
               <Nosotros />
             </Layout>
           }
         />
         <Route 
-          path="/logueado" 
-          element={ 
-            isLoggedIn ? (<Home isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
-              </Home>
-            ) : (
-              <Navigate to="/" />
-            )
-          }
-        />
-        <Route 
           path='/misturnos' 
           element={
-            <Layout>
+            <Layout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
               <Volver title={"Ir al Home"} />
               <Misturnos />
             </Layout>
@@ -128,3 +120,4 @@ function App() {
 }
 
 export default App;
+

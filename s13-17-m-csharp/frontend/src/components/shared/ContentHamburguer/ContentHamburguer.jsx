@@ -14,6 +14,7 @@ import { NavLink } from 'react-router-dom';
 const ContentHamburguer = ({isLoggedIn,setIsLoggedIn}) => {
 
     const closeSession=()=>{
+      console.log(isLoggedIn);
         setIsLoggedIn(!isLoggedIn)
     }
 

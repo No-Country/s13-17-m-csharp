@@ -50,18 +50,12 @@
 @media (width <= 560px){
     .bgContenedor{
         background-color: var(--color-bg-mobile);
-        /* position:relative; */
-        /* top: 400px; */
         width: 100vw;
     }
     
     .bgWhite{
         width: auto;
         background: #097dca1a;
-        /* background-color: var(--color-cards-desk); */
-        /* position:relative; */
         width: 100%;
-        /* top: -10px; */
-
     }
 }
