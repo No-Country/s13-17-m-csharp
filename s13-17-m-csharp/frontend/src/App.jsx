@@ -18,6 +18,8 @@ import Nosotros from './pages/Nosotros/Nosotros';
 import Confirmacion from './pages/Confirmacion/Confirmacion';
 import Misturnos from './pages/MisTurnos/Misturnos';
 import './App.css';
+import { SearchResults } from './pages/SearchResults/SearchResults';
+import { Agenda } from './pages/Agenda/Agenda';
 
 function App() {
   // state para saber si está registrado o no
@@ -79,7 +81,7 @@ function App() {
           }
         />
         <Route 
-          path='/agenda' 
+          path='/confirm' 
           element={
             isLoggedIn ? (
             <Layout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
@@ -114,8 +116,26 @@ function App() {
             </Layout>
           }
         />
-        <Route path="/search-doctors" element={<SearchResults />} />
-        <Route path="/agenda" element={<Agenda />} />
+        <Route 
+          path="/search-doctors" 
+          element={
+            <Layout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
+              <Volver title={"Volver"} />
+              <SearchResults />
+            </Layout>
+          } 
+        />
+
+        <Route 
+          path="/agenda" 
+          element={
+            <Layout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
+              <Volver title={"Volver"} />
+              <Agenda />
+            </Layout>
+          } 
+        />
+
       </Routes>
     </BrowserRouter>
   );
