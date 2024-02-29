@@ -1,17 +1,17 @@
 import { Calendar } from '../../components/Calendar/Calendar';
-import { Layout } from '../../components/shared/Layout/Layout';
+// import { Layout } from '../../components/shared/Layout/Layout';
 import { DoctorCard } from '../../components/DoctorCard/DoctorCard';
-import Volver from '../../components/Volver/Volver';
+// import Volver from '../../components/Volver/Volver';
 const Agenda = () => {
   return (
-    <Layout>
-      <Volver title="Volver" />
+    <>
+      {/* <Volver title="Volver" /> */}
       <main className="w-full flex justify-center">
         <DoctorCard viewAgenda={true}>
           <Calendar />
         </DoctorCard>
       </main>
-    </Layout>
+    </>
   );
 };
 
