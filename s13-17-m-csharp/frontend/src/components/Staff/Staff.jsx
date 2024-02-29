@@ -20,9 +20,9 @@ const Staff = () => {
     }, []);
 
     return (
-        <div>
+        <div className={styles.contenedorStaff}>
             <div className="p-4">
-                <h4 className={styles.titulo}>Staff médico</h4>
+                <h2 className={styles.titulo}>Staff médico</h2>
             </div>
 
             <div className={"overflow-x-scroll flex flex-col flex-wrap " + styles.areaStaff}>

@@ -1,7 +1,7 @@
 .img-containerinicio {
   display: flex;
   justify-content: center;
-  margin-top: 125px;
+  margin-top: 60px;
   margin-bottom: 13px;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .btns-logreg {
-  margin-bottom: 168px;
+  margin-bottom: 120px;
   display: flex;
   align-items: center;
   flex-direction: column;

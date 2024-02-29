@@ -1,5 +1,5 @@
-import React from 'react'
-
+/* eslint-disable react/prop-types */
+import { NavLink } from 'react-router-dom';
 import calendar from '../../../assets/img/Calendar.svg';
 import capsule from '../../../assets/img/Capsule.svg';
 import time from '../../../assets/img/Time.svg';
@@ -7,17 +7,12 @@ import customer from '../../../assets/img/Customer.svg';
 import support from '../../../assets/img/Support.svg';
 import info from '../../../assets/img/Info.svg';
 import styles from '../ContentHamburguer/ContentHamburguer.module.css'
-import { NavLink } from 'react-router-dom';
 
-
-
-const ContentHamburguer = ({isLoggedIn,setIsLoggedIn}) => {
+const ContentHamburguer = ({isLoggedIn,setIsLoggedIn, handleToggle}) => {
 
     const closeSession=()=>{
-      console.log(isLoggedIn);
         setIsLoggedIn(!isLoggedIn)
     }
-
 
   return (
     <div className={`${styles.bgContenedor}`}>
@@ -38,8 +33,8 @@ const ContentHamburguer = ({isLoggedIn,setIsLoggedIn}) => {
 
         <div className="flex items-center gap-2 mb-6">
           <img width={30} src={calendar} alt="" />
-          <NavLink to='/misturnos'>
-            <li className={styles.li} >Turnos</li>
+          <NavLink to='/misturnos' >
+            <li className={styles.li} onClick={handleToggle} >Turnos</li>
           </NavLink>
         </div>
 

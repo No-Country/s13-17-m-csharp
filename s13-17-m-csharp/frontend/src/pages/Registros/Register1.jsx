@@ -65,12 +65,8 @@ export default function Register1() {
             id="fechanacimiento"
           />
           <div className="container-btncontinuar1">
-
             <NavLink to={'/register/step2'}>
-
-  {/*<NavLink to='/register/step2'>*/}
-
-              <ButtonContinuar />
+              <ButtonContinuar title='Continuar'/>
             </NavLink>
           </div>
         </form>
