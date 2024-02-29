@@ -1,0 +1,11 @@
+.sm_p {
+  padding-right: 7%;
+  padding-left: 5%;
+}
+
+@media (max-width: 370px) {
+  .sm_p {
+    padding-right: 22%;
+    padding-left: 20%;
+  }
+}
