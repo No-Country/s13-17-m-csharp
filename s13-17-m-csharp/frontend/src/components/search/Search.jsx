@@ -5,21 +5,15 @@ import lupa from '../../assets/lupa.svg';
 
 import { categoriasTurnosMedicos } from '../../utils/Categorias';
 import { useState } from 'react';
-import {  NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import IconSearch from './IconSearch';
 
 const Search = () => {
-
-
   const [slide, setSlide] = useState(false);
-  const [searchText, setSearchText] = useState(''); 
-
+  const [searchText, setSearchText] = useState('');
 
   const [previewLimit, setPreviewLimit] = useState(7); // limitar opciones
-  const [preview, setPreview] = useState(false);       // falso, no se muestra la preview 
-
- 
-
+  const [preview, setPreview] = useState(false); // falso, no se muestra la preview
 
   const filteredItems = categoriasTurnosMedicos.filter((item) =>
     item.name.toLowerCase().includes(searchText.toLowerCase())
@@ -38,11 +32,10 @@ const Search = () => {
   };
 
   const handleBlur = (e) => {
-  
-    console.log(e)
+    console.log(e);
     if (
       !e.relatedTarget ||
-      !e.relatedTarget.classList.contains('preview-button') // hace funcionar el boton de ver todas las especialdades 
+      !e.relatedTarget.classList.contains('preview-button') // hace funcionar el boton de ver todas las especialdades
     ) {
       setTimeout(() => {
         setPreview(false);
@@ -99,21 +92,22 @@ const Search = () => {
                     .slice(0, previewLimit)
                     .map((item) => (
                       <>
-                        <NavLink to={'/docProfile'} onClick={(e) => e.stopPropagation()}>
+                        <NavLink
+                          to={'/search-doctors'}
+                          onClick={(e) => e.stopPropagation()}>
                           <div
                             className={`${styles.contenedorItems} hover:bg-slate-200 cursor-pointer p-2  grid grid-cols-[auto,1fr,auto] gap-4 items-center w-f mb-4 `}
-                            key={item.id} onMouseEnter={blur}>
-                     
-                            <IconSearch />   
+                            key={item.id}
+                            onMouseEnter={blur}>
+                            <IconSearch />
                             <h3 className="text-base cursor-pointer ">
                               {item.name}
                             </h3>
                             <span className="text-sm  text-gray-500">
                               Especialidad
                             </span>
-                    
                           </div>
-                          </NavLink>
+                        </NavLink>
                       </>
                     ))}
 
@@ -140,7 +134,7 @@ const Search = () => {
           <div className={styles.sugerencias}>
             <h2 className={styles.titleSugerencia}>Sugerencias</h2>
             {categoriasTurnosMedicos.map((category) => (
-              <NavLink to="/docProfile" key={category.id}>
+              <NavLink to="/search-doctors" key={category.id}>
                 <div>
                   <h3
                     className={`${styles.category} mb-4 text-blue-600 hover:text-blue-800 cursor-pointer`}>

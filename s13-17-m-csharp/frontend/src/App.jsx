@@ -19,6 +19,7 @@ import Nosotros from './pages/Nosotros/Nosotros';
 import Confirmacion from './pages/Confirmacion/Confirmacion';
 import Misturnos from './pages/MisTurnos/Misturnos';
 import { Agenda } from './pages/Agenda/Agenda';
+import { SearchResults } from './pages/SearchResults/SearchResults';
 
 function App() {
   // state para saber si está registrado o no
@@ -67,17 +68,11 @@ function App() {
             </Layout>
           }
         />
+        <Route path="/search-doctors" element={<SearchResults />} />
+        <Route path="/agenda" element={<Agenda />} />
+
         <Route
-          path="/docProfile"
-          element={
-            <Layout>
-              <Volver title={'Volver'} />
-              <DoctorCard />
-            </Layout>
-          }
-        />
-        <Route
-          path="/agenda"
+          path="/confirm"
           element={
             <Layout>
               <Volver title={'Confirmar fecha'} />
@@ -125,8 +120,6 @@ function App() {
             </Layout>
           }
         />
-
-        <Route path="/agenda/:id" element={<Agenda />} />
       </Routes>
     </BrowserRouter>
   );
