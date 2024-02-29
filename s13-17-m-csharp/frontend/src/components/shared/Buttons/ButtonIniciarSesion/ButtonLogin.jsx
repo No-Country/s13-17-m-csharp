@@ -1,19 +1,17 @@
+/* eslint-disable react/prop-types */
 import './buttonLogin.css';
 
 export default function ButtonLogin({isLoggedIn,setIsLoggedIn}) {
   console.log(setIsLoggedIn)
 
-  
-  const changeMenu=()=>{
-
-    // cambiar menu
-    setIsLoggedIn(!isLoggedIn)
-  }
-
+  const handleLogin = () => {
+    // Lógica para autenticar al usuario
+    setIsLoggedIn(!isLoggedIn);
+  };
 
   return (
     <div className="btn-logincontainer">
-      <button onClick={changeMenu} className="btn-login">Iniciar sesión</button>
+      <button onClick={()=>handleLogin()} className="btn-login">Iniciar sesión</button>
     </div>
   );
 }
