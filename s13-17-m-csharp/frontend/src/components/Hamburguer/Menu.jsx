@@ -36,6 +36,7 @@ const Menu = ({ isLoggedIn, setIsLoggedIn }) => {
           <ContentHamburguer
             isLoggedIn={isLoggedIn}
             setIsLoggedIn={setIsLoggedIn}
+            handleToggle={handleToggle}
           />
         </>
       ) : null}

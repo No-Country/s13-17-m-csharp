@@ -8,10 +8,9 @@ import support from '../../../assets/img/Support.svg';
 import info from '../../../assets/img/Info.svg';
 import styles from '../ContentHamburguer/ContentHamburguer.module.css'
 
-const ContentHamburguer = ({isLoggedIn,setIsLoggedIn}) => {
+const ContentHamburguer = ({isLoggedIn,setIsLoggedIn, handleToggle}) => {
 
     const closeSession=()=>{
-      console.log(isLoggedIn);
         setIsLoggedIn(!isLoggedIn)
     }
 
@@ -34,8 +33,8 @@ const ContentHamburguer = ({isLoggedIn,setIsLoggedIn}) => {
 
         <div className="flex items-center gap-2 mb-6">
           <img width={30} src={calendar} alt="" />
-          <NavLink to='/misturnos'>
-            <li className={styles.li} >Turnos</li>
+          <NavLink to='/misturnos' >
+            <li className={styles.li} onClick={handleToggle} >Turnos</li>
           </NavLink>
         </div>
 
