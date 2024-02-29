@@ -54,21 +54,18 @@
     font-family: var(--font-text);
     font-weight: 400;
     font-size: 1.1rem;
-
     margin-bottom: 3rem;
-text-decoration: underline;
+    text-decoration: underline;
 }
 
 
 .input{
     border: 1px solid #00A1A3;
     padding: .9rem;
-   
     width: 80%;
     font-size: 1.2rem;
     padding-left: 50px;
     
-   
 }
 
 .contenedorItems{
@@ -76,25 +73,17 @@ text-decoration: underline;
 }
 
 .input:focus{
-
-  
-
     outline: none;
- 
-   border-color: var(--color-secondary);
+    border-color: var(--color-secondary);
 }
 
 .lupa{
-
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
-   margin-top: .6rem;
-   margin-left: 10px;
-  
-   
-  
+    margin-top: .6rem;
+    margin-left: 10px;
 }
 
 .titleSecondary{
@@ -103,25 +92,16 @@ text-decoration: underline;
     font-family: var(--font-main);
     font-size: 1.9rem;
     line-height: 1.5;
-  
-    
-
-
 }
 
 
 @media (min-width:1024px){
-
     .titleSecondary{
         color: var(--color-secondary);
         font-weight: 500;
         font-family: var(--font-main);
-        font-size: 2.79rem;
+        font-size: 2.5rem;
         line-height: 1.5;
-      
-        
-    
-    
     }
 }
 

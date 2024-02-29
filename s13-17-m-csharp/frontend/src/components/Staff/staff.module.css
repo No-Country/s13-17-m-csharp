@@ -5,7 +5,7 @@
 
 .titulo{
     text-align: center;
-    font-size: 18px;
+    font-size: 1.5rem;
     line-height: 1.5rem/* 24px */;
     font-family: var(--font-main);
     font-weight: 500;
@@ -118,7 +118,7 @@
     .titulo{
         font-family: var(--font-main);
         color: var(--color-secondary);
-        font-size: 55px;
+        font-size: 3rem;
         font-weight: 500;
     }
     .contenedorStaff{

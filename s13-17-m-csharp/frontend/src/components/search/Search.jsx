@@ -72,9 +72,9 @@ const Search = () => {
         <div className="bg-[#EEEEEE] hidden md:grid gap-2 rounded-3xl pb-9 pt-12 mt-3 grid-cols-2">
           <img className="mx-auto" src={agenda} alt="" />
           <div>
-            <h2 className={styles.titleSecondary}>
+            <h3 className={styles.titleSecondary}>
               Encuentra tu especialista y agenda una cita
-            </h2>
+            </h3>
 
             <div className="relative mt-5">
               <input

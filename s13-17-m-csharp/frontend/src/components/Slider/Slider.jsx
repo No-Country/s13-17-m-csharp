@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import prev from '../../assets/prev.svg'
-
-
+// import prev from '../../assets/prev.svg'
 import styles from "../Slider/slider.module.css";
 
 const Slider = () => {
@@ -84,7 +82,7 @@ const Slider = () => {
           ))}
         </div>
         <img
-           src={prev}
+          // src={prev}
           className="absolute cursor-pointer w-9 top-1/2 left-4 transform -translate-y-1/2   bg-opacity-50 p-2 rounded-full text-white focus:outline-none"
           onClick={goToPrevSlide}
         ></img>

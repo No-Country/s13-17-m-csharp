@@ -1,9 +1,16 @@
+/* eslint-disable react/prop-types */
 import './buttonContinuar.css';
 
-export default function ButtonContinuar() {
+export default function ButtonContinuar({isLoggedIn,setIsLoggedIn,title}) {
+
+  const handleLogin = () => {
+    // Lógica para autenticar al usuario
+    setIsLoggedIn(!isLoggedIn);
+  };
+
   return (
     <div>
-      <button className="btn-continuar">Continuar</button>
+      <button onClick={()=>handleLogin()}  className="btn-continuar">{title}</button>
     </div>
   );
 }
