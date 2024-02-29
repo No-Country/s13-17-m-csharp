@@ -14,6 +14,8 @@
   --color-cards-desk: rgba(9, 125, 202, 0.1);
   --color-text: #000000;
   --color-secondary-text: rgba(51, 51, 51, 1);
+  --color-cards-light: rgba(9, 125, 202, 0.051);
+
   /* --color-bg: #ffffff; */
   --color-text-footer: rgba(255, 255, 255, 0.6);
   --font-main: 'Poppins', sans-serif;
@@ -54,8 +56,8 @@ body {
   margin: 0;
   background-color: var(--color-bg-desk);
 }
-@media (max-width: 768px){
-  body{
+@media (max-width: 768px) {
+  body {
     background-color: var(--color-bg-mobile);
   }
 }

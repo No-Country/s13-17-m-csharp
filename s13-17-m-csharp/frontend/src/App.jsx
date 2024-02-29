@@ -114,6 +114,8 @@ function App() {
             </Layout>
           }
         />
+        <Route path="/search-doctors" element={<SearchResults />} />
+        <Route path="/agenda" element={<Agenda />} />
       </Routes>
     </BrowserRouter>
   );
@@ -121,3 +123,5 @@ function App() {
 
 export default App;
 
+
+        

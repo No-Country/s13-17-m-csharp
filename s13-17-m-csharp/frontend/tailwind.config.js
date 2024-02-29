@@ -11,7 +11,8 @@ export default {
         'color-bg': 'var(--color-bg)',
         'color-text-footer': 'var(--color-text-footer)',
         'color-secondary-text': 'var(--color-secondary-text)',
-        'color-cards-desk': 'var(--color-cards-desk)'
+        'color-cards-desk': 'var(--color-cards-desk)',
+        'color-cards-light': 'var(--color-cards-light)'
       },
       fontFamily: {
         'font-main': 'var(--font-main)',
