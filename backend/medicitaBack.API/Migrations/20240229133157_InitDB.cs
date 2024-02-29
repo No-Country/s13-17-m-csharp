@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
@@ -288,7 +287,6 @@ namespace medicitaBack.API.Migrations
                         principalTable: "Citas",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.NoAction);
-                      
                     table.ForeignKey(
                         name: "FK_ListaCitas_Medicos_MedicoId",
                         column: x => x.MedicoId,

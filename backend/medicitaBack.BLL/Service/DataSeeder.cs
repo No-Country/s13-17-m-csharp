@@ -29,9 +29,19 @@ namespace medicitaBack.BLL.Service
         {
             List<CreacionEspecialidadDTO> especialidad = new List<CreacionEspecialidadDTO>()
             {
-                new CreacionEspecialidadDTO(){Nombre="Games" },
-                new CreacionEspecialidadDTO(){Nombre="Celulares" },
-                new CreacionEspecialidadDTO(){Nombre="Muebles" }
+                new CreacionEspecialidadDTO(){Nombre="Cardiología" },
+                new CreacionEspecialidadDTO(){Nombre="Ginecología" },
+                new CreacionEspecialidadDTO(){Nombre="Dermatología" },
+                new CreacionEspecialidadDTO(){Nombre="Endocrinología" },
+                new CreacionEspecialidadDTO(){Nombre="Gastroenterología" },
+                new CreacionEspecialidadDTO(){Nombre="Nutrición Infantil" },
+                new CreacionEspecialidadDTO(){Nombre="Neurología" },
+                new CreacionEspecialidadDTO(){Nombre="Nutrición" },
+                new CreacionEspecialidadDTO(){Nombre="Obstetricia" },
+                new CreacionEspecialidadDTO(){Nombre="Oftalmología" },
+                new CreacionEspecialidadDTO(){Nombre="Pediatría" },
+                new CreacionEspecialidadDTO(){Nombre="Psiquiatría" },
+                new CreacionEspecialidadDTO(){Nombre="Traumatología cadera y pelvis" }
             };
             var query = await _especialidadRepo.ObtenerTodos();
             foreach(var x in especialidad)

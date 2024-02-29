@@ -12,7 +12,7 @@ using medicitaBack.DAL.Dbcontext;
 namespace medicitaBack.API.Migrations
 {
     [DbContext(typeof(AplicationDBcontext))]
-    [Migration("20240228220013_InitDB")]
+    [Migration("20240229133157_InitDB")]
     partial class InitDB
     {
         /// <inheritdoc />
