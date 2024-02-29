@@ -15,7 +15,19 @@ const Menu = ({ isLoggedIn, setIsLoggedIn }) => {
 
   return (
     <div>
-        <div className="flex items-center gap-3 md:order-1 mr-[16px] md:mr-[40px]">
+      <header className={`${styles.header} w-full  h-14 flex  justify-between items-center font-font-main text-base pt-5 mb-5`} >
+        {/*  <source media="(min-width:768px)" srcSet={desktopLogo} />*/}
+
+        <div>
+          <img
+            className="ml-4 w-28 md:w-36 md:ml-10"
+            alt="logo"
+            src={mobileLogo}
+          />
+        </div>
+
+        <div className="flex items-center gap-3 md:order-1 ">
+
           <h4 className={`${styles.font} text-[#333333]`}>
             ¡Hola Julia!{' '}
           </h4>
