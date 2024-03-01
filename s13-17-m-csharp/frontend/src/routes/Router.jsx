@@ -1,16 +1,9 @@
-import {
-  BrowserRouter,
-  Route,
-  Routes,
-  Navigate
-} from 'react-router-dom';
-import { useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from '../pages/Login/Login';
 import Inicio from '../pages/Inicio/Inicio';
 import Register1 from '../pages/Registros/Register1';
 import Register2 from '../pages/Registros/Register2';
 import { Layout } from '../components/shared/Layout/Layout';
-import { DoctorCard } from '../components/DoctorCard/DoctorCard';
 import Volver from '../components/Volver/Volver';
 import Home from '../pages/Home/Home';
 import Turno from '../pages/Turno/Turno';
@@ -32,10 +25,9 @@ const Router = () => {
           <Route
             path="/inicio"
             element={
-              <>
-                <Volver title={'Volver'} />
+              <NoAuthWrapper>
                 <Inicio />
-              </>
+              </NoAuthWrapper>
             }
           />
 
@@ -45,16 +37,6 @@ const Router = () => {
               <NoAuthWrapper>
                 <Login />
               </NoAuthWrapper>
-            }
-          />
-
-          <Route
-            path="/docProfile"
-            element={
-              <>
-                <Volver title={'Volver'} />
-                <DoctorCard />
-              </>
             }
           />
 

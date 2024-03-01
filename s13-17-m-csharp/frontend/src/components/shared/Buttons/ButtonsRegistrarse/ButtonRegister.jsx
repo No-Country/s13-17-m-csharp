@@ -1,9 +1,12 @@
+import { NavLink } from 'react-router-dom';
 import './buttonRegister.css';
 
 export default function ButtonRegister() {
   return (
     <div className="btn-containerregister">
-      <button className="btn-register">Registrarse</button>
+      <NavLink to="register/step1" className="btn-register">
+        Registrarse
+      </NavLink>
     </div>
   );
 }

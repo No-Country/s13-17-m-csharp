@@ -2,17 +2,19 @@ import React from 'react';
 import { Navigate } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
 
-const NoAuthWrapper = ({ children }) => {
+const AuthRouteWrapper = ({ children }) => {
   const {
     state: {
       user: { isAuth }
     }
   } = React.useContext(AppContext);
-  //Evita que un usuario autenticado entre a las páginas de login, registro o inicio
-  if (isAuth) {
-    return <Navigate to="/" />;
+
+  //Evita que usuarios no autenticados accesen a rutas que requieren credenciales.
+
+  if (!isAuth) {
+    return <Navigate to="/inicio" />;
   }
   return <>{children}</>;
 };
 
-export { NoAuthWrapper };
+export { AuthRouteWrapper };
