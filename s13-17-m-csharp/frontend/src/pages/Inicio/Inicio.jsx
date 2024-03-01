@@ -6,7 +6,6 @@ import Volver from '../../components/Volver/Volver';
 
 // eslint-disable-next-line react/prop-types
 export default function Inicio() {
-  console.log('inicio');
   return (
     <>
       <Volver title={'Volver'} />

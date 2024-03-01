@@ -4,7 +4,6 @@ import Inicio from '../pages/Inicio/Inicio';
 import Register1 from '../pages/Registros/Register1';
 import Register2 from '../pages/Registros/Register2';
 import { Layout } from '../components/shared/Layout/Layout';
-import Volver from '../components/Volver/Volver';
 import Home from '../pages/Home/Home';
 import Turno from '../pages/Turno/Turno';
 import Nosotros from '../pages/Nosotros/Nosotros';
@@ -14,6 +13,7 @@ import '../App.css';
 import { SearchResults } from '../pages/SearchResults/SearchResults';
 import { Agenda } from '../pages/Agenda/Agenda';
 import { NoAuthWrapper } from './NoAuthRouteWrapper';
+import { AuthRouteWrapper } from './AuthRouteWrapper';
 
 const Router = () => {
   return (
@@ -40,21 +40,12 @@ const Router = () => {
             }
           />
 
-          <Route
-            path="/search-doctors"
-            element={
-              <>
-                <Volver title={'Ir al home'} />
-                <SearchResults />
-              </>
-            }
-          />
+          <Route path="/search-doctors" element={<SearchResults />} />
 
           <Route
             path="/register/step1"
             element={
               <NoAuthWrapper>
-                <Volver title={'Volver'} />
                 <Register1 />
               </NoAuthWrapper>
             }
@@ -64,40 +55,36 @@ const Router = () => {
             path="/register/step2"
             element={
               <NoAuthWrapper>
-                <Volver title={'Volver'} />
                 <Register2 />
               </NoAuthWrapper>
             }
           />
-          <Route path="/confirm" element={<Turno />} />
-          <Route path="/confirmacion" element={<Confirmacion />} />
           <Route
-            path="/nosotros"
+            path="/confirm"
             element={
-              <>
-                <Volver title={'Volver'} />
-                <Nosotros />
-              </>
+              <AuthRouteWrapper>
+                <Turno />
+              </AuthRouteWrapper>
             }
           />
+          <Route
+            path="/confirmacion"
+            element={
+              <AuthRouteWrapper>
+                <Confirmacion />
+              </AuthRouteWrapper>
+            }
+          />
+          <Route path="/nosotros" element={<Nosotros />} />
           <Route
             path="/misturnos"
             element={
-              <>
-                <Volver title={'Ir al Home'} />
+              <AuthRouteWrapper>
                 <Misturnos />
-              </>
+              </AuthRouteWrapper>
             }
           />
-          <Route
-            path="/agenda"
-            element={
-              <>
-                <Volver title={'Ver otros médicos'} />
-                <Agenda />
-              </>
-            }
-          />
+          <Route path="/agenda" element={<Agenda />} />
         </Routes>
       </Layout>
     </BrowserRouter>
