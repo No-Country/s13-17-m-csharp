@@ -1,15 +1,22 @@
 import Cookies from 'js-cookie';
 import React from 'react';
+import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { headersJson } from '../../api/headers';
 import { login } from '../../api/services/user.service';
 import ButtonLogin from '../../components/shared/Buttons/ButtonIniciarSesion/ButtonLogin';
 import ButtonRegister from '../../components/shared/Buttons/ButtonsRegistrarse/ButtonRegister';
+import { AppContext } from '../../context/AppContext';
 import { useMakeRequest } from '../../hooks/useMakeRequest';
 import { useValidateFields } from '../../hooks/useValidateFields';
 import './login.css';
 
 // eslint-disable-next-line react/prop-types
 export default function Login({ isLoggedIn, setIsLoggedIn }) {
+  //context
+  const { authUser } = useContext(AppContext);
+
+  const navigate = useNavigate();
   const [validEmail, setValidEmail] = React.useState(true);
   const [validPas, setValidPass] = React.useState(true);
   const formRef = new React.useRef(null);
@@ -46,6 +53,8 @@ export default function Login({ isLoggedIn, setIsLoggedIn }) {
       Cookies.set('token', response.token);
       //Modifica headersJson para que todas las peticiones incluyan el token
       headersJson.Authorization = `Bearer ${response.token}`;
+      authUser();
+      navigate('/');
     }
   }, [response]);
 
