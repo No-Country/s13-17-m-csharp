@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import ButtonContinuar from '../../components/shared/Buttons/ButtonContinuar/ButtonContinuar';
 import './register2.css';
 
-export default function Register2({isLoggedIn,setIsLoggedIn}) {
+export default function Register2() {
   return (
     <div className="container-registermain2">
       <div className="container-register2">
@@ -54,8 +54,8 @@ export default function Register2({isLoggedIn,setIsLoggedIn}) {
             </div>
           </fieldset>
           <div className="container-btncontinuar2">
-            <NavLink to='/'>
-              <ButtonContinuar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} title='Quiero registrarme' />
+            <NavLink to="/">
+              <ButtonContinuar title="Quiero registrarme" />
             </NavLink>
           </div>
         </form>

@@ -13,7 +13,6 @@ function useMakeRequest() {
     try {
       setState({ loading: true, response: null, error: false });
       const res = await reqFun(data);
-      console.log(res);
       setState({ response: res, loading: false, error: false });
     } catch (err) {
       setState({ loading: false, response: null, error: true });

@@ -10,9 +10,9 @@ import { AppContext } from '../../context/AppContext';
 import { useMakeRequest } from '../../hooks/useMakeRequest';
 import { useValidateFields } from '../../hooks/useValidateFields';
 import './login.css';
-
+import Volver from '../../components/Volver/Volver';
 // eslint-disable-next-line react/prop-types
-export default function Login({ isLoggedIn, setIsLoggedIn }) {
+export default function Login() {
   //context
   const { authUser } = useContext(AppContext);
 
@@ -53,13 +53,14 @@ export default function Login({ isLoggedIn, setIsLoggedIn }) {
       Cookies.set('token', response.token);
       //Modifica headersJson para que todas las peticiones incluyan el token
       headersJson.Authorization = `Bearer ${response.token}`;
-      authUser();
+      authUser(true);
       navigate('/');
     }
   }, [response]);
 
   return (
     <>
+      <Volver title={'Volver'} />
       {loading && <h1>Cargando</h1>}
       {error && <h2>Alert de error</h2>}
 
@@ -76,7 +77,7 @@ export default function Login({ isLoggedIn, setIsLoggedIn }) {
               id="email"
               placeholder="Mail"
               className={`${!validEmail && 'focus:outline-red-700 '} input-iniciarsesion`}
-              onChange={() => validateEmail(e, setValidEmail)}
+              onChange={(e) => validateEmail(e, setValidEmail)}
             />
             {!validEmail && (
               <p className="mb-1 w-[328px] text-red-700">
@@ -104,11 +105,7 @@ export default function Login({ isLoggedIn, setIsLoggedIn }) {
               Olvide mi contraseña
             </a>
             <div className="btns-iniciarsesion">
-              <ButtonLogin
-                onClick={(e) => handleSubmit(e)}
-                isLoggedIn={isLoggedIn}
-                setIsLoggedIn={setIsLoggedIn}
-              />
+              <ButtonLogin onClick={(e) => handleSubmit(e)} />
 
               <div className="ocultarbtn-iniciarsesion">
                 <ButtonRegister />

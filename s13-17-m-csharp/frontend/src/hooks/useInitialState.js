@@ -13,8 +13,8 @@ const initialState = {
 function useInitialState() {
   const [state, setState] = React.useState(initialState);
 
-  const authUser = () => {
-    setState({ ...state, user: { ...state.user, isAuth: true } });
+  const authUser = (auth) => {
+    setState({ ...state, user: { ...state.user, isAuth: auth } });
   };
 
   return { authUser, state };
