@@ -51,7 +51,9 @@
   text-decoration: underline;
   color: #646161;
   margin-top: 25px;
-  margin-inline: 24px;
+  width: 100%;
+  padding-left: 8px;
+  text-align: left;
 }
 
 .btns-iniciarsesion {
@@ -67,7 +69,7 @@
 @media (width >= 576px) {
   .container-iniciarsesion {
     width: 578px;
-    height: 511px;
+    min-height: 511px;
     background-color: #eeeeee;
     border-radius: 50px;
     margin-bottom: 100px;
@@ -102,7 +104,6 @@
   }
 
   .text-iniciarsesion {
-    margin-inline: 101px;
     margin-top: 12px;
   }
 
