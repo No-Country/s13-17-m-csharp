@@ -1,10 +1,9 @@
 import { DoctorCard } from '../../components/DoctorCard/DoctorCard';
-// import { Layout } from '../../components/shared/Layout/Layout';
-// import Volver from '../../components/Volver/Volver';
+import Volver from '../../components/Volver/Volver';
 const SearchResults = () => {
   return (
     <>
-      {/* <Volver title={'Volver'} /> */}
+      <Volver title={'Ir al home'} />
       <main className="w-full flex flex-col items-center md:flex-row md:flex-wrap md:justify-evenly">
         <DoctorCard />
         <DoctorCard />
