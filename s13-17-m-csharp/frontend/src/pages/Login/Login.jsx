@@ -11,6 +11,8 @@ import { useMakeRequest } from '../../hooks/useMakeRequest';
 import { useValidateFields } from '../../hooks/useValidateFields';
 import './login.css';
 import Volver from '../../components/Volver/Volver';
+import Loader from '../../components/shared/Loader/Loader';
+import Error from '../../components/shared/Error/Error';
 // eslint-disable-next-line react/prop-types
 export default function Login() {
   //context
@@ -61,8 +63,8 @@ export default function Login() {
   return (
     <>
       <Volver title={'Volver'} />
-      {loading && <h1>Cargando</h1>}
-      {error && <h2>Alert de error</h2>}
+      {loading && <Loader />}
+      {error && <Error />}
 
       <div className="container-iniciarmain">
         <div className="container-iniciarsesion">

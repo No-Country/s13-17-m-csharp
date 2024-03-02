@@ -1,0 +1,20 @@
+.bgContenedor{
+    background: #0000008a;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: auto;
+    z-index: 200;
+}
+
+.bgWhite{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    margin: auto;
+    position: relative;
+    top: 40%;
+    padding-left: 25px;
+}

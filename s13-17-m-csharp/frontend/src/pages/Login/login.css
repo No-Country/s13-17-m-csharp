@@ -21,7 +21,7 @@
 .form-iniciarsesion {
   display: inherit;
   flex-direction: column;
-  margin-top: 75px;
+  margin-top: 25px;
 }
 
 .label-iniciarsesion {
@@ -52,7 +52,7 @@
   color: #646161;
   margin-top: 25px;
   width: 100%;
-  padding-left: 8px;
+  padding-left: 16px;
   text-align: left;
 }
 
