@@ -1,0 +1,21 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.title {
+    font-family: var(--font-main);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 20px;
+    /* color: var(--color-text); */
+    color: #b91c1c;
+    margin: 10px;
+}
+.img{
+    width: 80px;
+    height: 80px;
+}

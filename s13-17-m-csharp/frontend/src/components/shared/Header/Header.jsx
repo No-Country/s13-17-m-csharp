@@ -50,7 +50,7 @@ const Header = ({ isLoggedIn }) => {
           </section>
         ) : (
           <section className="flex text-sm">
-            <NavLink to="/inicio">
+            <NavLink to="/login">
               <button className="h-10 w-24 bg-color-primary  rounded flex items-center justify-center mr-4 md:mr-10 md:rounded-md md:h-7">
                 Ingresar
               </button>

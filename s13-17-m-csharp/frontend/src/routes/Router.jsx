@@ -14,12 +14,14 @@ import { SearchResults } from '../pages/SearchResults/SearchResults';
 import { Agenda } from '../pages/Agenda/Agenda';
 import { NoAuthWrapper } from './NoAuthRouteWrapper';
 import { AuthRouteWrapper } from './AuthRouteWrapper';
+import Loader from '../components/shared/Loader/Loader';
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Layout>
         <Routes>
+          <Route path='/loader' element={<Loader />}></Route>
           <Route path="/" element={<Home />} />
 
           <Route

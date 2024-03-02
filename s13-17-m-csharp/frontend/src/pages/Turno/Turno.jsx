@@ -4,7 +4,6 @@ import ButtonContinuar from '../../components/shared/Buttons/ButtonContinuar/But
 import style from './Turno.module.css';
 import TurnoAsignado from '../../components/TurnoAsignado/TurnoAsignado';
 import Volver from '../../components/Volver/Volver';
-import React from 'react';
 
 const Turno = () => {
   return (
