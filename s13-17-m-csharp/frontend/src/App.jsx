@@ -175,6 +175,8 @@ function App() {
   // state para saber si está registrado o no
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+
+
   return (
     <BrowserRouter>
       <Layout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
@@ -202,6 +204,7 @@ function App() {
         <Route 
           path="/search-doctors" 
           element={<><Volver title={"Ir al home"} /><SearchResults /></>} 
+          
         />
 
         <Route 
