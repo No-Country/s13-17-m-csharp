@@ -1,6 +1,9 @@
+import { useState } from 'react';
+import InputSrc from './InputSearch/InputSrc';
+import { categoriasTurnosMedicos } from '../../utils/Categorias';
 import styles from './search.module.css';
-import arrow from '../../assets/arrow.svg';
 import agenda from '../../assets/agenda.svg';
+
 import lupa from '../../assets/lupa.svg';
 
 import { useState, useEffect } from 'react';
@@ -8,8 +11,8 @@ import { NavLink } from 'react-router-dom';
 import IconSearch from './IconSearch';
 import { fetchData } from '../../utils/CategoryApi';
 
+
 const Search = () => {
-  const [slide, setSlide] = useState(false);
   const [searchText, setSearchText] = useState('');
 
   const [previewLimit, setPreviewLimit] = useState(7); // limitar opciones
@@ -34,10 +37,6 @@ const Search = () => {
     item.nombre.toLowerCase().includes(searchText.toLowerCase())
   );
 
-  const slideup = () => {
-    setSlide(!slide);
-  };
-
   const handleChange = (e) => {
     const value = e.target.value;
 
@@ -61,26 +60,12 @@ const Search = () => {
     <div>
       <div className={styles.contenedor}>
         <h2 className={`${styles.title} mt-5`}>Agenda tu turno</h2>
+
+        {/* Mobile */}
         <div
-          className={`${styles.contenedorSearch} flex items-center mt-5 justify-between md:hidden`}
-          onClick={slideup}>
-          {!slide ? (
-            <>
-              <h3 className={styles.titleSearch}>
-                Busca por especialidad
-              </h3>
-              <img className={styles.img} src={arrow} alt="" />
-            </>
-          ) : (
-            <div>
-              <h2 className="block w-full mb-2 text-[#646161]">
-                Especialidad
-              </h2>
-              <h2 className="block w-full mt-2 text-[#646161]">
-                Ejemplo Neurologia
-              </h2>
-            </div>
-          )}
+          className={`md:hidden`}
+          >
+            <InputSrc  handleChange={handleChange} handleBlur={handleBlur} preview={preview} filteredItems={filteredItems} setPreviewLimit={setPreviewLimit} previewLimit={previewLimit}></InputSrc>
         </div>
 
         {/*Desktop */}
@@ -91,7 +76,8 @@ const Search = () => {
               Encuentra tu especialista y agenda una cita
             </h3>
 
-            <div className="relative mt-5">
+
+           {/* <div className="relative mt-5">
               <input
                 className={`${styles.input} relative`}
                 type="text"
@@ -140,11 +126,11 @@ const Search = () => {
               <img className={styles.lupa} src={lupa} alt="" />
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* */}
 
-        {slide ? (
+      {/*  {slide ? (
           <div className={styles.sugerencias}>
             <h2 className={styles.titleSugerencia}>Sugerencias</h2>
             {categoria.map((category) => (
@@ -158,7 +144,13 @@ const Search = () => {
               </NavLink>
             ))}
           </div>
-        ) : null}
+        ) : null} */}
+
+            <InputSrc handleChange={handleChange} handleBlur={handleBlur} preview={preview} filteredItems={filteredItems} setPreviewLimit={setPreviewLimit} previewLimit={previewLimit}></InputSrc>
+          </div>
+        </div>
+
+
       </div>
     </div>
   );

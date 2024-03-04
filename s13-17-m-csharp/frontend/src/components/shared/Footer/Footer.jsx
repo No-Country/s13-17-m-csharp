@@ -3,6 +3,7 @@ import fbIcon from '../../../assets/icons/facebook-icon.svg';
 import insIcon from '../../../assets/icons/instagram-icon.svg';
 import twiIcon from '../../../assets/icons/twitter-icon.svg';
 import youIcon from '../../../assets/icons/youtube-icon.svg';
+import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <footer className="mt-9 pt-4 pb-4 text-white font-font-text w-full bg-color-secondary flex flex-col  md:flex-row md:justify-evenly ">
@@ -51,9 +52,11 @@ const Footer = () => {
         </section>
         <section className="md:flex md:w-1/2 md:justify-between">
           <div>
-            <h2 className="mb-2 text-xl font-bold md:mb-5">
-              Nosotros
-            </h2>
+            <Link to='/nosotros'>
+              <h2 className="mb-2 text-xl font-bold md:mb-5">
+                Nosotros
+              </h2>
+            </Link>
             <ul className="text-base text-color-text-footer mb-4">
               <li className="mb-1 md:mb-3">Conócenos</li>
               <li className="mb-1 md:mb-3">Servicios</li>
