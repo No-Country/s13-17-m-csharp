@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { NavLink, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import calendar from '../../../assets/img/Calendar.svg';
 import capsule from '../../../assets/img/Capsule.svg';
 import time from '../../../assets/img/Time.svg';
@@ -40,11 +40,11 @@ const ContentHamburguer = ({ handleToggle }) => {
 
         <div className="flex items-center gap-2 mb-6">
           <img width={30} src={calendar} alt="" />
-          <NavLink to="/misturnos">
+          <Link to="/misturnos">
             <li className={styles.li} onClick={handleToggle}>
               Turnos
             </li>
-          </NavLink>
+          </Link>
         </div>
 
         <div className="flex items-center gap-2 mb-6 mt-32">
