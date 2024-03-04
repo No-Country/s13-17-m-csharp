@@ -36,9 +36,9 @@ namespace medicitaBack.API.Controllers
         {
             try
             {
-                var pedido = await _iCitaService.ObtenerPorId(id);
+                var cita = await _iCitaService.ObtenerPorId(id);
               
-                return Ok(pedido);
+                return Ok(cita);
             }
             catch (NotFoundException ex)
             {
@@ -59,9 +59,9 @@ namespace medicitaBack.API.Controllers
             {
                 var claim = HttpContext.User.Claims.Where(c => c.Type == "id").FirstOrDefault();
                 var id = claim.Value;
-                var pedidos = await _iCitaService.misCitas(id);
+                var cita = await _iCitaService.misCitas(id);
 
-                return Ok(pedidos);
+                return Ok(cita);
             }
             catch (NotFoundException ex)
             {
@@ -84,10 +84,10 @@ namespace medicitaBack.API.Controllers
                 var id = claim.Value;
                 modelo.UsuarioId = id;                                         
 
-                var pedidoFinal = await _iCitaService.Registrar(modelo);
+                var citaFinal = await _iCitaService.Registrar(modelo);
 
 
-                return Ok(pedidoFinal);
+                return Ok(citaFinal);
 
             }
             catch(BadRequestException ex)
@@ -110,9 +110,9 @@ namespace medicitaBack.API.Controllers
         {
             try
             {
-                var datos = await _iCitaService.Actualizar(id, modelo);
+                var cita = await _iCitaService.Actualizar(id, modelo);
 
-                return Ok(datos);
+                return Ok(cita);
             }
             catch (NotFoundException ex)
             {

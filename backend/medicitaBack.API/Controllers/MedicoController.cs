@@ -30,9 +30,9 @@ namespace medicitaBack.API.Controllers
         {
             try
             {
-                var producto = await _medicoService.ObtenerPorId(id);
+                var medico = await _medicoService.ObtenerPorId(id);
 
-                return Ok(producto);
+                return Ok(medico);
             }
             catch (NotFoundException ex)
             {
@@ -50,8 +50,8 @@ namespace medicitaBack.API.Controllers
         {
             try
             {
-                var producto = await _medicoService.ObtenerPorFiltro(regXPagina,paginaActual, nombre, idEspecialidad);
-                return Ok(producto);
+                var medico = await _medicoService.ObtenerPorFiltro(regXPagina,paginaActual, nombre, idEspecialidad);
+                return Ok(medico);
             }
             catch (Exception)
             {
@@ -85,9 +85,9 @@ namespace medicitaBack.API.Controllers
         {
             try
             {
-                var producto = await _medicoService.Actualizar(id, modelo);
+                var medico = await _medicoService.Actualizar(id, modelo);
 
-                return Ok(producto);
+                return Ok(medico);
             }
             catch (NotFoundException ex)
             {
@@ -127,9 +127,9 @@ namespace medicitaBack.API.Controllers
             {
                 var claim = HttpContext.User.Claims.Where(c => c.Type == "id").FirstOrDefault();
                 var idUser = claim.Value;
-                var producto = await _medicoService.ActivoInactivo(idMedico, idUser);
+                var medico = await _medicoService.ActivoInactivo(idMedico, idUser);
 
-                return Ok(producto);
+                return Ok(medico);
             }
             catch (NotFoundException ex)
             {
