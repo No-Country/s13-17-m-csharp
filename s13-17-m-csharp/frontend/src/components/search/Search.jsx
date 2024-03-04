@@ -3,10 +3,10 @@ import arrow from '../../assets/arrow.svg';
 import agenda from '../../assets/agenda.svg';
 import lupa from '../../assets/lupa.svg';
 
-import { categoriasTurnosMedicos } from '../../utils/Categorias';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import IconSearch from './IconSearch';
+import { fetchData } from '../../utils/CategoryApi';
 
 const Search = () => {
   const [slide, setSlide] = useState(false);
@@ -14,9 +14,24 @@ const Search = () => {
 
   const [previewLimit, setPreviewLimit] = useState(7); // limitar opciones
   const [preview, setPreview] = useState(false); // falso, no se muestra la preview
+  const [categoria, setCategoria] = useState([]);
 
-  const filteredItems = categoriasTurnosMedicos.filter((item) =>
-    item.name.toLowerCase().includes(searchText.toLowerCase())
+  useEffect(() => {
+    const obtenerDatos = async () => {
+      try {
+        const data = await fetchData(); // Funcion de utils/categoryApi.js
+        setCategoria(data);
+      } catch (error) {
+        
+      }
+    };
+
+    obtenerDatos();
+  }, []);
+
+
+  const filteredItems = categoria.filter((item) =>
+    item.nombre.toLowerCase().includes(searchText.toLowerCase())
   );
 
   const slideup = () => {
@@ -92,7 +107,7 @@ const Search = () => {
                     .map((item) => (
                       <>
                         <NavLink
-                          to={'/search-doctors'}
+                         to={`/search-doctors/${item.nombre}`} id={item.id}
                           onClick={(e) => e.stopPropagation()}>
                           <div
                             className={`${styles.contenedorItems} hover:bg-slate-200 cursor-pointer p-2  grid grid-cols-[auto,1fr,auto] gap-4 items-center w-f mb-4 `}
@@ -100,7 +115,7 @@ const Search = () => {
                             onMouseEnter={blur}>
                             <IconSearch />
                             <h3 className="text-base cursor-pointer ">
-                              {item.name}
+                              {item.nombre}
                             </h3>
                             <span className="text-sm  text-gray-500">
                               Especialidad
@@ -132,12 +147,12 @@ const Search = () => {
         {slide ? (
           <div className={styles.sugerencias}>
             <h2 className={styles.titleSugerencia}>Sugerencias</h2>
-            {categoriasTurnosMedicos.map((category) => (
+            {categoria.map((category) => (
               <NavLink to="/search-doctors" key={category.id}>
                 <div>
                   <h3
                     className={`${styles.category} mb-4 text-blue-600 hover:text-blue-800 cursor-pointer`}>
-                    {category.name}
+                    {category.nombre}
                   </h3>
                 </div>
               </NavLink>

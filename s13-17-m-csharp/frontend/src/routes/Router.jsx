@@ -42,7 +42,7 @@ const Router = () => {
             }
           />
 
-          <Route path="/search-doctors" element={<SearchResults />} />
+          <Route path="/search-doctors/:especialidad" element={<SearchResults />} />
 
           <Route
             path="/register/step1"
