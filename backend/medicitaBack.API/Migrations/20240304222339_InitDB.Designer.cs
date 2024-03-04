@@ -12,7 +12,7 @@ using medicitaBack.DAL.Dbcontext;
 namespace medicitaBack.API.Migrations
 {
     [DbContext(typeof(AplicationDBcontext))]
-    [Migration("20240229133157_InitDB")]
+    [Migration("20240304222339_InitDB")]
     partial class InitDB
     {
         /// <inheritdoc />
@@ -166,16 +166,18 @@ namespace medicitaBack.API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("EstadoCita")
-                        .HasMaxLength(45)
-                        .HasColumnType("nvarchar(45)");
+                    b.Property<bool>("Activo")
+                        .HasColumnType("bit");
 
                     b.Property<int>("MedicoId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Motivo")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("UsuarioId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("fecha_cita")
                         .HasColumnType("datetime2");
@@ -183,8 +185,6 @@ namespace medicitaBack.API.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("MedicoId");
-
-                    b.HasIndex("UsuarioId");
 
                     b.ToTable("Citas");
                 });
@@ -473,15 +473,7 @@ namespace medicitaBack.API.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("medicitaBack.Models.Entidades.Usuario", "Usuario")
-                        .WithMany()
-                        .HasForeignKey("UsuarioId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Medico");
-
-                    b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("medicitaBack.Models.Entidades.HistorialCita", b =>
@@ -498,7 +490,7 @@ namespace medicitaBack.API.Migrations
             modelBuilder.Entity("medicitaBack.Models.Entidades.Lista_Cita", b =>
                 {
                     b.HasOne("medicitaBack.Models.Entidades.Cita", "Cita")
-                        .WithMany("HistorialCitas")
+                        .WithMany()
                         .HasForeignKey("CitaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -532,11 +524,6 @@ namespace medicitaBack.API.Migrations
                         .HasForeignKey("DatosId");
 
                     b.Navigation("Datos");
-                });
-
-            modelBuilder.Entity("medicitaBack.Models.Entidades.Cita", b =>
-                {
-                    b.Navigation("HistorialCitas");
                 });
 #pragma warning restore 612, 618
         }

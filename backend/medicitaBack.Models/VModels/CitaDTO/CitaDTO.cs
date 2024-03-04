@@ -13,13 +13,19 @@ namespace medicitaBack.Models.VModels.CitaDTO
     {
         public int Id { get; set; }
 
-        public string? usuarioId { get; set; }
+        public string UsuarioId { get; set; }
+
+        [MaxLength(250)]
+        public string? Motivo { get; set; }
+
+        public int MedicoId { get; set; }
+
+        public MedicoDTO.MedicoDTO Medico {  get; set; } 
 
         public DateTime fecha_cita { get; set; }
 
-        [MaxLength(45)]
-        public string? EstadoCita { get; set; }
+        public bool Activo { get; set; }
 
-        public List<Lista_CitaDTO.Lista_CitaDTO> Lista_Cita { get; set; } = new List<Lista_CitaDTO.Lista_CitaDTO>();
+
     }
 }

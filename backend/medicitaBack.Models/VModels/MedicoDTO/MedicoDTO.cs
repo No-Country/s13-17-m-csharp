@@ -15,7 +15,7 @@ namespace medicitaBack.Models.VModels.MedicoDTO
 
         [Required(ErrorMessage = "Se requiere el Nombre del Medico")]
         [MaxLength(75)]
-        public string nombre { get; set; }
+        public string Nombre { get; set; }
 
         [MaxLength(250)]
         public string? Descripcion { get; set; }

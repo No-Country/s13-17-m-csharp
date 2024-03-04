@@ -1,7 +1,6 @@
 ﻿using medicitaBack.API.Exceptions;
 using medicitaBack.BLL.contrato;
 using medicitaBack.BLL.Service;
-using medicitaBack.Models.VModels.DatosDTO;
 using medicitaBack.Models.VModels.CitaDTO;
 using medicitaBack.Models.VModels.MedicoDTO;
 using medicitaBack.Models.VModels.Lista_CitaDTO;
@@ -11,6 +10,7 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace medicitaBack.API.Controllers
 {
@@ -76,18 +76,15 @@ namespace medicitaBack.API.Controllers
 
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpPost("Registrar")]
-        public async Task<ActionResult<CitaDTO>>RegistrarCita(DateTime Fecha_cita) 
+        public async Task<ActionResult<CitaDTO>>RegistrarCita(CreacionCitaDTO modelo) 
         {
             try
             {
                 var claim = HttpContext.User.Claims.Where(c => c.Type == "id").FirstOrDefault();
                 var id = claim.Value;
+                modelo.UsuarioId = id;                                         
 
-                var emailClaim = HttpContext.User.Claims.Where(c => c.Type == "mail").FirstOrDefault();
-                var email = emailClaim.Value;
-
-
-                var pedidoFinal = await _iCitaService.Registrar(id, email, Fecha_cita);
+                var pedidoFinal = await _iCitaService.Registrar(modelo);
 
 
                 return Ok(pedidoFinal);
@@ -109,11 +106,11 @@ namespace medicitaBack.API.Controllers
 
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpPut("ActualizarCita")]
-        public async Task<ActionResult<DatosDTO>> Actualizar(int id, CreacionLista_CitaDTO modelo)
+        public async Task<ActionResult<CitaDTO>> Actualizar(int id, CreacionCitaDTO modelo)
         {
             try
             {
-                var datos = await _listaService.Actualizar(id, modelo);
+                var datos = await _iCitaService.Actualizar(id, modelo);
 
                 return Ok(datos);
             }

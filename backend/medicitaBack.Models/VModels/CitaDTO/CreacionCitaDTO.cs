@@ -14,13 +14,14 @@ namespace medicitaBack.Models.VModels.CitaDTO
        
         public string UsuarioId { get; set; }
 
+        [MaxLength(250)]
+        public string? Motivo {  get; set; }
+
         public DateTime fecha_cita { get; set; }
 
         public int MedicoId { get; set; }
            
-
-        [MaxLength(45)]
-        public string? EstadoCita { get; set; }
+        public bool Activo { get; set; }    
 
     }
 }

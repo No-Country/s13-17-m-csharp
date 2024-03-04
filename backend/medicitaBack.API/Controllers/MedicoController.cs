@@ -68,9 +68,9 @@ namespace medicitaBack.API.Controllers
             var claim = HttpContext.User.Claims.Where(c => c.Type == "id").FirstOrDefault();
             var id = claim.Value;
                 creacionMedicoDTO.UsuarioId = id;
-            var producto = await _medicoService.Registrar(creacionMedicoDTO);
+            var medico = await _medicoService.Registrar(creacionMedicoDTO);
 
-            return Ok(producto);
+            return Ok(medico);
             }
             catch(Exception)
             {

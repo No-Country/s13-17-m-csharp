@@ -38,13 +38,13 @@ namespace medicitaBack.DAL.Repository
 
                 cita.UsuarioId = modelo.UsuarioId;
 
+                cita.Motivo = modelo.Motivo;
+
                 cita.fecha_cita = modelo.fecha_cita;             
 
-                cita.EstadoCita = modelo.EstadoCita;
+                cita.Activo = modelo.Activo;
                 
-                cita.MedicoId = modelo.MedicoId;
-
-                cita.EstadoCita = modelo.EstadoCita;
+                cita.MedicoId = modelo.MedicoId;               
 
 
 
@@ -100,7 +100,7 @@ namespace medicitaBack.DAL.Repository
 
         public async Task<CitaDTO> ObtenerPorId(int id)
         {
-            var cita = await _dbcontext.Citas.Where(c => c.Id == id).Include(c => c.HistorialCitas).ThenInclude(p => p.Medico).FirstOrDefaultAsync();
+            var cita = await _dbcontext.Citas.Where(c => c.Id == id).Include(p => p.Medico).ThenInclude(p => p.Especialidad).FirstOrDefaultAsync();
 
             if (cita == null) throw new NotFoundException();
 
@@ -111,7 +111,7 @@ namespace medicitaBack.DAL.Repository
         {
             try
             {
-                IQueryable<Cita> queryCitas = _dbcontext.Citas.Include(c => c.HistorialCitas).ThenInclude(p => p.Medico);
+                IQueryable<Cita> queryCitas = _dbcontext.Citas.Include(p => p.Medico).ThenInclude(p => p.Especialidad);
                 return queryCitas;
             }
             catch (Exception)

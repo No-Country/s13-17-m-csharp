@@ -4,6 +4,7 @@ using medicitaBack.BLL.contrato;
 using medicitaBack.DAL.Contrato;
 using medicitaBack.DAL.Dbcontext;
 using medicitaBack.Models.Entidades;
+using medicitaBack.Models.VModels;
 using medicitaBack.Models.VModels.CitaDTO;
 using medicitaBack.Models.VModels.Lista_CitaDTO;
 using Microsoft.EntityFrameworkCore;
@@ -62,22 +63,14 @@ namespace medicitaBack.BLL.Service
             return _mapper.Map<IEnumerable<CitaDTO>>(lista);
         }
 
-        public async Task<CitaDTO> Registrar(string idUsuario,string email,DateTime Fecha_cita)
+        public async Task<CitaDTO> Registrar(CreacionCitaDTO modelo)
         {
             var transaction = await _context.Database.BeginTransactionAsync();
             try
             {
-                    var cita = new CreacionCitaDTO()
-                    {
-                        UsuarioId = idUsuario,
+                   
 
-                        fecha_cita = Fecha_cita,
-
-                        EstadoCita = "Sin Procesar",
-
-                    };
-
-                    var citaCreada = await _citarepo.Insertar(cita);
+                    var citaCreada = await _citarepo.Insertar(modelo);
 
                                                        
 
@@ -87,23 +80,22 @@ namespace medicitaBack.BLL.Service
                     {
                       
 
-                        EstadoCita = "Agendado",
+                        Activo = true,
+
+                        Motivo = citaCreada.Motivo,
+
+                        MedicoId = citaCreada.MedicoId,
 
                         fecha_cita = citaCreada.fecha_cita,
 
-                        UsuarioId = citaCreada.usuarioId,
+                        UsuarioId = citaCreada.UsuarioId,
 
                       
                     };
 
-                    var citaFinal = await Actualizar(citaCreada.Id, creacionCita);
-
-                    
-
-                    await _emailService.EnviarEmailAsync(email, "TU CITA HA SIDO AGENDADA", $"{citaFinal.Id}");
+                    var citaFinal = await Actualizar(citaCreada.Id, creacionCita);                                     
                     
                     
-
                     return citaFinal;
 
             }
@@ -121,8 +113,7 @@ namespace medicitaBack.BLL.Service
             var query = await _citarepo.ObtenerTodos();
 
             var lista = await query
-                .Include(p=>p.HistorialCitas)
-                    .ThenInclude(r=>r.Medico)                        
+                .Include(r=>r.Medico)                        
                 .Where(p=>p.UsuarioId==userId)
                 .ToListAsync();
             return _mapper.Map<IEnumerable<CitaDTO>>(lista);

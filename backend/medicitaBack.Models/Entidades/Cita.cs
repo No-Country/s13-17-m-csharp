@@ -15,18 +15,16 @@ namespace medicitaBack.Models.Entidades
 
         public string UsuarioId { get; set; }
 
-        public Usuario Usuario { get; set; }
-
+        public string? Motivo { get; set; }
+     
         public int MedicoId { get; set; }
 
         public Medico Medico { get; set; }
        
-        public DateTime fecha_cita { get; set; }
-      
-        [MaxLength(45)]
-        public string? EstadoCita {  get; set; }
+        public DateTime fecha_cita { get; set; } 
 
-        public List<Lista_Cita> HistorialCitas { get; set; } = new List<Lista_Cita>();
+        public bool Activo {  get; set; }
+     
 
     }
 }

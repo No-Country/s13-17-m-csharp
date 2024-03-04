@@ -10,7 +10,7 @@ namespace medicitaBack.BLL.contrato
 {
     public interface ICitaService
     {
-        Task<CitaDTO> Registrar(string idUsuario,string email, DateTime Fecha_cita);
+        Task<CitaDTO> Registrar(CreacionCitaDTO modelo);
 
         Task<CitaDTO> Actualizar(int id, CreacionCitaDTO modelo);
 

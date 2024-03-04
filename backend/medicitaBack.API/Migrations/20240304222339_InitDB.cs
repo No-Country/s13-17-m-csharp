@@ -225,20 +225,15 @@ namespace medicitaBack.API.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UsuarioId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    UsuarioId = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Motivo = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MedicoId = table.Column<int>(type: "int", nullable: false),
                     fecha_cita = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    EstadoCita = table.Column<string>(type: "nvarchar(45)", maxLength: 45, nullable: true)
+                    Activo = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Citas", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Citas_AspNetUsers_UsuarioId",
-                        column: x => x.UsuarioId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Citas_Medicos_MedicoId",
                         column: x => x.MedicoId,
@@ -345,11 +340,6 @@ namespace medicitaBack.API.Migrations
                 column: "MedicoId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Citas_UsuarioId",
-                table: "Citas",
-                column: "UsuarioId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_HistorialCitas_MedicoId",
                 table: "HistorialCitas",
                 column: "MedicoId");
@@ -398,16 +388,16 @@ namespace medicitaBack.API.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "Citas");
-
-            migrationBuilder.DropTable(
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "Medicos");
+                name: "Citas");
 
             migrationBuilder.DropTable(
                 name: "Datos");
+
+            migrationBuilder.DropTable(
+                name: "Medicos");
 
             migrationBuilder.DropTable(
                 name: "Especialidades");
