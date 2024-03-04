@@ -25,7 +25,7 @@
     }
 }
 
-@media (min-width: 576px){
+@media (min-width: 768px){
     .containerVolver{
         background-color: transparent;
         margin-inline: 114px;
