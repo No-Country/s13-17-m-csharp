@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ButtonContinuar from '../../components/shared/Buttons/ButtonContinuar/ButtonContinuar';
 import './register1.css';
 import Volver from '../../components/Volver/Volver';
@@ -67,9 +67,9 @@ export default function Register1() {
               id="fechanacimiento"
             />
             <div className="container-btncontinuar1">
-              <NavLink to={'/register/step2'}>
+              <Link to={'/register/step2'}>
                 <ButtonContinuar title="Continuar" />
-              </NavLink>
+              </Link>
             </div>
           </form>
         </div>

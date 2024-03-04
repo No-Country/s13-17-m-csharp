@@ -14,22 +14,19 @@
         font-family:var(--font-main) ;
         margin: 20px 0px;
     }
+    .contenedorSearch{
+        border: 1px solid var(--color-primary);
+        padding: 0.9rem;
+        border-radius: 13px;
+        cursor: pointer;
+    }
 }
-
 
 .contenedor{
     max-width: 1400px;
     margin: 0 auto;
     width: 100%;
 }
-
-.contenedorSearch{
-    border: 1px solid var(--color-primary);
-    padding: 0.9rem;
-    border-radius: 13px;
-    cursor: pointer;
-}
-
 
 .titleSearch{
     color: var(--color-primary);
@@ -39,7 +36,10 @@
 .img{
     width: 38px;
     height: 38px;
-    
+    position: relative;
+    top: -50px;
+    bottom: 0;
+    left: 88%;
 }
 
 .titleSugerencia{
@@ -65,7 +65,13 @@
     width: 80%;
     font-size: 1.2rem;
     padding-left: 50px;
-    
+}
+
+@media (width<768px){
+    .input{
+        width: 100%;
+        border-radius: 10px;
+    }
 }
 
 .contenedorItems{
@@ -93,7 +99,6 @@
     font-size: 1.9rem;
     line-height: 1.5;
 }
-
 
 @media (min-width:1024px){
     .titleSecondary{
