@@ -2,6 +2,37 @@
 import style from './Misturnos.module.css';
 import TurnoAsignado from '../../components/TurnoAsignado/TurnoAsignado';
 import Volver from '../../components/Volver/Volver';
+import Swal from "sweetalert2";
+
+const cancelTurno = () => {
+  Swal.fire({
+    title: "Cancelar turno",
+    text: `Esta seguro que desa cancelar el turno?`,
+    // icon: "question",
+    showCancelButton: true,
+    confirmButtonText: "Si, cancelar turno",
+    cancelButtonText: "No, volver atrás",
+    confirmButtonColor: "#00a1a3",
+    // cancelButtonColor:  "#00a1a3",
+    focusCancel: true,
+
+  })
+  .then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        text: "Su turno fue cancelado con éxito",
+        icon: "success",
+        showConfirmButton: false,
+        timer: 1500,
+        timerProgressBar: true,
+
+        //! ACA PONER LA FUNCION QUE ELIMINA EL TURNO
+
+      })
+    }
+  });
+}
+
 const Misturnos = () => {
   return (
     <>
@@ -19,7 +50,7 @@ const Misturnos = () => {
           </p>
           <TurnoAsignado />
           <div className="flex justify-end mt-[35px] sm:mr-[35px] ">
-            <button className={style.btnContinuar}>
+            <button onClick={cancelTurno} className={style.btnContinuar}>
               Cancelar turno
             </button>
           </div>
@@ -31,3 +62,4 @@ const Misturnos = () => {
 };
 
 export default Misturnos;
+
