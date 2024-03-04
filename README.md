@@ -14,9 +14,6 @@ Comienza tu viaje lingüístico con Mate Speak, se parte de nuestra comunidad gl
 | `Front End`       | Nicolás Ramirez      | [![GitHub]](https://github.com/jramire5) [![linkedin]](https://www.linkedin.com/in/nicolasramire/)                                |
 | `Front End`       | Simón Montoya        | [![GitHub]](https://github.com/montoyitadevelp) [![linkedin]](https://www.linkedin.com/in/sim%C3%B3n-restrepo-montoya-071244249/) |
 | `Front End`       | Sofía Costamagna     | [![GitHub]](https://github.com/sofiacostamagna) [![linkedin]](https://www.linkedin.com/in/sofia-costamagna/)                      |
-| `Back End`        | Ariel Jaime          | [![GitHub]]() [![linkedin]]()                                                                                                     |
-| `Back End`        | Deivison Jiménez     | [![GitHub]](https://github.com/Deivison81) [![linkedin]](https://www.linkedin.com/in/deivison-jimenez/)                           |
-| `Back End`        | Nicolás Arteaga      | [![GitHub]](https://github.com/HesherDev) [![linkedin]](https://www.linkedin.com/in/nicolasarteagadev/)                           |
 | `Back End`        | Rodrigo Kohnen       | [![GitHub]](https://github.com/rodrikohnen) [![linkedin]](https://www.linkedin.com/in/rodrigo-kohnen)                             |
 
 
