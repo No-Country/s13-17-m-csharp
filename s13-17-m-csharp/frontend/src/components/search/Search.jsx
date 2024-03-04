@@ -42,7 +42,7 @@ const Search = () => {
     const value = e.target.value;
 
     setPreview(true);
-
+//dsa
     setSearchText(value);
   };
 
