@@ -23,20 +23,21 @@ const InputSrc = ({handleBlur, handleChange, preview, filteredItems, setPreviewL
                     .slice(0, previewLimit)
                     .map((item) => (
                         <div key={item.id}>
-                        <Link to={'/search-doctors'}>
-                            <div
-                                className={`${styles.contenedorItems} hover:bg-slate-200 cursor-pointer p-2  grid grid-cols-[auto,1fr,auto] gap-4 items-center w-f mb-4 `}
-                                key={item.id}
-                                onMouseEnter={blur}>
-                                    <IconSearch key={item.id}/>
-                                    <h3  className="text-base cursor-pointer ">
-                                        {item.name}
-                                    </h3>
-                                    <span className="text-sm  text-gray-500">
-                                        Especialidad
-                                    </span>
-                            </div>
-                        </Link>
+                            <Link to={`/search-doctors/${item.nombre}`} id={item.id}
+                                >
+                                <div
+                                    className={`${styles.contenedorItems} hover:bg-slate-200 cursor-pointer p-2  grid grid-cols-[auto,1fr,auto] gap-4 items-center w-f mb-4 `}
+                                    key={item.id}
+                                    onMouseEnter={blur}>
+                                        <IconSearch key={item.id}/>
+                                        <h3  className="text-base cursor-pointer ">
+                                            {item.nombre}
+                                        </h3>
+                                        <span className="text-sm  text-gray-500">
+                                            Especialidad
+                                        </span>
+                                </div>
+                            </Link>
                         </div>
                     ))}
 
