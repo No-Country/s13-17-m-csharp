@@ -23,9 +23,9 @@ namespace medicitaBack.Models.Entidades
         
         [MaxLength(45)]
         public string DNI { get; set; } = string.Empty;
-        
+
         [MaxLength(250)]
-        public string Telefono { get; set; }
+        public string Telefono { get; set; } = string.Empty;
 
         [MaxLength(250)]
         public string PerfilMedico { get; set; } = string.Empty;

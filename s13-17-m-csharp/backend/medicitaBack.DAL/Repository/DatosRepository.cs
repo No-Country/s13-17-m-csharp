@@ -39,6 +39,10 @@ namespace medicitaBack.DAL.Repository
                 datos.Direccion = modelo.Direccion;              
 
                 datos.DNI = modelo.DNI;
+
+                datos.Telefono = modelo.Telefono;
+
+                datos.PerfilMedico = modelo.PerfilMedico;
                
                 _dbcontext.Update(datos);
 

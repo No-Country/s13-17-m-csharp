@@ -25,5 +25,9 @@ namespace medicitaBack.Models.VModels.DatosDTO
 
         [MaxLength(45)]
         public string Telefono { get; set; } = string.Empty;
+
+        [MaxLength(250)]
+        public string PerfilMedico { get; set; } = string.Empty;
+
     }
 }
