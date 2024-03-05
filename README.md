@@ -43,7 +43,7 @@ Facilidad de Uso: La interfaz intuitiva de Medicita hace que sea fácil para los
 | `Front End`       | Alejo Hurtado Testa  | [![GitHub]]() [![linkedin]]()                      |
 | `Back End`        | Rodrigo Kohnen       | [![GitHub]](https://github.com/rodrikohnen) [![linkedin]](https://www.linkedin.com/in/rodrigo-kohnen)                             |
 | `UX/UI Designer`  | Andree Suarez        | [![behance]]() [![linkedin]]()           |
-| `UX/UI Designer`  | Ailén Martinez       | [![]](https://www.notion.so/ailenmartinez/Portfolio-Ail-n-Martinez-acd244c4c61e41189daf851bbbecbad5?pvs=4) [![linkedin]](https://www.linkedin.com/in/ail%C3%A9ndaniela-martinezrosica/)           |
+| `UX/UI Designer`  | Ailén Martinez       | [![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white)](https://www.notion.so/ailenmartinez/Portfolio-Ail-n-Martinez-acd244c4c61e41189daf851bbbecbad5?pvs=4) [![linkedin]](https://www.linkedin.com/in/ail%C3%A9ndaniela-martinezrosica/)           |
 
 
 ## Stack Tecnológico
