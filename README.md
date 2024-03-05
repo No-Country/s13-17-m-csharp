@@ -1,21 +1,31 @@
 # Introducción:
 
 
-Medicita es una aplicación web y móvil diseñada para facilitar la reserva de citas médicas. Con Medicita, los usuarios pueden encontrar y reservar citas médicas de manera conveniente y eficiente. A diferencia de otras plataformas similares, Medicita es una solución genérica, lo que significa que no está limitada a un solo lugar o clínica específica. Los usuarios tienen la flexibilidad de cargar su propia clínica en la plataforma, ofreciendo así un amplio espectro de opciones para los pacientes.
+MediCita es una aplicación web y móvil diseñada para facilitar la reserva de citas médicas. Con Medicita, los usuarios pueden encontrar y reservar citas médicas de manera conveniente y eficiente. A diferencia de otras plataformas similares, Medicita es una solución genérica, lo que significa que no está limitada a un solo lugar o clínica específica. Los usuarios tienen la flexibilidad de cargar su propia clínica en la plataforma, ofreciendo así un amplio espectro de opciones para los pacientes.
 
 
 
-Características principales
-Registro de Clínicas
+## Características principales
+* Registro de Clínicas
 Los usuarios pueden registrar su clínica en la plataforma de Medicita, proporcionando información detallada sobre la ubicación, horarios de atención y servicios ofrecidos.
 
-Gestión de Especialidades
+* Gestión de Especialidades
 Una vez registrada la clínica, los usuarios pueden cargar las especialidades médicas con las que trabajan. Esto permite a los pacientes encontrar fácilmente especialistas en función de sus necesidades médicas específicas.
 
-Programación de Citas
-Medicita permite a los usuarios administrar las agendas de los médicos disponibles en su clínica. Los pacientes pueden ver la disponibilidad de los médicos y reservar citas según su conveniencia.
+* Programación de Citas
+MediCita permite a los usuarios administrar las agendas de los médicos disponibles en su clínica. Los pacientes pueden ver la disponibilidad de los médicos y reservar citas según su conveniencia.
 
-Ventajas de Medicita
+* Registro
+Los usuarios pueden registrarse, indicando su información de contacto, y también su historia clinica (enfermedades preexistentes, alergías)
+
+* Agendar turno
+MediCita permite al usuario filtrar según la especialidad deseada, ver la agenda disponible del médico, y reservar su turno.
+
+* Cancelar turno
+Tienen la posibilidad de cancelar su turno mediante la aplicación en caso de no poder asistir.
+
+
+## Ventajas de Medicita
 Flexibilidad: Al ser una plataforma genérica, Medicita ofrece a los usuarios la libertad de personalizar su experiencia según sus necesidades específicas.
 
 Accesibilidad: Los pacientes pueden acceder a la plataforma desde cualquier dispositivo con conexión a internet, lo que les permite reservar citas médicas en cualquier momento y desde cualquier lugar.
@@ -26,14 +36,14 @@ Facilidad de Uso: La interfaz intuitiva de Medicita hace que sea fácil para los
 
 | Rol               | Nombre               | Redes                                                                                                                             |
 | :---------------- | :------------------- | :-------------------------------------------------------------------------------------------------------------------------------- |
-| `Project Manager` | Bruno Viscay         | [![GitHub]](https://github.com/BViscay) [![linkedin]](https://www.linkedin.com/in/bruno-viscay/)                                  |
-| `Testing`         | Juan Pablo Passadore | [![GitHub]]() [![linkedin]](https://www.linkedin.com/in/juan-pablo-passadore-denis-105349116/)                                    |
-| `UX/UI Designer`  | Soledad Ramirez      | [![behance]](https://www.behance.net/solramirez10) [![linkedin]](https://www.linkedin.com/in/soledad-ramirez-693997106)           |
-| `Front End`       | Juan Martín De Rosa  | [![GitHub]](https://github.com/juanmderosa) [![linkedin]](https://www.linkedin.com/in/juanmderosa/)                               |
-| `Front End`       | Nicolás Ramirez      | [![GitHub]](https://github.com/jramire5) [![linkedin]](https://www.linkedin.com/in/nicolasramire/)                                |
-| `Front End`       | Simón Montoya        | [![GitHub]](https://github.com/montoyitadevelp) [![linkedin]](https://www.linkedin.com/in/sim%C3%B3n-restrepo-montoya-071244249/) |
-| `Front End`       | Sofía Costamagna     | [![GitHub]](https://github.com/sofiacostamagna) [![linkedin]](https://www.linkedin.com/in/sofia-costamagna/)                      |
+| `Front End`       | Kevin Noviello       | [![GitHub]](https://github.com/kjnoviello) [![linkedin]](https://www.linkedin.com/in/kevinjoelnoviello/)                               |
+| `Front End`       | María Laura Carballo | [![GitHub]]() [![linkedin]]()                                |
+| `Front End`       | Diego Herrera        | [![GitHub]](https://github.com/Diegohrp) [![linkedin]](https://www.linkedin.com/in/diego-hp/) |
+| `Front End`       | Nicolas Gonzalez     | [![GitHub]]() [![linkedin]]()                      |
+| `Front End`       | Alejo Hurtado Testa  | [![GitHub]]() [![linkedin]]()                      |
 | `Back End`        | Rodrigo Kohnen       | [![GitHub]](https://github.com/rodrikohnen) [![linkedin]](https://www.linkedin.com/in/rodrigo-kohnen)                             |
+| `UX/UI Designer`  | Andree Suarez        | [![behance]]() [![linkedin]]()           |
+| `UX/UI Designer`  | Ailén Martinez       | [![notion]](https://www.notion.so/ailenmartinez/Portfolio-Ail-n-Martinez-acd244c4c61e41189daf851bbbecbad5?pvs=4) [![linkedin]](https://www.linkedin.com/in/ail%C3%A9ndaniela-martinezrosica/)           |
 
 
 ## Stack Tecnológico
@@ -50,8 +60,11 @@ Facilidad de Uso: La interfaz intuitiva de Medicita hace que sea fácil para los
 |               |
 
 
-## Demo
-https://s11-15-m-csharp-react.vercel.app
+### Demo
+https://medicita.vercel.app/
+
+### Link al prototipo
+https://www.figma.com/file/DMNbko4G9wOPV88WUGA8iD/S13-17-m-chsarp?type=design&node-id=0%3A1&mode=design&t=ClRfSeT7zRoXtQWf-1
 
 [behance]: https://img.shields.io/badge/Behance-1769ff?style=for-the-badge&logo=behance&logoColor=white
 [linkedin]: https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white
