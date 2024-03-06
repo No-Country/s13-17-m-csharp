@@ -125,8 +125,9 @@ https://www.figma.com/file/DMNbko4G9wOPV88WUGA8iD/S13-17-m-chsarp?type=design&no
 | `Front End`       | Nicolas Gonzalez     | [![GitHub]](https://github.com/nicolas355) [![linkedin]](https://www.linkedin.com/in/nicolas-gonzalez-68b5081b0/)                      |
 | `Front End`       | Alejo Hurtado Testa  | [![GitHub]](https://github.com/Alejo-Hurtado-Testa) [![linkedin]](https://www.linkedin.com/in/alejo-hurtado-testa-53b14a216/)                      |
 | `Back End`        | Rodrigo Kohnen       | [![GitHub]](https://github.com/rodrikohnen) [![linkedin]](https://www.linkedin.com/in/rodrigo-kohnen)                             |
-| `UX/UI Designer`  | Andree Suarez        | [![behance]]() [![linkedin]]()           |
 | `UX/UI Designer`  | Ailén Martinez       | [![Notion]](https://www.notion.so/ailenmartinez/Portfolio-Ail-n-Martinez-acd244c4c61e41189daf851bbbecbad5?pvs=4) [![linkedin]](https://www.linkedin.com/in/ail%C3%A9ndaniela-martinezrosica/)           |
+| `UX/UI Designer`  | Andree Suarez        
+
 
 
 
