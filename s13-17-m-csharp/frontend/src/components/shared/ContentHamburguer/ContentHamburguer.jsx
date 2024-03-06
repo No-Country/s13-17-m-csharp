@@ -18,7 +18,7 @@ const ContentHamburguer = ({ handleToggle }) => {
   const closeSession = () => {
     Cookies.remove('token');
     authUser(false);
-    navigate('/login');
+    navigate('/inicio');
   };
 
   return (

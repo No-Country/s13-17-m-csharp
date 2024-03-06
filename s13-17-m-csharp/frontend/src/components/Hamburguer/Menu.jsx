@@ -6,10 +6,17 @@ import user from '../../assets/img/User.svg';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import ContentHamburguer from '../shared/ContentHamburguer/ContentHamburguer';
+import { profileData } from '../../api/services/profile.service';
+
+
+
+
 
 const Menu = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
+
+  console.log(profileData);
 
   const handleToggle = () => {
     setOpen(!open);
@@ -18,6 +25,24 @@ const Menu = () => {
   useEffect(() => {
     setOpen(false); 
   }, [location]);
+
+
+
+// Luego puedes llamar a la función profileData en tu código
+const obtenerDatosPerfil = async () => {
+  try {
+      const datos = await profileData({ email: 'ejemplo@example.com', nombre: 'Nombre', apellido: 'Apellido', password: 'contraseña' });
+      console.log(datos); // Hacer algo con los datos del perfil obtenidos
+  } catch (error) {
+      console.error('Error al obtener datos del perfil:', error);
+  }
+};
+
+// Llama a la función obtenerDatosPerfil para iniciar el proceso de obtención de datos del perfil
+obtenerDatosPerfil();
+
+
+
 
   return (
     <div>
