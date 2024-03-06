@@ -8,7 +8,10 @@ const endPoints = {
     schedule: `${API_URL}/Citas/Registrar`
   },
   doctors: {
-    info: (doctorId) => `${API_URL}/Medico/BusquedaXID?id=${doctorId}`
+    info: (doctorId) =>
+      `${API_URL}/Medico/BusquedaXID?id=${doctorId}`,
+    appointments: (doctorId) =>
+      `${API_URL}/Citas/ObtenerxIDMedico?idMedico=${doctorId}`
   },
   profile: {
     datos: `${API_URL}/Datos/MisDatos`
