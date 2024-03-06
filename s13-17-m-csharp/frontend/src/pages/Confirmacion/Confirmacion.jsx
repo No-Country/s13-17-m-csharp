@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import style from './Confirmacion.module.css';
 import Loader from '../../components/shared/Loader/Loader';
+import { Fade } from 'react-awesome-reveal';
 
 const Confirmacion = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -18,6 +19,7 @@ const Confirmacion = () => {
             {isLoading ? (
                 <Loader />
             ) : (
+                <Fade className="w-full flex justify-center" cascade triggerOnce="true">
                 <main className="flex justify-center content-center mt-[120px] text-center">
                     <div className={style.container}>
                         <section>
@@ -34,6 +36,7 @@ const Confirmacion = () => {
                         </section>
                     </div>
                 </main>
+                </Fade>
             )}
         </div>
     );
