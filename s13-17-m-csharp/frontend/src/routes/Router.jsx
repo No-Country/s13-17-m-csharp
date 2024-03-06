@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { DoctorCard } from '../components/DoctorCard/DoctorCard';
 import Login from '../pages/Login/Login';
 import Inicio from '../pages/Inicio/Inicio';
 import Register1 from '../pages/Registros/Register1';
@@ -9,7 +10,6 @@ import Turno from '../pages/Turno/Turno';
 import Nosotros from '../pages/Nosotros/Nosotros';
 import Confirmacion from '../pages/Confirmacion/Confirmacion';
 import Misturnos from '../pages/MisTurnos/Misturnos';
-import '../App.css';
 import { SearchResults } from '../pages/SearchResults/SearchResults';
 import { Agenda } from '../pages/Agenda/Agenda';
 import { NoAuthWrapper } from './NoAuthRouteWrapper';
@@ -89,8 +89,14 @@ const Router = () => {
               </AuthRouteWrapper>
             }
           />
+
           <Route path="/agenda" element={<Agenda />} />
-          <Route path="/agenda/:doctorId" element={<Agenda />} />
+          {/*  <Route path="/agenda/:doctorId" element={<Agenda />} /> */}
+
+          <Route path="/agenda/:id" element={<Agenda />} />
+
+          {/* Ruta para el componente DoctorCard que incluye un parámetro de ID */}
+          <Route path="/doctor" element={<DoctorCard />} />
         </Routes>
       </Layout>
     </BrowserRouter>

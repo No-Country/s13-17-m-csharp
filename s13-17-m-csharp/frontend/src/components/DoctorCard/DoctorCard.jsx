@@ -1,14 +1,27 @@
 /* eslint-disable react/prop-types */
-import { NavLink } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import addresIcon from '../../assets/icons/address-icon.svg';
 import docIcon from '../../assets/icons/doc-icon.svg';
 import DoctorData from '../DoctorData/DoctorData';
+import { useNavigate } from 'react-router-dom';
 
-const DoctorCard = ({ children, viewAgenda, medico }) => {
+const DoctorCard = ({
+  children,
+  viewAgenda,
+  medico,
+  key,
+  medicoProfile
+}) => {
   const { descripcion, especialidad, horario, nombre } = medico;
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  const handleAgendaClick = () => {
+    navigate(`/agenda/${medico.id}`, { state: { medico } }); // Navega a Agenda y pasa el estado
+  };
 
   return (
-    <article className="mb-5 w-[91%] bg-color-cards p-3 rounded  md:w-[90%] md:max-w-[561px] md:bg-color-cards-desk md:p-5 md:rounded-xl md:m-5">
+    <article className="mb-5 w-[91%] bg-color-cards p-3 rounded md:w-[90%] md:max-w-[561px] md:bg-color-cards-desk md:p-5 md:rounded-xl md:m-5">
       <section>
         <DoctorData nombre={nombre} descripcion={descripcion} />
 
@@ -27,7 +40,6 @@ const DoctorCard = ({ children, viewAgenda, medico }) => {
               <img alt="doc icon" src={docIcon} />
               <p className="ml-2">Consulta {descripcion} </p>
             </div>
-
             <p className="mr-10">$60</p>
           </div>
         </section>
@@ -36,14 +48,16 @@ const DoctorCard = ({ children, viewAgenda, medico }) => {
             <a className="ml-[6px] underline">
               Próxima fecha disponible: 20/2
             </a>
-            <NavLink to="/agenda" className="flex items-center">
+            <button
+              onClick={handleAgendaClick}
+              className="flex items-center">
               <p className="underline">Ver agenda</p>
               <img
                 className={`${viewAgenda ? 'rotate-[-90deg]' : 'rotate-180'} ml-2 mt-[2px] h-6 `}
                 alt="arrow"
                 src="../Back.svg"
               />
-            </NavLink>
+            </button>
           </section>
           {children}
         </footer>

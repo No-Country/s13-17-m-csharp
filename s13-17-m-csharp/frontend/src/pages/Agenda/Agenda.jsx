@@ -7,8 +7,9 @@ import { DoctorCard } from '../../components/DoctorCard/DoctorCard';
 import Volver from '../../components/Volver/Volver';
 import { useMakeRequest } from '../../hooks/useMakeRequest';
 import Loader from '../../components/shared/Loader/Loader';
+
 const Agenda = () => {
-  const location = useLocation();
+  //const location = useLocation();
 
   const {
     state: { loading, error, response: doctor },
@@ -20,6 +21,9 @@ const Agenda = () => {
     await sendRequest(doctorId, getDoctorInfo);
   };
 
+  const location = useLocation();
+  const medico = location.state?.medico;
+
   React.useEffect(() => {
     getDoctor();
   }, []);
@@ -27,6 +31,7 @@ const Agenda = () => {
   return (
     <>
       <Volver title={'Ver otros médicos'} />
+
       <main className="min-h-[100vh] w-full flex justify-center">
         {loading && (
           <div className="h-[1000px]">

@@ -2,6 +2,7 @@ import React from 'react';
 import arrow from '../../assets/arrow.svg';
 import styles from './calendar.module.css';
 import { Hour } from './Hour';
+
 import {
   formatDate,
   formatDay,
@@ -73,6 +74,7 @@ const Calendar = ({ appointments }) => {
                   <ul className="flex flex-col items-center mt-3 ">
                     {hours.map(({ hour, available }, index) => (
                       <Hour
+                        medico={medico}
                         key={index}
                         hour={hour}
                         available={available}
