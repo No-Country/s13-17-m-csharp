@@ -1,9 +1,10 @@
-import { NavLink, Navigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import DoctorData from '../../components/DoctorData/DoctorData';
 import ButtonContinuar from '../../components/shared/Buttons/ButtonContinuar/ButtonContinuar';
 import style from './Turno.module.css';
 import TurnoAsignado from '../../components/TurnoAsignado/TurnoAsignado';
 import Volver from '../../components/Volver/Volver';
+import { Fade } from 'react-awesome-reveal';
 
 const Turno = () => {
 
@@ -15,9 +16,12 @@ const Turno = () => {
   return (
     <>
       <Volver title={'Modificar fecha'} />
+          <Fade>
       <article className="w-[91%] bg-color-cards mx-auto p-3 rounded md:w-[72%] lg:bg-color-cards-desk lg:p-3 ">
         <section className="s:w-[55%] md:w-[100%]">
+
           <DoctorData />
+
           <footer className="md:hidden md:mt-0 mt-4 rounded-md flex-column justify-between items-center bg-white py-1 text-xs font-normal font-font-title">
             <TurnoAsignado />
             <div className="md:hidden flex justify-center mt-20 mb-2">
@@ -28,6 +32,9 @@ const Turno = () => {
           </footer>
         </section>
       </article>
+          </Fade>
+          <Fade>
+
       <article className="w-[91%] mx-auto md:p-0 p-3 rounded md:w-[72%] ">
         <section className="s:w-[55%] md:w-[100%]">
           <footer className="hidden md:flex md:flex-col rounded-md flex-column justify-between bg-white py-1 text-xs font-normal font-font-title">
@@ -82,6 +89,7 @@ const Turno = () => {
           </footer>
         </section>
       </article>
+          </Fade>
     </>
   );
 };
