@@ -21,7 +21,7 @@ const Router = () => {
     <BrowserRouter>
       <Layout>
         <Routes>
-          <Route path='/loader' element={<Loader />}></Route>
+          <Route path="/loader" element={<Loader />}></Route>
           <Route path="/" element={<Home />} />
 
           <Route
@@ -42,7 +42,10 @@ const Router = () => {
             }
           />
 
-          <Route path="/search-doctors/:especialidad" element={<SearchResults />} />
+          <Route
+            path="/search-doctors/:especialidad"
+            element={<SearchResults />}
+          />
 
           <Route
             path="/register/step1"
@@ -87,6 +90,7 @@ const Router = () => {
             }
           />
           <Route path="/agenda" element={<Agenda />} />
+          <Route path="/agenda/:doctorId" element={<Agenda />} />
         </Routes>
       </Layout>
     </BrowserRouter>
