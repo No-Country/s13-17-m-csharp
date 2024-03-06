@@ -1,11 +1,10 @@
 import { endPoints } from '../endPoints';
 import { headersJson } from '../headers';
 
-const profileData = async ({ email, nombre, apellido, password }) => {
+const profileData = async () => {
     const response = await fetch(endPoints.profile.datos, {
-        method: 'POST',
+        method: 'GET',
         headers: headersJson,
-        body: JSON.stringify({ email, nombre, apellido, password })
     });
     const data = await response.json();
     return data;

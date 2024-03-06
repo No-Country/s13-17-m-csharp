@@ -5,7 +5,7 @@ const endPoints = {
     login: `${API_URL}/Cuentas/login`
   },
   profile: {
-    datos: `${API_URL}/Cuentas/registro`
+    datos: `${API_URL}/Datos/MisDatos`
   }
 };
 

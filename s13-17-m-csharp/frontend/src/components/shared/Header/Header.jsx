@@ -12,7 +12,7 @@ const Header = ({ isLoggedIn }) => {
           <source media="(min-width:768px)" srcSet={desktopLogo} />
           <NavLink to="/">
             <img
-              className="ml-4 w-24 md:w-36 md:ml-10"
+              className="ml-4 w-24 md:w-36 md:ml-10 hover:scale-110 ease-in duration-100"
               alt="logo"
               src={mobileLogo}
             />
@@ -51,7 +51,7 @@ const Header = ({ isLoggedIn }) => {
         ) : (
           <section className="flex text-sm">
             <NavLink to="/login">
-              <button className="h-10 w-24 bg-color-primary  rounded flex items-center justify-center mr-4 md:mr-10 md:rounded-md md:h-7">
+              <button className="h-10 w-24 bg-color-primary  rounded flex items-center justify-center mr-4 md:mr-10 md:rounded-md md:h-7 hover:scale-110 ease-in duration-100">
                 Ingresar
               </button>
             </NavLink>

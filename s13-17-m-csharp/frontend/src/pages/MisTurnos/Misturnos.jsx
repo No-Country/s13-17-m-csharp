@@ -3,6 +3,7 @@ import style from './Misturnos.module.css';
 import TurnoAsignado from '../../components/TurnoAsignado/TurnoAsignado';
 import Volver from '../../components/Volver/Volver';
 import Swal from "sweetalert2";
+import { Fade } from 'react-awesome-reveal';
 
 const cancelTurno = () => {
   Swal.fire({
@@ -36,6 +37,8 @@ const cancelTurno = () => {
 const Misturnos = () => {
   return (
     <>
+    <Fade>
+
       <Volver title={'Ir al Home'} />
       <main className="w-[91%] bg-color-cards mx-auto  p-3 rounded md:w-[72%] lg:bg-color-cards-desk lg:p-3 ">
         <p className=" ml-[35px] text-lg underline font-medium mb-2 md:text-[20px] text-[#333333]">
@@ -57,6 +60,7 @@ const Misturnos = () => {
           <br />
         </div>
       </main>
+    </Fade>
     </>
   );
 };

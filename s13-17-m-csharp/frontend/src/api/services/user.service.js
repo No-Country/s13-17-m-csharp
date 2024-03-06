@@ -8,6 +8,7 @@ const login = async ({ email, password }) => {
     body: JSON.stringify({ email, password })
   });
   const data = await response.json();
+  console.log(data);
 
   return data;
 };

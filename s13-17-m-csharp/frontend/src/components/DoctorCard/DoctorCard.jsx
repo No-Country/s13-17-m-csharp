@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { NavLink } from 'react-router-dom';
 import addresIcon from '../../assets/icons/address-icon.svg';
 import docIcon from '../../assets/icons/doc-icon.svg';
@@ -5,7 +6,7 @@ import DoctorData from '../DoctorData/DoctorData';
 
 const DoctorCard = ({ children, viewAgenda }) => {
   return (
-    <article className="mb-5 w-[91%] bg-color-cards p-3 rounded  md:w-[55%] md:max-w-[561px] md:bg-color-cards-desk md:p-5 md:rounded-xl md:m-5">
+    <article className="mb-5 w-[91%] bg-color-cards p-3 rounded  md:w-[90%] md:max-w-[561px] md:bg-color-cards-desk md:p-5 md:rounded-xl md:m-5">
       <section>
         <DoctorData />
         <section className="text-[#333333] hidden md:flex flex-col mt-5 font-font-text mb-8 md:my-5">

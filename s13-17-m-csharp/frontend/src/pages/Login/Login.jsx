@@ -17,6 +17,7 @@ import Error from '../../components/shared/Error/Error';
 export default function Login() {
   //context
   const { authUser } = useContext(AppContext);
+  console.log(authUser);
 
   const navigate = useNavigate();
   const [validEmail, setValidEmail] = React.useState(true);
