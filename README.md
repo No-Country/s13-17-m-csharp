@@ -86,10 +86,9 @@ El proyecto se encuentra en un MVP inicial y funcional. Actualmente soporta el u
 
 ### Backend:
 
-[Deploy Backend](https://www.medicita.somee.com/swagger/index.html)
+API REST, Arquitectura en capas, Principios SOLID, uso de Interfaces, Inyección de dependencias, Repositorios, DTO, Reglas CORS, JWT Authentication, Entity Framework Code-First, Automapper, Base de datos relacional SQL Server.
 
-Es una API REST, arquitectura en capas, principios SOLID, interfaces, inyección de dependencias, repositories, DTO, reglas cors, token jwt authentication, Entity Framework code first, automapper, base de datos relacional sql server.
-
+[Deploy API](https://www.medicita.somee.com/swagger/index.html)
 
 ### Uso de la app-web
 
@@ -218,9 +217,9 @@ The project is in an initial and functional MVP stage. It currently supports usa
 
 ### Backend:
 
-[Deploy Backend](https://www.medicita.somee.com/swagger/index.html)
+REST API, Layered architecture, SOLID principles, using Interfaces, Dependency injections, Repositories, DTO, CORS rules, JWT Authentication, Entity Framework Code-First, Automapper, Relational database SQL Server.
 
-It is a REST API, layered architecture, SOLID principles, interfaces, dependency injection, repositories, DTO, cors rules, jwt token authentication, Entity Framework code first, automapper, relational database sql server.
+[Deploy API](https://www.medicita.somee.com/swagger/index.html)
 
 ### Using the web app
 
