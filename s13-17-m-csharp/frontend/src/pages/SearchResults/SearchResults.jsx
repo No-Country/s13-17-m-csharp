@@ -2,23 +2,80 @@ import { DoctorCard } from '../../components/DoctorCard/DoctorCard';
 import Volver from '../../components/Volver/Volver';
 import { useParams } from 'react-router-dom';
 
+import {Fade} from 'react-awesome-reveal'
+
+import { medicosApi } from '../../utils/MedicosApi';
+import { useEffect,useState } from 'react';
+
+
+
 const SearchResults = () => {
 const params=useParams()
 const {especialidad} = params
 
+const [medicos, setMedicos] = useState([]);
 
+
+useEffect(() => {
+  const fetchMedicos = async () => {
+    try {
+      const data = await medicosApi();
+    
+      const medicosFiltrados = data.medicos.filter(
+        (medico) => medico.especialidad.nombre === especialidad
+      );
+      setMedicos(medicosFiltrados);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  fetchMedicos();
+}, [especialidad]);
 
   return (
     <>
       <Volver title={'Ir al home'} />
-      <h2 className='flex text-[20px] text-[--color-secondary] font-bold md:mx-[180px] justify-center md:justify-start mx-[63px] my-[35px]'> {especialidad} </h2>
+    
       <main className="w-full flex flex-col items-center md:flex-row md:flex-wrap md:justify-evenly">
-        <DoctorCard />
-        <DoctorCard />
-        <DoctorCard />
-        <DoctorCard />
-        <DoctorCard />
-        <DoctorCard />
+
+        <Fade className="md:w-[600px] w-full flex  justify-center" cascade triggerOnce="true" damping="0.2">
+          {/*<DoctorCard />
+          <DoctorCard />
+          <DoctorCard />
+          <DoctorCard />
+          <DoctorCard />
+          <DoctorCard />
+        </Fade>*/}
+
+
+
+  
+      {medicos.map((medico) => (
+
+        
+
+        
+        <>
+
+    
+
+
+        
+        <DoctorCard key={medico.id} medico={medico} />
+        
+        </>
+
+            
+
+
+
+        ))}
+    
+
+
+        </Fade>
+
       </main>
     </>
   );

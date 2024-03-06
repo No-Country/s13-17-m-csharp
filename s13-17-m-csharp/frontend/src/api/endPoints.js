@@ -9,6 +9,9 @@ const endPoints = {
   },
   doctors: {
     info: (doctorId) => `${API_URL}/Medico/BusquedaXID?id=${doctorId}`
+  },
+  profile: {
+    datos: `${API_URL}/Datos/MisDatos`
   }
 };
 
