@@ -52,6 +52,27 @@ namespace medicitaBack.API.Controllers
         }
 
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [HttpGet("ObtenerxIDMedico")]
+        public async Task<ActionResult<List<CitaDTO>>> ListarporIDMedico(int idMedico)
+        {
+            try
+            {
+                var cita = await _iCitaService.ObtenerPorIdMedico(idMedico);
+
+                return Ok(cita);
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(500, "Error interno del servidor");
+            }
+        }
+
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpGet("MisCitas")]
         public async Task<ActionResult<List<CitaDTO>>> Listar()
         {

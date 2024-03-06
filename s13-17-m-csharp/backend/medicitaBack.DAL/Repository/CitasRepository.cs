@@ -15,7 +15,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace medicitaBack.DAL.Repository
 {
 
-    public class CitasRepository : IGenericRepository<CreacionCitaDTO, CitaDTO, Cita>
+    public class CitasRepository : IGenericRepository<CreacionCitaDTO, CitaDTO, Cita>,ICitaBusquedaRepository
     {
         private readonly AplicationDBcontext _dbcontext;
         private readonly IMapper mapper;
@@ -119,5 +119,17 @@ namespace medicitaBack.DAL.Repository
                 throw;
             }
         }
+
+        public async Task<IQueryable<Cita>> ObtenerPorIdMedico(int idMedico)
+        {          
+          
+
+            IQueryable<Cita> cita = _dbcontext.Citas.Where(c => c.MedicoId == idMedico).Include(p => p.Medico).ThenInclude(p => p.Especialidad);
+
+            if (cita == null) throw new NotFoundException();
+
+            return cita;
+        }
+
     }
 }

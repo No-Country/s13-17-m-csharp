@@ -24,11 +24,12 @@ namespace medicitaBack.BLL.Service
         private readonly IGenericService<CreacionLista_CitaDTO, Lista_CitaDTO> _listaService;
         private readonly IEmailService _emailService;
         private readonly AplicationDBcontext _context;
+        private readonly ICitaBusquedaRepository _citaRepository;
        
 
         public CitaService(IGenericRepository<CreacionCitaDTO, CitaDTO, Cita> citarepo, IMedicoService medicoService,
             IMapper mapper, IGenericService<CreacionLista_CitaDTO, Lista_CitaDTO> listaService,
-            IEmailService emailService, AplicationDBcontext aplicationDBcontext)
+            IEmailService emailService, AplicationDBcontext aplicationDBcontext, ICitaBusquedaRepository citaRepository)
         {
             this._citarepo = citarepo;
             this._medicorepo = medicoService;
@@ -36,6 +37,7 @@ namespace medicitaBack.BLL.Service
             this._listaService = listaService;
             this._emailService = emailService;
             this._context = aplicationDBcontext;
+            this._citaRepository = citaRepository;
           
            
         }
@@ -116,6 +118,14 @@ namespace medicitaBack.BLL.Service
                 .Include(r=>r.Medico)                        
                 .Where(p=>p.UsuarioId==userId)
                 .ToListAsync();
+            return _mapper.Map<IEnumerable<CitaDTO>>(lista);
+        }
+
+        public async Task<IEnumerable<CitaDTO>> ObtenerPorIdMedico(int idMedico)
+        {
+            var query = await _citaRepository.ObtenerPorIdMedico(idMedico);
+
+            var lista = await query.ToListAsync();
             return _mapper.Map<IEnumerable<CitaDTO>>(lista);
         }
     }

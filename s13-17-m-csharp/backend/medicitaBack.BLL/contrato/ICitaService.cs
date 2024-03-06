@@ -21,5 +21,7 @@ namespace medicitaBack.BLL.contrato
         Task<IEnumerable<CitaDTO>> ObtenerTodos();
 
         Task<IEnumerable<CitaDTO>> misCitas(string userId);
+
+        Task<IEnumerable<CitaDTO>> ObtenerPorIdMedico(int idMedico);
     }
 }

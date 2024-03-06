@@ -17,5 +17,7 @@ namespace medicitaBack.DAL.Contrato
         Task<DTO> ObtenerPorId(int id);
 
         Task<IQueryable<Entidad>> ObtenerTodos();
+
+        
     }
 }

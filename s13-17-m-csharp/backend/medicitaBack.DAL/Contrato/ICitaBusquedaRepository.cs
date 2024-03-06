@@ -10,14 +10,14 @@ using medicitaBack.Models.VModels.HistorialCitaDTO;
 
 namespace medicitaBack.DAL.Contrato
 {
-    public interface ICitaRepository {
-
-         Task<List<HistorialCitaDTO>> BusquedaPorIdMedico(int idMedico);
-
-       
+    public interface ICitaBusquedaRepository
+    {
 
 
+        Task<IQueryable<Cita>> ObtenerPorIdMedico(int idMedico);
 
 
     }
 }
+
+

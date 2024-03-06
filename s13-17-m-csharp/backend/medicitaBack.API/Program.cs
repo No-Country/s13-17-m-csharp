@@ -121,6 +121,7 @@ builder.Services.AddScoped<IMedicoService, MedicoService>();
 //Cita
 builder.Services.AddScoped<IGenericRepository<CreacionCitaDTO, CitaDTO, Cita>, CitasRepository>();
 builder.Services.AddScoped<ICitaService, CitaService>();
+builder.Services.AddScoped<ICitaBusquedaRepository, CitasRepository>();
 //Lista_Citas Cita
 builder.Services.AddScoped<IGenericRepository<CreacionLista_CitaDTO, Lista_CitaDTO, Lista_Cita>, Lista_CitasRepository>();
 builder.Services.AddScoped<IGenericService<CreacionLista_CitaDTO, Lista_CitaDTO>, Lista_CitaService>();
