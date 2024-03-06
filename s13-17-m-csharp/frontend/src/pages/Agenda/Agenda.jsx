@@ -11,21 +11,17 @@ const Agenda = () => {
     horario: "Ejemplo de horario",
     nombre: " Diego ",
     id:crypto.randomUUID()
- };
+  };
 
 
   return (
     <>
       <Volver title={'Ver otros médicos'} />
       <main className="w-full flex justify-center">
-
         <Fade className="w-full flex justify-center" cascade triggerOnce="true">
-          {/*<DoctorCard viewAgenda={true}>*/}
-
-        <DoctorCard key={medico.id} medico={medico}    viewAgenda={true}>
-
-          <Calendar />
-        </DoctorCard>
+          <DoctorCard key={medico.id} medico={medico}    viewAgenda={true}>
+            <Calendar />
+          </DoctorCard>
         </Fade>
       </main>
     </>
