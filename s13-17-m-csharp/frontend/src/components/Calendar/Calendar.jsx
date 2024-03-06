@@ -76,7 +76,7 @@ const formatDate = (date) => {
   );
 };
 
-const Calendar = () => {
+const Calendar = ({medico}) => {
   let slidePos = 0;
   const step = 128;
   const [schedule, setSchedule] = React.useState([]);
@@ -138,6 +138,7 @@ const Calendar = () => {
                   <ul className="flex flex-col items-center mt-3 ">
                     {hours.map(({ hour, available }, index) => (
                       <Hour
+                      medico={medico}
                         key={index}
                         hour={hour}
                         available={available}
