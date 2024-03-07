@@ -1,21 +1,24 @@
 /* eslint-disable react/prop-types */
-import { NavLink, useParams } from 'react-router-dom';
 import addresIcon from '../../assets/icons/address-icon.svg';
 import docIcon from '../../assets/icons/doc-icon.svg';
 import DoctorData from '../DoctorData/DoctorData';
 import { useNavigate } from 'react-router-dom';
 
-const DoctorCard = ({ children, viewAgenda, medico, key, medicoProfile }) => {
+const DoctorCard = ({
+  children,
+  viewAgenda,
+  medico,
+  key,
+  medicoProfile
+}) => {
   const { descripcion, especialidad, horario, nombre } = medico;
-  const { id } = useParams(); 
-  const navigate = useNavigate(); 
- 
 
+  const navigate = useNavigate();
 
   const handleAgendaClick = () => {
-    navigate( `/agenda/${medico.id}`, { state: { medico } }); // Navega a Agenda y pasa el estado
- };
-  
+    navigate(`/agenda/${medico.id}`); // Navega a Agenda y pasa el estado
+  };
+
   return (
     <article className="mb-5 w-[91%] bg-color-cards p-3 rounded md:w-[90%] md:max-w-[561px] md:bg-color-cards-desk md:p-5 md:rounded-xl md:m-5">
       <section>
@@ -27,7 +30,8 @@ const DoctorCard = ({ children, viewAgenda, medico, key, medicoProfile }) => {
           <div className="flex items-center mb-3">
             <img alt="address icon" src={addresIcon} />
             <p className="ml-2">
-              Av Próceres De la Independencia N° 1722, S.J.L. piso 3, Lima
+              Av Próceres De la Independencia N° 1722, S.J.L. piso 3,
+              Lima
             </p>
           </div>
           <div className="flex justify-between">
@@ -41,9 +45,11 @@ const DoctorCard = ({ children, viewAgenda, medico, key, medicoProfile }) => {
         <footer className="rounded-md flex flex-col justify-between items-center bg-white py-1 text-xs font-normal font-font-title">
           <section className="w-full flex justify-between items-center">
             <a className="ml-[6px] underline">
-              Próxima fecha disponible: 20/2
+              {/* Próxima fecha disponible: 20/2 */}
             </a>
-            <button onClick={handleAgendaClick} className="flex items-center">
+            <button
+              onClick={handleAgendaClick}
+              className="flex items-center">
               <p className="underline">Ver agenda</p>
               <img
                 className={`${viewAgenda ? 'rotate-[-90deg]' : 'rotate-180'} ml-2 mt-[2px] h-6 `}

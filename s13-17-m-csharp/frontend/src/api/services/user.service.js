@@ -12,16 +12,38 @@ const login = async ({ email, password }) => {
   return data;
 };
 
-const appoiments = async () => {
-  const responseAppoiments = await fetch(
-    endPoints.users.appoiments.myAppoiments,
+
+const makeAppointment = async ({ date, doctorId }) => {
+  const response = await fetch(
+    endPoints.users.appointments.schedule,
     {
-      method: 'GET',
-      headers: headersJson
+      method: 'POST',
+      headers: headersJson,
+      body: JSON.stringify({
+        usuarioId: '',
+        motivo: 'Consulta médica',
+        fecha_cita: date,
+        medicoId: doctorId,
+        activo: true
+      })
     }
   );
-  const dataAppoiments = await responseAppoiments.json();
-  return dataAppoiments;
+  return response.status;
 };
 
-export { login, appoiments };
+export { login, makeAppointment };
+
+// const appoiments = async () => {
+//   const responseAppoiments = await fetch(
+//     endPoints.users.appoiments.myAppoiments,
+//     {
+//       method: 'GET',
+//       headers: headersJson
+//     }
+//   );
+//   const dataAppoiments = await responseAppoiments.json();
+//   return dataAppoiments;
+// };
+// 
+// export { login, appoiments };
+
