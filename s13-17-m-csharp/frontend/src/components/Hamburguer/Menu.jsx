@@ -18,7 +18,7 @@ const Menu = () => {
 
   useEffect(() => {
     setOpen(false);
-  }, [location]);
+  }, []);
 
   useEffect(() => {
     const getProfileData = async () => {
