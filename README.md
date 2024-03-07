@@ -1,5 +1,6 @@
 
-![MediCita](https://github.com/No-Country/s13-17-m-csharp/assets/159576872/bec9737a-b71c-404b-bd93-a4d380639cff)
+![WhatsApp Image 2024-03-06 at 21 48 31](https://github.com/No-Country/s13-17-m-csharp/assets/159576872/e5a01eba-d2d2-4df6-8c37-8bacdb7a19bc)
+
 
 # Introducción:
 
