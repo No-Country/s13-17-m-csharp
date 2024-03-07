@@ -10,7 +10,7 @@ import {
   currentWeekAppointments
 } from '../../utils/schedule';
 
-const Calendar = ({ appointments }) => {
+const Calendar = ({ appointments, doctor }) => {
   let slidePos = 0;
   const step = 128;
   const [schedule, setSchedule] = React.useState([]);
@@ -74,8 +74,9 @@ const Calendar = ({ appointments }) => {
                   <ul className="flex flex-col items-center mt-3 ">
                     {hours.map(({ hour, available }, index) => (
                       <Hour
-                        medico={medico}
+                        medico={doctor}
                         key={index}
+                        date={date}
                         hour={hour}
                         available={available}
                       />

@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import { NavLink, useParams } from 'react-router-dom';
 import addresIcon from '../../assets/icons/address-icon.svg';
 import docIcon from '../../assets/icons/doc-icon.svg';
 import DoctorData from '../DoctorData/DoctorData';
@@ -13,11 +12,11 @@ const DoctorCard = ({
   medicoProfile
 }) => {
   const { descripcion, especialidad, horario, nombre } = medico;
-  const { id } = useParams();
+
   const navigate = useNavigate();
 
   const handleAgendaClick = () => {
-    navigate(`/agenda/${medico.id}`, { state: { medico } }); // Navega a Agenda y pasa el estado
+    navigate(`/agenda/${medico.id}`); // Navega a Agenda y pasa el estado
   };
 
   return (
@@ -46,7 +45,7 @@ const DoctorCard = ({
         <footer className="rounded-md flex flex-col justify-between items-center bg-white py-1 text-xs font-normal font-font-title">
           <section className="w-full flex justify-between items-center">
             <a className="ml-[6px] underline">
-              Próxima fecha disponible: 20/2
+              {/* Próxima fecha disponible: 20/2 */}
             </a>
             <button
               onClick={handleAgendaClick}

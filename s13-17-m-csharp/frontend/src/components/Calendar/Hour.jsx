@@ -1,10 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 
-const Hour = ({ available, hour, medico }) => {
+const Hour = ({ available, date, hour, medico }) => {
   const navigate = useNavigate();
 
   const handleHourClick = () => {
-    navigate('/confirm', { state: { medico, hour } });
+    navigate('/confirm', { state: { medico, date, hour } });
   };
 
   return (

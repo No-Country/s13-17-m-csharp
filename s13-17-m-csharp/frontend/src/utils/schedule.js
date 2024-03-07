@@ -88,7 +88,8 @@ const currentWeekAppointments = (appointments) => {
   const weekAppointments = new Map();
   const today = new Date();
   for (let appointment of appointments) {
-    const date = new Date(appointment.fecha_cita);
+    const date = new Date(appointment.fecha_cita + 'Z');
+
     if (
       date.getDate() >= today.getDate() &&
       date.getDate() <= today.getDate() + 7 &&
@@ -104,6 +105,7 @@ const currentWeekAppointments = (appointments) => {
       }
     }
   }
+  console.log(weekAppointments);
   return weekAppointments;
 };
 
