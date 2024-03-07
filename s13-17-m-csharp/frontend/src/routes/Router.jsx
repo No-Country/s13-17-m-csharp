@@ -92,7 +92,6 @@ const Router = () => {
 
           <Route path="/agenda/:doctorId" element={<Agenda />} />
 
-          {/* Ruta para el componente DoctorCard que incluye un parámetro de ID */}
           <Route path="/doctor" element={<DoctorCard />} />
         </Routes>
       </Layout>

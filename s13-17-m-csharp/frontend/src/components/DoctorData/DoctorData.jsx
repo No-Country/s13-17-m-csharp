@@ -18,7 +18,7 @@ const DoctorData = ({ nombre, descripcion, medico, horario }) => {
   return (
     <main className="flex font-font-text mb-5">
       <img
-        className="w-20 h-20 rounded-2xl   md:w-[100px] md:h-[110px] s:rounded-[20px] md:rounded-md"
+        className="w-20 h-20 rounded-2xl  object-cover  md:w-[100px] md:h-[110px] s:rounded-[20px] md:rounded-md"
         alt="Doctor photo"
         src={medico ? medico.horario : horario}
       />

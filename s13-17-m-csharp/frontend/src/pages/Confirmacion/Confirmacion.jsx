@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import style from './Confirmacion.module.css';
 import Loader from '../../components/shared/Loader/Loader';
 import { Fade } from 'react-awesome-reveal';
