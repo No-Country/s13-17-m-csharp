@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useLocation  } from 'react-router-dom';
 import { DoctorCard } from '../components/DoctorCard/DoctorCard';
 import Login from '../pages/Login/Login';
 import Inicio from '../pages/Inicio/Inicio';
@@ -15,10 +15,23 @@ import { Agenda } from '../pages/Agenda/Agenda';
 import { NoAuthWrapper } from './NoAuthRouteWrapper';
 import { AuthRouteWrapper } from './AuthRouteWrapper';
 import Loader from '../components/shared/Loader/Loader';
+import { useEffect } from 'react';
+
+//hace que el scroll vuelva arriba cuando el pathname cambia
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
 const Router = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Layout>
         <Routes>
           <Route path="/loader" element={<Loader />}></Route>

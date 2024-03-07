@@ -17,8 +17,6 @@ const Turno = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const medico = location.state?.medico;
-  const medicoHorario = location.state?.medico.horario;
-
   const hour = location.state?.hour;
   const date = location.state?.date;
 
@@ -31,7 +29,7 @@ const Turno = () => {
   );
 
   const {
-    state: { loading, error, response },
+    state: { loading, response },
     sendRequest
   } = useMakeRequest();
 
@@ -46,6 +44,7 @@ const Turno = () => {
     if (response) {
       navigate('/confirmacion');
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [response]);
   return (
     <>
@@ -55,7 +54,6 @@ const Turno = () => {
         <article className="w-[91%] bg-color-cards mx-auto p-3 rounded md:w-[72%] lg:bg-color-cards-desk lg:p-3 ">
           <section className="s:w-[55%] md:w-[100%]">
             <DoctorData medico={medico} />
-
             <footer className="md:hidden md:mt-0 mt-4 rounded-md flex-column justify-between items-center bg-white py-1 text-xs font-normal font-font-title">
               <TurnoAsignado localDate={appointmentDate} />
               <div className="md:hidden flex justify-center mt-20 mb-2">
