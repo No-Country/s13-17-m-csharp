@@ -34,6 +34,8 @@ Ease of Use: The intuitive interface of Medicita makes it easy for users to navi
 ## Demo
 https://medicita.vercel.app/
 
+![video_promocional](/s13-17-m-csharp/frontend/public/video_promocional.gif "Esta es una previsualizacion del proyecto.")
+
 ## Status
 The project is in an initial and functional MVP stage. It currently supports usage from mobile devices, tablets, laptops, and PCs, being fully responsive. It allows logging in and scheduling a medical appointment by selecting the doctor according to the specialty and their office hours, as well as canceling the appointment from the user menu.
 
