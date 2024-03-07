@@ -60,7 +60,7 @@ const Turno = () => {
               <TurnoAsignado />
               <div className="md:hidden flex justify-center mt-20 mb-2">
                 <NavLink to="/confirmacion">
-                  <ButtonContinuar title="Confirmar el turno" />
+                  <ButtonContinuar onClick={confirmAppointment} title="Confirmar el turno" />
                 </NavLink>
               </div>
             </footer>
