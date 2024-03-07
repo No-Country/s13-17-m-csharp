@@ -12,7 +12,6 @@ const login = async ({ email, password }) => {
   return data;
 };
 
-
 const makeAppointment = async ({ date, doctorId }) => {
   const response = await fetch(
     endPoints.users.appointments.schedule,
@@ -31,19 +30,27 @@ const makeAppointment = async ({ date, doctorId }) => {
   return response.status;
 };
 
-export { login, makeAppointment };
+const myAppoiments = async () => {
+  const responseAppoiments = await fetch(
+    endPoints.users.appointments.myAppoiments,
+    {
+      method: 'GET',
+      headers: headersJson
+    }
+  );
+  const dataAppoiments = await responseAppoiments.json();
+  return dataAppoiments;
+};
 
-// const appoiments = async () => {
-//   const responseAppoiments = await fetch(
-//     endPoints.users.appoiments.myAppoiments,
-//     {
-//       method: 'GET',
-//       headers: headersJson
-//     }
-//   );
-//   const dataAppoiments = await responseAppoiments.json();
-//   return dataAppoiments;
-// };
-// 
-// export { login, appoiments };
+const cancelAppointment = async (id) => {
+  const response = await fetch(
+    endPoints.users.appointments.cancel(id),
+    {
+      method: 'DELETE',
+      headers: headersJson
+    }
+  );
+  return response.status;
+};
 
+export { login, makeAppointment, myAppoiments, cancelAppointment };
