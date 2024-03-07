@@ -1,5 +1,5 @@
 .container{
-    width: 860px;
+    width: 280px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,8 +31,8 @@
 
 @media (width > 768px){
     .container{
+    width: 800px;
         background-color: #F7F9FA;
-
     }
 }
 

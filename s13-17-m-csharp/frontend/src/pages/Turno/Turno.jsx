@@ -57,7 +57,7 @@ const Turno = () => {
             <DoctorData medico={medico} />
 
             <footer className="md:hidden md:mt-0 mt-4 rounded-md flex-column justify-between items-center bg-white py-1 text-xs font-normal font-font-title">
-              <TurnoAsignado />
+              <TurnoAsignado/>
               <div className="md:hidden flex justify-center mt-20 mb-2">
                 <NavLink to="/confirmacion">
                   <ButtonContinuar onClick={confirmAppointment} title="Confirmar el turno" />
