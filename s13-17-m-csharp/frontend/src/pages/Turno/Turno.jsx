@@ -17,8 +17,6 @@ const Turno = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const medico = location.state?.medico;
-  const medicoHorario = location.state?.medico.horario;
-
   const hour = location.state?.hour;
   const date = location.state?.date;
 
@@ -31,7 +29,7 @@ const Turno = () => {
   );
 
   const {
-    state: { loading, error, response },
+    state: { loading, response },
     sendRequest
   } = useMakeRequest();
 
@@ -46,6 +44,7 @@ const Turno = () => {
     if (response) {
       navigate('/confirmacion');
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [response]);
   return (
     <>

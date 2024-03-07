@@ -15,7 +15,7 @@ import Loader from '../../components/shared/Loader/Loader';
 const Misturnos = () => {
   const [appointments, setAppointments] = React.useState([]);
   const {
-    state: { loading, error, response },
+    state: { loading, response },
     sendRequest
   } = useMakeRequest();
 
@@ -27,12 +27,10 @@ const Misturnos = () => {
     Swal.fire({
       title: 'Cancelar turno',
       text: `Esta seguro que desa cancelar el turno?`,
-      // icon: "question",
       showCancelButton: true,
       confirmButtonText: 'Si, cancelar turno',
       cancelButtonText: 'No, volver atrás',
       confirmButtonColor: '#00a1a3',
-      // cancelButtonColor:  "#00a1a3",
       focusCancel: true
     }).then(async (result) => {
       if (result.isConfirmed) {
@@ -48,7 +46,6 @@ const Misturnos = () => {
 
         const newAppointments = [...appointments];
         newAppointments.splice(index, 1);
-        console.log(newAppointments);
         setAppointments(newAppointments);
       }
     });

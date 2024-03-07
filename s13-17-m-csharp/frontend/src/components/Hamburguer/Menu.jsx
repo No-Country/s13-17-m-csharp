@@ -3,14 +3,12 @@ import { useState, useEffect } from 'react';
 import { Turn as Hamburger } from 'hamburger-react';
 import styles from '../Hamburguer/menu.module.css';
 import user from '../../assets/img/User.svg';
-import { useLocation } from 'react-router-dom';
 import ContentHamburguer from '../shared/ContentHamburguer/ContentHamburguer';
 import { profileData } from '../../api/services/profile.service';
 
 const Menu = () => {
   const [open, setOpen] = useState(false);
   const [profileName, setProfileName] = useState('');
-  const location = useLocation();
 
   const handleToggle = () => {
     setOpen(!open);
