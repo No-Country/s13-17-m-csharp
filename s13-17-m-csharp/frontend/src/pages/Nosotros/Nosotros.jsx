@@ -10,7 +10,7 @@ export default function Nosotros() {
         <div className={styles.containerNosMain}>
           <Fade cascade triggerOnce="true" damping="0.1" >
             <div className={"rounded-md h-96 mb-3 -mt-5"}>
-              <img className={"rounded-md w-full h-96 object-cover"} src={'../../../public/img/medicos/equipo0.png'} alt="foto-equipo-medico"/>
+              <img className={"rounded-md w-full h-96 object-cover"} src={'/img/medicos/equipo0.png'} alt="foto-equipo-medico"/>
             </div>
             
             <span className={styles.titleNos}>
