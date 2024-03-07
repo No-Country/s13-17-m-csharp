@@ -38,7 +38,7 @@ Facilidad de Uso: La interfaz intuitiva de Medicita hace que sea fácil para los
 ## Demo
 https://medicita.vercel.app/
 
-![video_promocional]([/video_promocional.gif](https://drive.google.com/drive/u/0/folders/1458bu7x_oH1PV2ocPAib0TBiEuLrcQBj))
+[video_promocional]([/video_promocional.gif](https://drive.google.com/drive/u/0/folders/1458bu7x_oH1PV2ocPAib0TBiEuLrcQBj))
 
 ## Estado
 El proyecto se encuentra en un MVP inicial y funcional. Actualmente soporta el uso desde dispositivos móviles, tablets, laptops y PCs siendo completamente responsivo. Permite iniciar sesión y agendar un turno médico seleccionando el médico según la especialidad y su horario de atención, como así también cancelar el turno desde el menú del usuario. 
