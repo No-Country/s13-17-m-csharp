@@ -41,6 +41,7 @@ const SearchResults = () => {
               key={medico.id}
               medico={medico}
               medicoNombre={medico.nombre}
+              medicoHorario={medico.horario}
             />
           ))}
         </Fade>
