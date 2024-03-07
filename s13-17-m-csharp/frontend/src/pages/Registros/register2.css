@@ -1,0 +1,154 @@
+.container-registermain2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container-register2 {
+  display: inherit;
+  flex-direction: column;
+  margin-inline: 16px;
+}
+
+.title-register2 {
+  margin-top: 121px;
+  margin-bottom: 50px;
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--color-text);
+}
+
+.form-register2 {
+  display: inherit;
+  flex-direction: column;
+}
+
+.label-register2 {
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--color-text);
+  width: 328px;
+}
+
+.input-register2 {
+  display: block;
+  padding: 15px 5px;
+  border: 1px solid var(--color-primary);
+  border-radius: 4px;
+  width: 328px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.input-register2::placeholder {
+  font-family: var(--font-title);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #646161;
+}
+
+.container-opcionessexo {
+  padding: 15px;
+}
+
+.title-opcionessexo {
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--color-text);
+  margin-bottom: 25px;
+}
+
+.label-opcionessexo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--color-text);
+  margin-bottom: 19px;
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary);
+  margin-right: 19px;
+}
+
+input[type='radio']:checked + label .circle {
+  background-color: var(--color-primary);
+}
+
+.container-btncontinuar2 {
+  margin-top: 71px;
+  margin-bottom: 79px;
+}
+
+@media (width >= 576px) {
+  .container-register2 {
+    width: 578px;
+    height: 786px;
+    background-color: #eeeeee;
+    border-radius: 50px;
+    align-items: center;
+    margin-bottom: 242px;
+  }
+
+  .title-register2 {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 45px;
+    color: var(--color-secondary);
+    text-align: center;
+    margin-top: 32px;
+    margin-bottom: 18px;
+  }
+
+  .label-register2 {
+    font-family: var(--font-text);
+    font-size: 18px;
+    width: auto;
+  }
+
+  .input-register2 {
+    width: 454px;
+    height: 68px;
+  }
+
+  .title-opcionessexo {
+    font-family: var(--font-text);
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 36px;
+  }
+
+  .label-opcionessexo {
+    font-family: var(--font-text);
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 24px;
+  }
+
+  .container-btncontinuar2 {
+    display: inherit;
+    align-items: center;
+    justify-content: center;
+    margin-top: 103px;
+    margin-bottom: 49px;
+  }
+}
