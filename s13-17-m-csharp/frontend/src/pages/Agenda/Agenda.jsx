@@ -24,7 +24,7 @@ const Agenda = () => {
   React.useEffect(() => {
     getDoctor();
   }, []);
-
+  console.log(doctor);
   return (
     <>
       <Volver title={'Ver otros médicos'} />
@@ -50,6 +50,12 @@ const Agenda = () => {
               />
             </DoctorCard>
           </Fade>
+        )}
+        {error && (
+          <h2 className="font-bold text-xl text-center">
+            El médico que tratas de buscar no existe o no está
+            disponible.
+          </h2>
         )}
       </main>
     </>

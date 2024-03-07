@@ -1,6 +1,7 @@
 const formatTime = (num) => num.toString().padStart(2, '0');
 
-const generateHours = (start, end) => {
+const generateHours = (start, end, isToday) => {
+  const currentDate = new Date();
   const interval = 30;
   const hours = [];
 
@@ -10,7 +11,8 @@ const generateHours = (start, end) => {
       let formattedMinute = formatTime(minute);
       hours.push({
         hour: `${formattedHour}:${formattedMinute}`,
-        available: true
+        available:
+          !isToday || (isToday && hour > currentDate.getHours())
       });
     }
   }
@@ -28,7 +30,7 @@ const generateSchedule = (weekAppointments) => {
 
     schedule.push({
       date,
-      hours: generateHours(9, 17)
+      hours: generateHours(9, 17, date.getDate() == today.getDate())
     });
   }
 
@@ -50,8 +52,8 @@ const formatDay = (date) => {
   const today = new Date();
 
   if (
-    date.getDay() == today.getDay() &&
-    date.getMonth() == today.getMonth()
+    date.getDate() === today.getDate() &&
+    date.getMonth() === today.getMonth()
   ) {
     return 'Hoy';
   }
@@ -105,7 +107,7 @@ const currentWeekAppointments = (appointments) => {
       }
     }
   }
-  console.log(weekAppointments);
+
   return weekAppointments;
 };
 

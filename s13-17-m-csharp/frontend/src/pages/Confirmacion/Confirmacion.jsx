@@ -1,6 +1,8 @@
+import React, { useState, useEffect } from 'react';
 import style from './Confirmacion.module.css';
 import Loader from '../../components/shared/Loader/Loader';
 import { Fade } from 'react-awesome-reveal';
+import { NavLink } from 'react-router-dom';
 
 const Confirmacion = () => {
   return (
@@ -23,7 +25,7 @@ const Confirmacion = () => {
                 asistir.
               </p>
               <p>
-                <a href="#">Cancelar turno.</a>
+                <NavLink to="/misturnos">Cancelar turno.</NavLink>
               </p>
             </section>
           </div>
