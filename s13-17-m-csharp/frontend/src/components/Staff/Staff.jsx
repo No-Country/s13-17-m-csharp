@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react';
-
-
 import styles from '../Staff/staff.module.css';
 
 const Staff = () => {
@@ -21,42 +19,26 @@ const Staff = () => {
       fetchData();
     }, []);
 
-    const imagenes = [
-      '/img/medicos/medico8.png',
-      '/img/medicos/medico2.png',
-      '/img/medicos/medico5.png',
-      '/img/medicos/medico4.png',
-      '/img/medicos/medico3.png',
-      '/img/medicos/medico6.png',
-      '/img/medicos/medico10.png',
-      '/img/medicos/medico7.png',
-      '/img/medicos/medico1.png',
-      '/img/medicos/medico13.png',
-    ];
-
-
     return (
-        <div className={styles.contenedorStaff}>
-            <div className="p-4">
-                <h2 className={styles.titulo}>Staff médico</h2>
-            </div>
-
-            <div className={"overflow-x-scroll flex flex-col flex-wrap " + styles.areaStaff}>
-                {data && data.medicos && data.medicos.length > 0 && data.medicos.map((dato, index) => (
-                    <div key={index} className={styles.cardMedico}>
-                        <div className={styles.contenedorFotoMedico} >
-                          <img className={styles.fotoMedico} src={dato.horario} alt="foto-medico"/>
-                        </div>
-                        <h6 className={styles.nombreMedico}>{dato.nombre}</h6>
-                        <p className={styles.especialidadMedico}>{dato.descripcion}</p>
-                    </div>
-                  
-                ))
-                }
-              
-            </div>
+      <div className={styles.contenedorStaff}>
+        <div className="p-4">
+            <h2 className={styles.titulo}>Staff médico</h2>
         </div>
-        
+
+        <div className={"overflow-x-scroll flex flex-col flex-wrap " + styles.areaStaff}>
+          {data && data.medicos && data.medicos.length > 0 && data.medicos.map((dato, index) => (
+            <div key={index} className={styles.cardMedico}>
+              <div className={styles.contenedorFotoMedico} >
+                <img className={styles.fotoMedico} src={dato.horario} alt="foto-medico"/>
+              </div>
+              <h6 className={styles.nombreMedico}>{dato.nombre}</h6>
+              <p className={styles.especialidadMedico}>{dato.descripcion}</p>
+            </div>
+            
+          ))
+          }
+        </div>
+      </div>
     )
   }
   
