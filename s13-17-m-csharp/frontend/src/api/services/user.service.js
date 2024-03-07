@@ -12,4 +12,16 @@ const login = async ({ email, password }) => {
   return data;
 };
 
-export { login };
+const appoiments = async () => {
+  const responseAppoiments = await fetch(
+    endPoints.users.appoiments.myAppoiments,
+    {
+      method: 'GET',
+      headers: headersJson
+    }
+  );
+  const dataAppoiments = await responseAppoiments.json();
+  return dataAppoiments;
+};
+
+export { login, appoiments };
