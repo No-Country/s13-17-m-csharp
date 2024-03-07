@@ -22,20 +22,20 @@ const Turno = () => {
   const hour = location.state?.hour;
   const date = location.state?.date;
 
+  const appointmentDate = new Date(
+    date.getFullYear(),
+    date.getMonth(),
+    date.getDate(),
+    parseInt(hour.slice(0, 2)),
+    parseInt(hour.slice(3))
+  );
+
   const {
     state: { loading, error, response },
     sendRequest
   } = useMakeRequest();
 
   const confirmAppointment = async () => {
-    const appointmentDate = new Date(
-      date.getFullYear(),
-      date.getMonth(),
-      date.getDate(),
-      parseInt(hour.slice(0, 2)),
-      parseInt(hour.slice(3))
-    );
-
     await sendRequest(
       { date: appointmentDate.toISOString(), doctorId: medico.id },
       makeAppointment
@@ -57,7 +57,7 @@ const Turno = () => {
             <DoctorData medico={medico} />
 
             <footer className="md:hidden md:mt-0 mt-4 rounded-md flex-column justify-between items-center bg-white py-1 text-xs font-normal font-font-title">
-              <TurnoAsignado />
+              <TurnoAsignado localDate={appointmentDate} />
               <div className="md:hidden flex justify-center mt-20 mb-2">
                 <NavLink to="/confirmacion">
                   <ButtonContinuar title="Confirmar el turno" />
