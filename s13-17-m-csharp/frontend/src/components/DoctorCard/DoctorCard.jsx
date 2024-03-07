@@ -8,8 +8,6 @@ const DoctorCard = ({
   children,
   viewAgenda,
   medico,
-  key,
-  medicoProfile
 }) => {
   const { descripcion, especialidad, horario, nombre } = medico;
 
@@ -22,7 +20,7 @@ const DoctorCard = ({
   return (
     <article className="mb-5 w-[91%] bg-color-cards p-3 rounded md:w-[90%] md:max-w-[561px] md:bg-color-cards-desk md:p-5 md:rounded-xl md:m-5">
       <section>
-        <DoctorData nombre={nombre} descripcion={descripcion} />
+        <DoctorData nombre={nombre} descripcion={descripcion} horario={horario} />
 
         <section className="text-[#333333] hidden md:flex flex-col mt-5 font-font-text mb-8 md:my-5">
           <h3 className="text-lg mb-2 font-medium">Dirección</h3>

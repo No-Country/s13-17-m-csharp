@@ -17,6 +17,8 @@ const Turno = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const medico = location.state?.medico;
+  const medicoHorario = location.state?.medico.horario;
+
   const hour = location.state?.hour;
   const date = location.state?.date;
 
