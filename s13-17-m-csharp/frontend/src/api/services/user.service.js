@@ -12,6 +12,7 @@ const login = async ({ email, password }) => {
   return data;
 };
 
+
 const makeAppointment = async ({ date, doctorId }) => {
   const response = await fetch(
     endPoints.users.appointments.schedule,
@@ -31,3 +32,18 @@ const makeAppointment = async ({ date, doctorId }) => {
 };
 
 export { login, makeAppointment };
+
+// const appoiments = async () => {
+//   const responseAppoiments = await fetch(
+//     endPoints.users.appoiments.myAppoiments,
+//     {
+//       method: 'GET',
+//       headers: headersJson
+//     }
+//   );
+//   const dataAppoiments = await responseAppoiments.json();
+//   return dataAppoiments;
+// };
+// 
+// export { login, appoiments };
+
