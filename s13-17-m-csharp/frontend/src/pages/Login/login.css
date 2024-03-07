@@ -21,7 +21,7 @@
 .form-iniciarsesion {
   display: inherit;
   flex-direction: column;
-  margin-top: 75px;
+  margin-top: 25px;
 }
 
 .label-iniciarsesion {
@@ -51,11 +51,13 @@
   text-decoration: underline;
   color: #646161;
   margin-top: 25px;
-  margin-inline: 24px;
+  width: 100%;
+  padding-left: 16px;
+  text-align: left;
 }
 
 .btns-iniciarsesion {
-  margin-top: 267px;
+  margin-top: 30%;
   margin-bottom: 168px;
   display: flex;
   justify-content: center;
@@ -67,10 +69,10 @@
 @media (width >= 576px) {
   .container-iniciarsesion {
     width: 578px;
-    height: 511px;
+    min-height: 511px;
     background-color: #eeeeee;
     border-radius: 50px;
-    margin-bottom: 242px;
+    margin-bottom: 100px;
   }
 
   .title-iniciarsesion {
@@ -102,7 +104,6 @@
   }
 
   .text-iniciarsesion {
-    margin-inline: 101px;
     margin-top: 12px;
   }
 

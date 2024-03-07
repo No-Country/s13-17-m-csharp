@@ -9,4 +9,6 @@
   border-radius: 100px;
   border: 1px solid var(--color-secondary);
   width: 328px;
+  display: flex;
+  justify-content: center;
 }

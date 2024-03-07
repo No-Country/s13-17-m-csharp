@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import './buttonRegisterFill.css';
 
 export default function ButtonRegisterFill() {

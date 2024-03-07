@@ -1,12 +1,18 @@
 /* eslint-disable react/prop-types */
 import { Header } from '../Header/Header';
 import { Footer } from '../Footer/Footer';
-import Menu from '../../Hamburguer/Menu';
-const Layout = ({ children,isLoggedIn,setIsLoggedIn }) => {
+import React from 'react';
+import { AppContext } from '../../../context/AppContext';
 
+const Layout = ({ children }) => {
+  const {
+    state: {
+      user: { isAuth }
+    }
+  } = React.useContext(AppContext);
   return (
     <>
-      {isLoggedIn ? <Menu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />   :  <Header /> }
+      {isAuth ? <Header isLoggedIn={isAuth} /> : <Header />}
       {children}
       <Footer />
     </>

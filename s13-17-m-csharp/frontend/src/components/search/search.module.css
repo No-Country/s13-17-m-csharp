@@ -14,23 +14,19 @@
         font-family:var(--font-main) ;
         margin: 20px 0px;
     }
+    .contenedorSearch{
+        border: 1px solid var(--color-primary);
+        padding: 0.9rem;
+        border-radius: 13px;
+        cursor: pointer;
+    }
 }
-
 
 .contenedor{
     max-width: 1400px;
     margin: 0 auto;
     width: 100%;
-  
 }
-
-.contenedorSearch{
-    border: 1px solid var(--color-primary);
-    padding: 0.9rem;
-    border-radius: 13px;
-    cursor: pointer;
-}
-
 
 .titleSearch{
     color: var(--color-primary);
@@ -40,7 +36,10 @@
 .img{
     width: 38px;
     height: 38px;
-    
+    position: relative;
+    top: -50px;
+    bottom: 0;
+    left: 88%;
 }
 
 .titleSugerencia{
@@ -55,44 +54,42 @@
     font-family: var(--font-text);
     font-weight: 400;
     font-size: 1.1rem;
-
     margin-bottom: 3rem;
-text-decoration: underline;
+    text-decoration: underline;
 }
 
 
 .input{
     border: 1px solid #00A1A3;
     padding: .9rem;
-   
     width: 80%;
     font-size: 1.2rem;
     padding-left: 50px;
-    
-   
 }
 
+@media (width<768px){
+    .input{
+        width: 100%;
+        border-radius: 10px;
+    }
+}
+
+.contenedorItems{
+    width: 100%;
+}
 
 .input:focus{
-
-  
-
     outline: none;
- 
-   border-color: var(--color-secondary);
+    border-color: var(--color-secondary);
 }
 
 .lupa{
-
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
-   margin-top: .6rem;
-   margin-left: 10px;
-  
-   
-  
+    margin-top: .6rem;
+    margin-left: 10px;
 }
 
 .titleSecondary{
@@ -101,25 +98,22 @@ text-decoration: underline;
     font-family: var(--font-main);
     font-size: 1.9rem;
     line-height: 1.5;
-  
-    
-
-
 }
 
-
 @media (min-width:1024px){
-
     .titleSecondary{
         color: var(--color-secondary);
         font-weight: 500;
         font-family: var(--font-main);
-        font-size: 2.79rem;
+        font-size: 2.5rem;
         line-height: 1.5;
-      
-        
-    
-    
     }
 }
 
+.bgContainerItems{
+    background: white;
+    margin-top: 5px;
+    border-radius: 5px;
+    width: 80%;
+    padding: 10px;
+}
