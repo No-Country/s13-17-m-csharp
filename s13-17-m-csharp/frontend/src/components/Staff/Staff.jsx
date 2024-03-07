@@ -45,11 +45,7 @@ const Staff = () => {
                 {data && data.medicos && data.medicos.length > 0 && data.medicos.map((dato, index) => (
                     <div key={index} className={styles.cardMedico}>
                         <div className={styles.contenedorFotoMedico} >
-                        {imagenes.map((imagen, indexI) => (
-                            (index === indexI) && (
-                              <img key={indexI} className={styles.fotoMedico} src={imagen} alt="foto-medico1"/>
-                            )                          
-                          ))}
+                          <img className={styles.fotoMedico} src={dato.horario} alt="foto-medico"/>
                         </div>
                         <h6 className={styles.nombreMedico}>{dato.nombre}</h6>
                         <p className={styles.especialidadMedico}>{dato.descripcion}</p>
