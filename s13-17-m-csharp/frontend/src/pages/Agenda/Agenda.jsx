@@ -7,18 +7,25 @@ import { DoctorCard } from '../../components/DoctorCard/DoctorCard';
 import Volver from '../../components/Volver/Volver';
 import { useMakeRequest } from '../../hooks/useMakeRequest';
 import Loader from '../../components/shared/Loader/Loader';
+import { useNavigate } from 'react-router-dom';
 
 const Agenda = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+  
+  const redirect =  () =>{
+      navigate(`/inicio`)
+  }
 
   const {
     state: { loading, error, response: doctor },
     sendRequest
   } = useMakeRequest();
-
+  
   const getDoctor = async () => {
     const doctorId = location.pathname.slice(8);
     await sendRequest(doctorId, getDoctorInfo);
+    console.log(doctorId);
   };
 
   React.useEffect(() => {
@@ -53,10 +60,7 @@ const Agenda = () => {
           </Fade>
         )}
         {error && (
-          <h2 className="font-bold text-xl text-center">
-            El médico que tratas de buscar no existe o no está
-            disponible.
-          </h2>
+          redirect()
         )}
       </main>
     </>
