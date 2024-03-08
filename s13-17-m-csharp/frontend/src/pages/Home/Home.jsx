@@ -1,20 +1,23 @@
 /* eslint-disable react/prop-types */
+import { Fade } from 'react-awesome-reveal';
 import Slider from '../../components/Slider/Slider'
 import Staff from '../../components/Staff/Staff'
 import Search from '../../components/search/Search'
 import Icon from '../../components/shared/Icon/Icon'
-import { Layout } from '../../components/shared/Layout/Layout'
-// import styles from './Home.module.css'
+import styles from './Home.module.css';
 
-const Home = ({isLoggedIn,setIsLoggedIn}) => {
+const Home = () => {
     return (
         <>
-            <Layout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
-                <Slider />
-                <Staff />
-                <Search />
-                <Icon />
-            </Layout>
+            <div className={styles.contenedorPadre}>
+                    <Fade triggerOnce="true" damping="0.2" cascade>
+                        <Slider />
+                        <Staff />
+                        <Search />
+
+                    </Fade>
+            </div>
+            <Icon />
         </>
     )
 }
