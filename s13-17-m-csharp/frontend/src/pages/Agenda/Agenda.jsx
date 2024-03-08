@@ -25,6 +25,7 @@ const Agenda = () => {
     getDoctor();
   }, []);
   console.log(doctor);
+  
   return (
     <>
       <Volver title={'Ver otros médicos'} />

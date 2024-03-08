@@ -9,7 +9,7 @@ const DoctorCard = ({
   viewAgenda,
   medico,
 }) => {
-  const { descripcion, especialidad, horario, nombre } = medico;
+  const { descripcion, horario, nombre } = medico;
 
   const navigate = useNavigate();
 
@@ -21,7 +21,6 @@ const DoctorCard = ({
     <article className="mb-5 w-[91%] bg-color-cards p-3 rounded md:w-[90%] md:max-w-[561px] md:bg-color-cards-desk md:p-5 md:rounded-xl md:m-5">
       <section>
         <DoctorData nombre={nombre} descripcion={descripcion} horario={horario} />
-
         <section className="text-[#333333] hidden md:flex flex-col mt-5 font-font-text mb-8 md:my-5">
           <h3 className="text-lg mb-2 font-medium">Dirección</h3>
           <span className="mb-2 w-full h-[1px] bg-[#333333]"></span>
